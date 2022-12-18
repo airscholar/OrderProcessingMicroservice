@@ -4,6 +4,7 @@ import com.airscholar.CommonService.commands.ValidatePaymentCommand;
 import com.airscholar.CommonService.events.PaymentProcessedEvent;
 import com.airscholar.CommonService.model.User;
 import com.airscholar.CommonService.queries.GetUserPaymentDetailsQuery;
+import com.airscholar.OrderService.command.api.command.ShipOrderCommand;
 import com.airscholar.OrderService.command.api.events.OrderCreatedEvent;
 import lombok.extern.slf4j.Slf4j;
 import org.axonframework.commandhandling.gateway.CommandGateway;
@@ -59,6 +60,16 @@ public class OrderProcessingSaga {
     @SagaEventHandler(associationProperty = "orderId")
     private void handle(PaymentProcessedEvent event){
         log.info("PaymentProcessedEvent received for orderId: {}", event.getOrderId());
-        ed
+        try {
+            ShipOrderCommand shipOrderCommand = ShipOrderCommand.builder()
+                    .shipmentId(UUID.randomUUID().toString())
+                    .orderId(event.getOrderId())
+                    .build();
+
+            commandGateway.sendAndWait(shipOrderCommand);
+        } catch (Exception e) {
+            log.error(e.getMessage());
+            //start the compensating transaction
+        }
     }
 }
