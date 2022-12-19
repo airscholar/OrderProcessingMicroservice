@@ -1,11 +1,13 @@
 package com.airscholar.OrderService.command.api.saga;
 
+import com.airscholar.CommonService.commands.CompleteOrderCommand;
 import com.airscholar.CommonService.commands.ValidatePaymentCommand;
 import com.airscholar.CommonService.events.PaymentProcessedEvent;
 import com.airscholar.CommonService.model.User;
 import com.airscholar.CommonService.queries.GetUserPaymentDetailsQuery;
-import com.airscholar.OrderService.command.api.command.ShipOrderCommand;
+import com.airscholar.CommonService.commands.ShipOrderCommand;
 import com.airscholar.OrderService.command.api.events.OrderCreatedEvent;
+import com.airscholar.OrderService.command.api.events.OrderShippedEvent;
 import lombok.extern.slf4j.Slf4j;
 import org.axonframework.commandhandling.gateway.CommandGateway;
 import org.axonframework.messaging.responsetypes.ResponseTypes;
@@ -33,7 +35,7 @@ public class OrderProcessingSaga {
 
     @StartSaga
     @SagaEventHandler(associationProperty = "orderId")
-    private void handle(OrderCreatedEvent event) {
+    public void handle(OrderCreatedEvent event) {
         log.info("OrderProcessingSaga started for orderId: {}", event.getOrderId());
 
 
@@ -58,7 +60,7 @@ public class OrderProcessingSaga {
     }
 
     @SagaEventHandler(associationProperty = "orderId")
-    private void handle(PaymentProcessedEvent event){
+    public void handle(PaymentProcessedEvent event){
         log.info("PaymentProcessedEvent received for orderId: {}", event.getOrderId());
         try {
             ShipOrderCommand shipOrderCommand = ShipOrderCommand.builder()
@@ -68,6 +70,23 @@ public class OrderProcessingSaga {
 
             commandGateway.sendAndWait(shipOrderCommand);
         } catch (Exception e) {
+            log.error(e.getMessage());
+            //start the compensating transaction
+        }
+    }
+
+    @SagaEventHandler(associationProperty = "orderId")
+    public void handle(OrderShippedEvent event){
+        log.info("        log.info(\"PaymentProcessedEvent received for orderId: {}\", event.getOrderId());\n received for orderId: {}", event.getOrderId());
+
+        try{
+            CompleteOrderCommand completeOrderCommand = CompleteOrderCommand.builder()
+                    .orderId(event.getOrderId())
+                    .orderStatus("APPROVED")
+                    .build();
+
+            commandGateway.sendAndWait(completeOrderCommand);
+        }catch (Exception e) {
             log.error(e.getMessage());
             //start the compensating transaction
         }
