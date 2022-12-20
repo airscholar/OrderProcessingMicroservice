@@ -1,0 +1,753 @@
+2022-12-19 14:42:48.319  INFO 85974 --- [main] c.a.P.PaymentServiceApplication          : Starting PaymentServiceApplication using Java 17.0.1 on ed-dynamic-158-197.wless.cranfield.ac.uk with PID 85974 (/Users/airscholar/IdeaProjects/OrderApp/PaymentService/target/classes started by airscholar in /Users/airscholar/IdeaProjects/OrderApp)
+2022-12-19 14:42:48.323  INFO 85974 --- [main] c.a.P.PaymentServiceApplication          : No active profile set, falling back to 1 default profile: "default"
+2022-12-19 14:42:49.232  INFO 85974 --- [main] .s.d.r.c.RepositoryConfigurationDelegate : Bootstrapping Spring Data JPA repositories in DEFAULT mode.
+2022-12-19 14:42:49.388  INFO 85974 --- [main] .s.d.r.c.RepositoryConfigurationDelegate : Finished Spring Data repository scanning in 148 ms. Found 1 JPA repository interfaces.
+2022-12-19 14:42:50.141  INFO 85974 --- [main] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat initialized with port(s): 9093 (http)
+2022-12-19 14:42:50.147  INFO 85974 --- [main] o.apache.catalina.core.StandardService   : Starting service [Tomcat]
+2022-12-19 14:42:50.147  INFO 85974 --- [main] org.apache.catalina.core.StandardEngine  : Starting Servlet engine: [Apache Tomcat/9.0.65]
+2022-12-19 14:42:50.272  INFO 85974 --- [main] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring embedded WebApplicationContext
+2022-12-19 14:42:50.272  INFO 85974 --- [main] w.s.c.ServletWebServerApplicationContext : Root WebApplicationContext: initialization completed in 1857 ms
+2022-12-19 14:42:50.309  INFO 85974 --- [main] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Starting...
+2022-12-19 14:42:50.519  INFO 85974 --- [main] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Start completed.
+2022-12-19 14:42:50.533  INFO 85974 --- [main] o.s.b.a.h2.H2ConsoleAutoConfiguration    : H2 console available at '/h2-console'. Database available at 'jdbc:h2:file:~/data/paymentDB'
+2022-12-19 14:42:50.724  INFO 85974 --- [main] o.hibernate.jpa.internal.util.LogHelper  : HHH000204: Processing PersistenceUnitInfo [name: default]
+2022-12-19 14:42:50.762  INFO 85974 --- [main] org.hibernate.Version                    : HHH000412: Hibernate ORM core version 5.6.10.Final
+2022-12-19 14:42:50.855  INFO 85974 --- [main] o.hibernate.annotations.common.Version   : HCANN000001: Hibernate Commons Annotations {5.1.2.Final}
+2022-12-19 14:42:50.915  INFO 85974 --- [main] org.hibernate.dialect.Dialect            : HHH000400: Using dialect: org.hibernate.dialect.H2Dialect
+2022-12-19 14:42:51.465  INFO 85974 --- [main] o.h.e.t.j.p.i.JtaPlatformInitiator       : HHH000490: Using JtaPlatform implementation: [org.hibernate.engine.transaction.jta.platform.internal.NoJtaPlatform]
+2022-12-19 14:42:51.472  INFO 85974 --- [main] j.LocalContainerEntityManagerFactoryBean : Initialized JPA EntityManagerFactory for persistence unit 'default'
+2022-12-19 14:42:51.703  WARN 85974 --- [main] JpaBaseConfiguration$JpaWebConfiguration : spring.jpa.open-in-view is enabled by default. Therefore, database queries may be performed during view rendering. Explicitly configure spring.jpa.open-in-view to disable this warning
+2022-12-19 14:42:51.973  INFO 85974 --- [main] o.a.s.a.XStreamAutoConfiguration         : Initializing an XStream instance since none was found. The auto configuration base packages will be used as wildcards for the XStream security settings.
+2022-12-19 14:42:52.093  INFO 85974 --- [main] o.a.s.util.XStreamSecurityTypeUtility    : Constructing wildcard type for base package [com.airscholar.PaymentService].
+2022-12-19 14:42:52.094  INFO 85974 --- [main] o.a.s.util.XStreamSecurityTypeUtility    : Constructing wildcard type for base package [org.axonframework.eventhandling.tokenstore].
+2022-12-19 14:42:52.094  INFO 85974 --- [main] o.a.s.util.XStreamSecurityTypeUtility    : Constructing wildcard type for base package [org.axonframework.eventhandling.deadletter.jpa].
+2022-12-19 14:42:52.094  INFO 85974 --- [main] o.a.s.util.XStreamSecurityTypeUtility    : Constructing wildcard type for base package [org.axonframework.modelling.saga.repository.jpa].
+2022-12-19 14:42:52.094  INFO 85974 --- [main] o.a.s.util.XStreamSecurityTypeUtility    : Constructing wildcard type for base package [org.axonframework.eventsourcing.eventstore.jpa].
+2022-12-19 14:42:52.101  INFO 85974 --- [main] o.a.serialization.ChainingConverter      : ContentTypeConverter of type [class org.axonframework.serialization.xml.Dom4JToByteArrayConverter] is ignored. It seems to rely on a class that is not available in the class loader: org/dom4j/Document
+2022-12-19 14:42:52.102  INFO 85974 --- [main] o.a.serialization.ChainingConverter      : ContentTypeConverter of type [class org.axonframework.serialization.xml.InputStreamToDom4jConverter] is ignored. It seems to rely on a class that is not available in the class loader: org/dom4j/Document
+2022-12-19 14:42:52.102  INFO 85974 --- [main] o.a.serialization.ChainingConverter      : ContentTypeConverter of type [class org.axonframework.serialization.xml.XomToStringConverter] is ignored. It seems to rely on a class that is not available in the class loader: nu/xom/Document
+2022-12-19 14:42:52.103  INFO 85974 --- [main] o.a.serialization.ChainingConverter      : ContentTypeConverter of type [class org.axonframework.serialization.xml.InputStreamToXomConverter] is ignored. It seems to rely on a class that is not available in the class loader: nu/xom/ParsingException
+2022-12-19 14:42:52.486  INFO 85974 --- [main] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat started on port(s): 9093 (http) with context path ''
+2022-12-19 14:42:52.742  INFO 85974 --- [main] i.a.a.c.impl.AxonServerManagedChannel    : Requesting connection details from localhost:8124
+2022-12-19 14:42:52.928  INFO 85974 --- [main] i.a.a.c.impl.AxonServerManagedChannel    : Successfully connected to localhost:8124
+2022-12-19 14:42:52.937  INFO 85974 --- [main] i.a.a.connector.impl.ControlChannelImpl  : Connected instruction stream for context 'default'. Sending client identification
+2022-12-19 14:42:52.951  INFO 85974 --- [main] i.a.a.c.command.impl.CommandChannelImpl  : CommandChannel for context 'default' connected, 0 command handlers registered
+2022-12-19 14:42:52.954  INFO 85974 --- [main] i.a.a.c.command.impl.CommandChannelImpl  : Registered handler for command 'com.airscholar.CommonService.commands.ValidatePaymentCommand' in context 'default'
+2022-12-19 14:42:53.056  INFO 85974 --- [main] c.a.P.PaymentServiceApplication          : Started PaymentServiceApplication in 5.258 seconds (JVM running for 6.135)
+2022-12-19 14:42:53.069  INFO 85974 --- [EventProcessor[com.airscholar.PaymentService.command.api.events]-0] o.a.e.TrackingEventProcessor             : Worker assigned to segment Segment[0/0] for processing
+2022-12-19 14:42:53.078  INFO 85974 --- [EventProcessor[com.airscholar.PaymentService.command.api.events]-0] o.a.e.TrackingEventProcessor             : Using current Thread for last segment worker: TrackingSegmentWorker{processor=com.airscholar.PaymentService.command.api.events, segment=Segment[0/0]}
+2022-12-19 14:42:53.084  INFO 85974 --- [EventProcessor[com.airscholar.PaymentService.command.api.events]-0] o.a.e.TrackingEventProcessor             : Fetched token: IndexTrackingToken{globalIndex=8} for segment: Segment[0/0]
+2022-12-19 15:02:21.658  INFO 85974 --- [SpringApplicationShutdownHook] o.a.e.TrackingEventProcessor             : Shutdown state set for Processor 'com.airscholar.PaymentService.command.api.events'.
+2022-12-19 15:02:21.735  INFO 85974 --- [SpringApplicationShutdownHook] o.a.e.TrackingEventProcessor             : Processor 'com.airscholar.PaymentService.command.api.events' awaiting termination...
+2022-12-19 15:02:22.858  INFO 85974 --- [EventProcessor[com.airscholar.PaymentService.command.api.events]-0] o.a.e.TrackingEventProcessor             : Released claim
+2022-12-19 15:02:22.865  INFO 85974 --- [EventProcessor[com.airscholar.PaymentService.command.api.events]-0] o.a.e.TrackingEventProcessor             : Worker for segment Segment[0/0] stopped.
+2022-12-19 15:02:22.896  INFO 85974 --- [SpringApplicationShutdownHook] i.a.a.c.command.impl.CommandChannelImpl  : Unregistered handler for command 'com.airscholar.CommonService.commands.ValidatePaymentCommand' in context 'default'
+2022-12-19 15:02:23.638  INFO 85974 --- [SpringApplicationShutdownHook] j.LocalContainerEntityManagerFactoryBean : Closing JPA EntityManagerFactory for persistence unit 'default'
+2022-12-19 15:02:23.676  INFO 85974 --- [SpringApplicationShutdownHook] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Shutdown initiated...
+2022-12-19 15:02:23.707  INFO 85974 --- [SpringApplicationShutdownHook] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Shutdown completed.
+2022-12-19 15:12:36.342  INFO 89414 --- [main] c.a.P.PaymentServiceApplication          : Starting PaymentServiceApplication using Java 17.0.1 on ed-dynamic-158-197.wless.cranfield.ac.uk with PID 89414 (/Users/airscholar/IdeaProjects/OrderApp/PaymentService/target/classes started by airscholar in /Users/airscholar/IdeaProjects/OrderApp)
+2022-12-19 15:12:36.352  INFO 89414 --- [main] c.a.P.PaymentServiceApplication          : No active profile set, falling back to 1 default profile: "default"
+2022-12-19 15:12:37.406  INFO 89414 --- [main] .s.d.r.c.RepositoryConfigurationDelegate : Bootstrapping Spring Data JPA repositories in DEFAULT mode.
+2022-12-19 15:12:37.623  INFO 89414 --- [main] .s.d.r.c.RepositoryConfigurationDelegate : Finished Spring Data repository scanning in 207 ms. Found 1 JPA repository interfaces.
+2022-12-19 15:12:38.936  INFO 89414 --- [main] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat initialized with port(s): 9093 (http)
+2022-12-19 15:12:38.961  INFO 89414 --- [main] o.apache.catalina.core.StandardService   : Starting service [Tomcat]
+2022-12-19 15:12:38.962  INFO 89414 --- [main] org.apache.catalina.core.StandardEngine  : Starting Servlet engine: [Apache Tomcat/9.0.65]
+2022-12-19 15:12:39.247  INFO 89414 --- [main] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring embedded WebApplicationContext
+2022-12-19 15:12:39.247  INFO 89414 --- [main] w.s.c.ServletWebServerApplicationContext : Root WebApplicationContext: initialization completed in 2764 ms
+2022-12-19 15:12:39.316  INFO 89414 --- [main] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Starting...
+2022-12-19 15:12:39.589  INFO 89414 --- [main] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Start completed.
+2022-12-19 15:12:39.605  INFO 89414 --- [main] o.s.b.a.h2.H2ConsoleAutoConfiguration    : H2 console available at '/h2-console'. Database available at 'jdbc:h2:file:~/data/paymentDB'
+2022-12-19 15:12:40.090  INFO 89414 --- [main] o.hibernate.jpa.internal.util.LogHelper  : HHH000204: Processing PersistenceUnitInfo [name: default]
+2022-12-19 15:12:40.127  INFO 89414 --- [main] org.hibernate.Version                    : HHH000412: Hibernate ORM core version 5.6.10.Final
+2022-12-19 15:12:40.380  INFO 89414 --- [main] o.hibernate.annotations.common.Version   : HCANN000001: Hibernate Commons Annotations {5.1.2.Final}
+2022-12-19 15:12:40.498  INFO 89414 --- [main] org.hibernate.dialect.Dialect            : HHH000400: Using dialect: org.hibernate.dialect.H2Dialect
+2022-12-19 15:12:41.588  INFO 89414 --- [main] o.h.e.t.j.p.i.JtaPlatformInitiator       : HHH000490: Using JtaPlatform implementation: [org.hibernate.engine.transaction.jta.platform.internal.NoJtaPlatform]
+2022-12-19 15:12:41.594  INFO 89414 --- [main] j.LocalContainerEntityManagerFactoryBean : Initialized JPA EntityManagerFactory for persistence unit 'default'
+2022-12-19 15:12:41.939  WARN 89414 --- [main] JpaBaseConfiguration$JpaWebConfiguration : spring.jpa.open-in-view is enabled by default. Therefore, database queries may be performed during view rendering. Explicitly configure spring.jpa.open-in-view to disable this warning
+2022-12-19 15:12:42.255  INFO 89414 --- [main] o.a.s.a.XStreamAutoConfiguration         : Initializing an XStream instance since none was found. The auto configuration base packages will be used as wildcards for the XStream security settings.
+2022-12-19 15:12:42.401  INFO 89414 --- [main] o.a.s.util.XStreamSecurityTypeUtility    : Constructing wildcard type for base package [com.airscholar.PaymentService].
+2022-12-19 15:12:42.402  INFO 89414 --- [main] o.a.s.util.XStreamSecurityTypeUtility    : Constructing wildcard type for base package [org.axonframework.eventhandling.tokenstore].
+2022-12-19 15:12:42.402  INFO 89414 --- [main] o.a.s.util.XStreamSecurityTypeUtility    : Constructing wildcard type for base package [org.axonframework.eventhandling.deadletter.jpa].
+2022-12-19 15:12:42.402  INFO 89414 --- [main] o.a.s.util.XStreamSecurityTypeUtility    : Constructing wildcard type for base package [org.axonframework.modelling.saga.repository.jpa].
+2022-12-19 15:12:42.402  INFO 89414 --- [main] o.a.s.util.XStreamSecurityTypeUtility    : Constructing wildcard type for base package [org.axonframework.eventsourcing.eventstore.jpa].
+2022-12-19 15:12:42.411  INFO 89414 --- [main] o.a.serialization.ChainingConverter      : ContentTypeConverter of type [class org.axonframework.serialization.xml.Dom4JToByteArrayConverter] is ignored. It seems to rely on a class that is not available in the class loader: org/dom4j/Document
+2022-12-19 15:12:42.412  INFO 89414 --- [main] o.a.serialization.ChainingConverter      : ContentTypeConverter of type [class org.axonframework.serialization.xml.InputStreamToDom4jConverter] is ignored. It seems to rely on a class that is not available in the class loader: org/dom4j/Document
+2022-12-19 15:12:42.412  INFO 89414 --- [main] o.a.serialization.ChainingConverter      : ContentTypeConverter of type [class org.axonframework.serialization.xml.XomToStringConverter] is ignored. It seems to rely on a class that is not available in the class loader: nu/xom/Document
+2022-12-19 15:12:42.413  INFO 89414 --- [main] o.a.serialization.ChainingConverter      : ContentTypeConverter of type [class org.axonframework.serialization.xml.InputStreamToXomConverter] is ignored. It seems to rely on a class that is not available in the class loader: nu/xom/ParsingException
+2022-12-19 15:12:42.908  INFO 89414 --- [main] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat started on port(s): 9093 (http) with context path ''
+2022-12-19 15:12:43.220  INFO 89414 --- [main] i.a.a.c.impl.AxonServerManagedChannel    : Requesting connection details from localhost:8124
+2022-12-19 15:12:43.409  INFO 89414 --- [main] i.a.a.c.impl.AxonServerManagedChannel    : Successfully connected to localhost:8124
+2022-12-19 15:12:43.418  INFO 89414 --- [main] i.a.a.connector.impl.ControlChannelImpl  : Connected instruction stream for context 'default'. Sending client identification
+2022-12-19 15:12:43.434  INFO 89414 --- [main] i.a.a.c.command.impl.CommandChannelImpl  : CommandChannel for context 'default' connected, 0 command handlers registered
+2022-12-19 15:12:43.440  INFO 89414 --- [main] i.a.a.c.command.impl.CommandChannelImpl  : Registered handler for command 'com.airscholar.CommonService.commands.ValidatePaymentCommand' in context 'default'
+2022-12-19 15:12:43.571  INFO 89414 --- [main] c.a.P.PaymentServiceApplication          : Started PaymentServiceApplication in 7.898 seconds (JVM running for 9.075)
+2022-12-19 15:12:43.580  INFO 89414 --- [EventProcessor[com.airscholar.PaymentService.command.api.events]-0] o.a.e.TrackingEventProcessor             : Worker assigned to segment Segment[0/0] for processing
+2022-12-19 15:12:43.590  INFO 89414 --- [EventProcessor[com.airscholar.PaymentService.command.api.events]-0] o.a.e.TrackingEventProcessor             : Using current Thread for last segment worker: TrackingSegmentWorker{processor=com.airscholar.PaymentService.command.api.events, segment=Segment[0/0]}
+2022-12-19 15:12:43.597  INFO 89414 --- [EventProcessor[com.airscholar.PaymentService.command.api.events]-0] o.a.e.TrackingEventProcessor             : Fetched token: IndexTrackingToken{globalIndex=10} for segment: Segment[0/0]
+2022-12-19 15:22:51.254  INFO 89414 --- [SpringApplicationShutdownHook] o.a.e.TrackingEventProcessor             : Shutdown state set for Processor 'com.airscholar.PaymentService.command.api.events'.
+2022-12-19 15:22:51.286  INFO 89414 --- [SpringApplicationShutdownHook] o.a.e.TrackingEventProcessor             : Processor 'com.airscholar.PaymentService.command.api.events' awaiting termination...
+2022-12-19 15:22:52.149  INFO 89414 --- [EventProcessor[com.airscholar.PaymentService.command.api.events]-0] o.a.e.TrackingEventProcessor             : Released claim
+2022-12-19 15:22:52.153  INFO 89414 --- [EventProcessor[com.airscholar.PaymentService.command.api.events]-0] o.a.e.TrackingEventProcessor             : Worker for segment Segment[0/0] stopped.
+2022-12-19 15:22:52.251  INFO 89414 --- [SpringApplicationShutdownHook] i.a.a.c.command.impl.CommandChannelImpl  : Unregistered handler for command 'com.airscholar.CommonService.commands.ValidatePaymentCommand' in context 'default'
+2022-12-19 15:22:52.756  INFO 89414 --- [SpringApplicationShutdownHook] j.LocalContainerEntityManagerFactoryBean : Closing JPA EntityManagerFactory for persistence unit 'default'
+2022-12-19 15:22:52.766  INFO 89414 --- [SpringApplicationShutdownHook] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Shutdown initiated...
+2022-12-19 15:22:52.813  INFO 89414 --- [SpringApplicationShutdownHook] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Shutdown completed.
+2022-12-19 15:35:06.223  INFO 91899 --- [main] c.a.P.PaymentServiceApplication          : Starting PaymentServiceApplication using Java 17.0.1 on ed-dynamic-158-197.wless.cranfield.ac.uk with PID 91899 (/Users/airscholar/IdeaProjects/OrderApp/PaymentService/target/classes started by airscholar in /Users/airscholar/IdeaProjects/OrderApp)
+2022-12-19 15:35:06.232  INFO 91899 --- [main] c.a.P.PaymentServiceApplication          : No active profile set, falling back to 1 default profile: "default"
+2022-12-19 15:35:10.037  INFO 91899 --- [main] .s.d.r.c.RepositoryConfigurationDelegate : Bootstrapping Spring Data JPA repositories in DEFAULT mode.
+2022-12-19 15:35:10.593  INFO 91899 --- [main] .s.d.r.c.RepositoryConfigurationDelegate : Finished Spring Data repository scanning in 533 ms. Found 1 JPA repository interfaces.
+2022-12-19 15:35:14.518  INFO 91899 --- [main] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat initialized with port(s): 9093 (http)
+2022-12-19 15:35:14.546  INFO 91899 --- [main] o.apache.catalina.core.StandardService   : Starting service [Tomcat]
+2022-12-19 15:35:14.548  INFO 91899 --- [main] org.apache.catalina.core.StandardEngine  : Starting Servlet engine: [Apache Tomcat/9.0.65]
+2022-12-19 15:35:15.059  INFO 91899 --- [main] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring embedded WebApplicationContext
+2022-12-19 15:35:15.060  INFO 91899 --- [main] w.s.c.ServletWebServerApplicationContext : Root WebApplicationContext: initialization completed in 8313 ms
+2022-12-19 15:35:15.243  INFO 91899 --- [main] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Starting...
+2022-12-19 15:35:16.243  INFO 91899 --- [main] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Start completed.
+2022-12-19 15:35:16.361  INFO 91899 --- [main] o.s.b.a.h2.H2ConsoleAutoConfiguration    : H2 console available at '/h2-console'. Database available at 'jdbc:h2:file:~/data/paymentDB'
+2022-12-19 15:35:17.256  INFO 91899 --- [main] o.hibernate.jpa.internal.util.LogHelper  : HHH000204: Processing PersistenceUnitInfo [name: default]
+2022-12-19 15:35:17.386  INFO 91899 --- [main] org.hibernate.Version                    : HHH000412: Hibernate ORM core version 5.6.10.Final
+2022-12-19 15:35:17.768  INFO 91899 --- [main] o.hibernate.annotations.common.Version   : HCANN000001: Hibernate Commons Annotations {5.1.2.Final}
+2022-12-19 15:35:18.218  INFO 91899 --- [main] org.hibernate.dialect.Dialect            : HHH000400: Using dialect: org.hibernate.dialect.H2Dialect
+2022-12-19 15:35:22.303  INFO 91899 --- [main] o.h.e.t.j.p.i.JtaPlatformInitiator       : HHH000490: Using JtaPlatform implementation: [org.hibernate.engine.transaction.jta.platform.internal.NoJtaPlatform]
+2022-12-19 15:35:22.354  INFO 91899 --- [main] j.LocalContainerEntityManagerFactoryBean : Initialized JPA EntityManagerFactory for persistence unit 'default'
+2022-12-19 15:35:24.007  WARN 91899 --- [main] JpaBaseConfiguration$JpaWebConfiguration : spring.jpa.open-in-view is enabled by default. Therefore, database queries may be performed during view rendering. Explicitly configure spring.jpa.open-in-view to disable this warning
+2022-12-19 15:35:25.708  INFO 91899 --- [main] o.a.s.a.XStreamAutoConfiguration         : Initializing an XStream instance since none was found. The auto configuration base packages will be used as wildcards for the XStream security settings.
+2022-12-19 15:35:26.290  INFO 91899 --- [main] o.a.s.util.XStreamSecurityTypeUtility    : Constructing wildcard type for base package [com.airscholar.PaymentService].
+2022-12-19 15:35:26.293  INFO 91899 --- [main] o.a.s.util.XStreamSecurityTypeUtility    : Constructing wildcard type for base package [org.axonframework.eventhandling.tokenstore].
+2022-12-19 15:35:26.293  INFO 91899 --- [main] o.a.s.util.XStreamSecurityTypeUtility    : Constructing wildcard type for base package [org.axonframework.eventhandling.deadletter.jpa].
+2022-12-19 15:35:26.293  INFO 91899 --- [main] o.a.s.util.XStreamSecurityTypeUtility    : Constructing wildcard type for base package [org.axonframework.modelling.saga.repository.jpa].
+2022-12-19 15:35:26.293  INFO 91899 --- [main] o.a.s.util.XStreamSecurityTypeUtility    : Constructing wildcard type for base package [org.axonframework.eventsourcing.eventstore.jpa].
+2022-12-19 15:35:26.324  INFO 91899 --- [main] o.a.serialization.ChainingConverter      : ContentTypeConverter of type [class org.axonframework.serialization.xml.Dom4JToByteArrayConverter] is ignored. It seems to rely on a class that is not available in the class loader: org/dom4j/Document
+2022-12-19 15:35:26.325  INFO 91899 --- [main] o.a.serialization.ChainingConverter      : ContentTypeConverter of type [class org.axonframework.serialization.xml.InputStreamToDom4jConverter] is ignored. It seems to rely on a class that is not available in the class loader: org/dom4j/Document
+2022-12-19 15:35:26.325  INFO 91899 --- [main] o.a.serialization.ChainingConverter      : ContentTypeConverter of type [class org.axonframework.serialization.xml.XomToStringConverter] is ignored. It seems to rely on a class that is not available in the class loader: nu/xom/Document
+2022-12-19 15:35:26.326  INFO 91899 --- [main] o.a.serialization.ChainingConverter      : ContentTypeConverter of type [class org.axonframework.serialization.xml.InputStreamToXomConverter] is ignored. It seems to rely on a class that is not available in the class loader: nu/xom/ParsingException
+2022-12-19 15:35:29.804  INFO 91899 --- [main] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat started on port(s): 9093 (http) with context path ''
+2022-12-19 15:35:34.121  INFO 91899 --- [main] i.a.a.c.impl.AxonServerManagedChannel    : Requesting connection details from localhost:8124
+2022-12-19 15:35:39.675  WARN 91899 --- [main] i.a.a.c.impl.AxonServerManagedChannel    : Connecting to AxonServer node [localhost:8124] failed.
+
+io.grpc.StatusRuntimeException: DEADLINE_EXCEEDED: deadline exceeded after 4.684535666s. [closed=[], open=[[buffered_nanos=4366154833, remote_addr=localhost/127.0.0.1:8124]]]
+	at io.grpc.stub.ClientCalls.toStatusRuntimeException(ClientCalls.java:262) ~[grpc-stub-1.44.1.jar:1.44.1]
+	at io.grpc.stub.ClientCalls.getUnchecked(ClientCalls.java:243) ~[grpc-stub-1.44.1.jar:1.44.1]
+	at io.grpc.stub.ClientCalls.blockingUnaryCall(ClientCalls.java:156) ~[grpc-stub-1.44.1.jar:1.44.1]
+	at io.axoniq.axonserver.grpc.control.PlatformServiceGrpc$PlatformServiceBlockingStub.getPlatformServer(PlatformServiceGrpc.java:250) ~[axonserver-connector-java-4.6.1.jar:4.6.1]
+	at io.axoniq.axonserver.connector.impl.AxonServerManagedChannel.connectChannel(AxonServerManagedChannel.java:115) ~[axonserver-connector-java-4.6.1.jar:4.6.1]
+	at io.axoniq.axonserver.connector.impl.AxonServerManagedChannel.createConnection(AxonServerManagedChannel.java:335) ~[axonserver-connector-java-4.6.1.jar:4.6.1]
+	at io.axoniq.axonserver.connector.impl.AxonServerManagedChannel.ensureConnected(AxonServerManagedChannel.java:300) ~[axonserver-connector-java-4.6.1.jar:4.6.1]
+	at io.axoniq.axonserver.connector.impl.AxonServerManagedChannel.getState(AxonServerManagedChannel.java:227) ~[axonserver-connector-java-4.6.1.jar:4.6.1]
+	at io.axoniq.axonserver.connector.impl.ContextConnection.ensureConnected(ContextConnection.java:210) ~[axonserver-connector-java-4.6.1.jar:4.6.1]
+	at io.axoniq.axonserver.connector.impl.ContextConnection.connect(ContextConnection.java:158) ~[axonserver-connector-java-4.6.1.jar:4.6.1]
+	at io.axoniq.axonserver.connector.AxonServerConnectionFactory.connect(AxonServerConnectionFactory.java:166) ~[axonserver-connector-java-4.6.1.jar:4.6.1]
+	at org.axonframework.axonserver.connector.AxonServerConnectionManager.createConnection(AxonServerConnectionManager.java:130) ~[axon-server-connector-4.6.0.jar:4.6.0]
+	at java.base/java.util.concurrent.ConcurrentHashMap.computeIfAbsent(ConcurrentHashMap.java:1708) ~[na:na]
+	at org.axonframework.axonserver.connector.AxonServerConnectionManager.getConnection(AxonServerConnectionManager.java:126) ~[axon-server-connector-4.6.0.jar:4.6.0]
+	at org.axonframework.axonserver.connector.command.AxonServerCommandBus.subscribe(AxonServerCommandBus.java:213) ~[axon-server-connector-4.6.0.jar:4.6.0]
+	at org.axonframework.modelling.command.AggregateAnnotationCommandHandler.lambda$null$0(AggregateAnnotationCommandHandler.java:138) ~[axon-modelling-4.6.0.jar:4.6.0]
+	at java.base/java.util.stream.ReferencePipeline$3$1.accept(ReferencePipeline.java:197) ~[na:na]
+	at java.base/java.util.HashMap$KeySpliterator.forEachRemaining(HashMap.java:1707) ~[na:na]
+	at java.base/java.util.stream.AbstractPipeline.copyInto(AbstractPipeline.java:509) ~[na:na]
+	at java.base/java.util.stream.AbstractPipeline.wrapAndCopyInto(AbstractPipeline.java:499) ~[na:na]
+	at java.base/java.util.stream.ForEachOps$ForEachOp.evaluateSequential(ForEachOps.java:150) ~[na:na]
+	at java.base/java.util.stream.ForEachOps$ForEachOp$OfRef.evaluateSequential(ForEachOps.java:173) ~[na:na]
+	at java.base/java.util.stream.AbstractPipeline.evaluate(AbstractPipeline.java:234) ~[na:na]
+	at java.base/java.util.stream.ReferencePipeline.forEach(ReferencePipeline.java:596) ~[na:na]
+	at java.base/java.util.stream.ReferencePipeline$7$1.accept(ReferencePipeline.java:276) ~[na:na]
+	at java.base/java.util.HashMap$EntrySpliterator.forEachRemaining(HashMap.java:1850) ~[na:na]
+	at java.base/java.util.stream.AbstractPipeline.copyInto(AbstractPipeline.java:509) ~[na:na]
+	at java.base/java.util.stream.AbstractPipeline.wrapAndCopyInto(AbstractPipeline.java:499) ~[na:na]
+	at java.base/java.util.stream.ReduceOps$ReduceOp.evaluateSequential(ReduceOps.java:921) ~[na:na]
+	at java.base/java.util.stream.AbstractPipeline.evaluate(AbstractPipeline.java:234) ~[na:na]
+	at java.base/java.util.stream.ReferencePipeline.collect(ReferencePipeline.java:682) ~[na:na]
+	at org.axonframework.modelling.command.AggregateAnnotationCommandHandler.subscribe(AggregateAnnotationCommandHandler.java:141) ~[axon-modelling-4.6.0.jar:4.6.0]
+	at org.axonframework.config.AggregateConfigurer.lambda$initialize$34(AggregateConfigurer.java:453) ~[axon-configuration-4.6.0.jar:4.6.0]
+	at org.axonframework.config.LifecycleOperations.lambda$onStart$0(LifecycleOperations.java:62) ~[axon-configuration-4.6.0.jar:4.6.0]
+	at java.base/java.util.stream.ReferencePipeline$3$1.accept(ReferencePipeline.java:197) ~[na:na]
+	at java.base/java.util.Spliterators$ArraySpliterator.forEachRemaining(Spliterators.java:992) ~[na:na]
+	at java.base/java.util.stream.AbstractPipeline.copyInto(AbstractPipeline.java:509) ~[na:na]
+	at java.base/java.util.stream.AbstractPipeline.wrapAndCopyInto(AbstractPipeline.java:499) ~[na:na]
+	at java.base/java.util.stream.ReduceOps$ReduceOp.evaluateSequential(ReduceOps.java:921) ~[na:na]
+	at java.base/java.util.stream.AbstractPipeline.evaluate(AbstractPipeline.java:234) ~[na:na]
+	at java.base/java.util.stream.ReferencePipeline.reduce(ReferencePipeline.java:662) ~[na:na]
+	at org.axonframework.config.DefaultConfigurer.invokeLifecycleHandlers(DefaultConfigurer.java:856) ~[axon-configuration-4.6.0.jar:4.6.0]
+	at org.axonframework.config.DefaultConfigurer.invokeStartHandlers(DefaultConfigurer.java:802) ~[axon-configuration-4.6.0.jar:4.6.0]
+	at org.axonframework.config.DefaultConfigurer$ConfigurationImpl.start(DefaultConfigurer.java:953) ~[axon-configuration-4.6.0.jar:4.6.0]
+	at org.axonframework.spring.config.SpringAxonConfiguration.start(SpringAxonConfiguration.java:76) ~[axon-spring-4.6.0.jar:4.6.0]
+	at org.springframework.context.support.DefaultLifecycleProcessor.doStart(DefaultLifecycleProcessor.java:178) ~[spring-context-5.3.22.jar:5.3.22]
+	at org.springframework.context.support.DefaultLifecycleProcessor.access$200(DefaultLifecycleProcessor.java:54) ~[spring-context-5.3.22.jar:5.3.22]
+	at org.springframework.context.support.DefaultLifecycleProcessor$LifecycleGroup.start(DefaultLifecycleProcessor.java:356) ~[spring-context-5.3.22.jar:5.3.22]
+	at java.base/java.lang.Iterable.forEach(Iterable.java:75) ~[na:na]
+	at org.springframework.context.support.DefaultLifecycleProcessor.startBeans(DefaultLifecycleProcessor.java:155) ~[spring-context-5.3.22.jar:5.3.22]
+	at org.springframework.context.support.DefaultLifecycleProcessor.onRefresh(DefaultLifecycleProcessor.java:123) ~[spring-context-5.3.22.jar:5.3.22]
+	at org.springframework.context.support.AbstractApplicationContext.finishRefresh(AbstractApplicationContext.java:935) ~[spring-context-5.3.22.jar:5.3.22]
+	at org.springframework.context.support.AbstractApplicationContext.refresh(AbstractApplicationContext.java:586) ~[spring-context-5.3.22.jar:5.3.22]
+	at org.springframework.boot.web.servlet.context.ServletWebServerApplicationContext.refresh(ServletWebServerApplicationContext.java:147) ~[spring-boot-2.7.3.jar:2.7.3]
+	at org.springframework.boot.SpringApplication.refresh(SpringApplication.java:734) ~[spring-boot-2.7.3.jar:2.7.3]
+	at org.springframework.boot.SpringApplication.refreshContext(SpringApplication.java:408) ~[spring-boot-2.7.3.jar:2.7.3]
+	at org.springframework.boot.SpringApplication.run(SpringApplication.java:308) ~[spring-boot-2.7.3.jar:2.7.3]
+	at org.springframework.boot.SpringApplication.run(SpringApplication.java:1306) ~[spring-boot-2.7.3.jar:2.7.3]
+	at org.springframework.boot.SpringApplication.run(SpringApplication.java:1295) ~[spring-boot-2.7.3.jar:2.7.3]
+	at com.airscholar.PaymentService.PaymentServiceApplication.main(PaymentServiceApplication.java:10) ~[classes/:na]
+
+2022-12-19 15:35:39.703  INFO 91899 --- [main] i.a.a.c.impl.AxonServerManagedChannel    : Failed to get connection to AxonServer. Scheduling a reconnect in 2000ms
+2022-12-19 15:35:40.104  INFO 91899 --- [main] i.a.a.c.impl.AxonServerManagedChannel    : Requesting connection details from localhost:8124
+2022-12-19 15:35:42.860  INFO 91899 --- [main] i.a.a.c.impl.AxonServerManagedChannel    : Successfully connected to localhost:8124
+2022-12-19 15:35:42.962  INFO 91899 --- [main] i.a.a.connector.impl.ControlChannelImpl  : Connected instruction stream for context 'default'. Sending client identification
+2022-12-19 15:35:43.016  INFO 91899 --- [main] i.a.a.c.command.impl.CommandChannelImpl  : CommandChannel for context 'default' connected, 0 command handlers registered
+2022-12-19 15:35:43.030  INFO 91899 --- [main] i.a.a.c.command.impl.CommandChannelImpl  : Registered handler for command 'com.airscholar.CommonService.commands.ValidatePaymentCommand' in context 'default'
+2022-12-19 15:35:47.685  INFO 91899 --- [EventProcessor[com.airscholar.PaymentService.command.api.events]-0] o.a.e.TrackingEventProcessor             : Worker assigned to segment Segment[0/0] for processing
+2022-12-19 15:35:48.295  INFO 91899 --- [EventProcessor[com.airscholar.PaymentService.command.api.events]-0] o.a.e.TrackingEventProcessor             : Using current Thread for last segment worker: TrackingSegmentWorker{processor=com.airscholar.PaymentService.command.api.events, segment=Segment[0/0]}
+2022-12-19 15:35:48.431  INFO 91899 --- [EventProcessor[com.airscholar.PaymentService.command.api.events]-0] o.a.e.TrackingEventProcessor             : Fetched token: IndexTrackingToken{globalIndex=15} for segment: Segment[0/0]
+2022-12-19 15:35:49.070  INFO 91899 --- [main] c.a.P.PaymentServiceApplication          : Started PaymentServiceApplication in 43.889 seconds (JVM running for 46.2)
+2022-12-19 15:46:37.552  INFO 91899 --- [SpringApplicationShutdownHook] o.a.e.TrackingEventProcessor             : Shutdown state set for Processor 'com.airscholar.PaymentService.command.api.events'.
+2022-12-19 15:46:37.681  INFO 91899 --- [SpringApplicationShutdownHook] o.a.e.TrackingEventProcessor             : Processor 'com.airscholar.PaymentService.command.api.events' awaiting termination...
+2022-12-19 15:46:40.099  INFO 91899 --- [EventProcessor[com.airscholar.PaymentService.command.api.events]-0] o.a.e.TrackingEventProcessor             : Released claim
+2022-12-19 15:46:40.461  INFO 91899 --- [EventProcessor[com.airscholar.PaymentService.command.api.events]-0] o.a.e.TrackingEventProcessor             : Worker for segment Segment[0/0] stopped.
+2022-12-19 15:46:43.143  INFO 91899 --- [SpringApplicationShutdownHook] i.a.a.c.command.impl.CommandChannelImpl  : Unregistered handler for command 'com.airscholar.CommonService.commands.ValidatePaymentCommand' in context 'default'
+2022-12-19 15:46:47.926  INFO 91899 --- [SpringApplicationShutdownHook] j.LocalContainerEntityManagerFactoryBean : Closing JPA EntityManagerFactory for persistence unit 'default'
+2022-12-19 15:46:48.515  INFO 91899 --- [SpringApplicationShutdownHook] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Shutdown initiated...
+2022-12-19 15:46:49.743  INFO 91899 --- [SpringApplicationShutdownHook] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Shutdown completed.
+2022-12-19 15:59:34.555  INFO 95002 --- [main] c.a.P.PaymentServiceApplication          : Starting PaymentServiceApplication using Java 17.0.1 on ed-dynamic-158-197.wless.cranfield.ac.uk with PID 95002 (/Users/airscholar/IdeaProjects/OrderApp/PaymentService/target/classes started by airscholar in /Users/airscholar/IdeaProjects/OrderApp)
+2022-12-19 15:59:34.558  INFO 95002 --- [main] c.a.P.PaymentServiceApplication          : No active profile set, falling back to 1 default profile: "default"
+2022-12-19 15:59:35.482  INFO 95002 --- [main] .s.d.r.c.RepositoryConfigurationDelegate : Bootstrapping Spring Data JPA repositories in DEFAULT mode.
+2022-12-19 15:59:35.666  INFO 95002 --- [main] .s.d.r.c.RepositoryConfigurationDelegate : Finished Spring Data repository scanning in 176 ms. Found 1 JPA repository interfaces.
+2022-12-19 15:59:36.585  INFO 95002 --- [main] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat initialized with port(s): 9093 (http)
+2022-12-19 15:59:36.592  INFO 95002 --- [main] o.apache.catalina.core.StandardService   : Starting service [Tomcat]
+2022-12-19 15:59:36.592  INFO 95002 --- [main] org.apache.catalina.core.StandardEngine  : Starting Servlet engine: [Apache Tomcat/9.0.65]
+2022-12-19 15:59:36.733  INFO 95002 --- [main] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring embedded WebApplicationContext
+2022-12-19 15:59:36.734  INFO 95002 --- [main] w.s.c.ServletWebServerApplicationContext : Root WebApplicationContext: initialization completed in 2117 ms
+2022-12-19 15:59:36.777  INFO 95002 --- [main] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Starting...
+2022-12-19 15:59:37.021  INFO 95002 --- [main] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Start completed.
+2022-12-19 15:59:37.037  INFO 95002 --- [main] o.s.b.a.h2.H2ConsoleAutoConfiguration    : H2 console available at '/h2-console'. Database available at 'jdbc:h2:file:~/data/paymentDB'
+2022-12-19 15:59:37.300  INFO 95002 --- [main] o.hibernate.jpa.internal.util.LogHelper  : HHH000204: Processing PersistenceUnitInfo [name: default]
+2022-12-19 15:59:37.332  INFO 95002 --- [main] org.hibernate.Version                    : HHH000412: Hibernate ORM core version 5.6.10.Final
+2022-12-19 15:59:37.443  INFO 95002 --- [main] o.hibernate.annotations.common.Version   : HCANN000001: Hibernate Commons Annotations {5.1.2.Final}
+2022-12-19 15:59:37.503  INFO 95002 --- [main] org.hibernate.dialect.Dialect            : HHH000400: Using dialect: org.hibernate.dialect.H2Dialect
+2022-12-19 15:59:38.164  INFO 95002 --- [main] o.h.e.t.j.p.i.JtaPlatformInitiator       : HHH000490: Using JtaPlatform implementation: [org.hibernate.engine.transaction.jta.platform.internal.NoJtaPlatform]
+2022-12-19 15:59:38.170  INFO 95002 --- [main] j.LocalContainerEntityManagerFactoryBean : Initialized JPA EntityManagerFactory for persistence unit 'default'
+2022-12-19 15:59:38.453  WARN 95002 --- [main] JpaBaseConfiguration$JpaWebConfiguration : spring.jpa.open-in-view is enabled by default. Therefore, database queries may be performed during view rendering. Explicitly configure spring.jpa.open-in-view to disable this warning
+2022-12-19 15:59:38.779  INFO 95002 --- [main] o.a.s.a.XStreamAutoConfiguration         : Initializing an XStream instance since none was found. The auto configuration base packages will be used as wildcards for the XStream security settings.
+2022-12-19 15:59:38.957  INFO 95002 --- [main] o.a.s.util.XStreamSecurityTypeUtility    : Constructing wildcard type for base package [com.airscholar.PaymentService].
+2022-12-19 15:59:38.957  INFO 95002 --- [main] o.a.s.util.XStreamSecurityTypeUtility    : Constructing wildcard type for base package [org.axonframework.eventhandling.tokenstore].
+2022-12-19 15:59:38.957  INFO 95002 --- [main] o.a.s.util.XStreamSecurityTypeUtility    : Constructing wildcard type for base package [org.axonframework.eventhandling.deadletter.jpa].
+2022-12-19 15:59:38.957  INFO 95002 --- [main] o.a.s.util.XStreamSecurityTypeUtility    : Constructing wildcard type for base package [org.axonframework.modelling.saga.repository.jpa].
+2022-12-19 15:59:38.957  INFO 95002 --- [main] o.a.s.util.XStreamSecurityTypeUtility    : Constructing wildcard type for base package [org.axonframework.eventsourcing.eventstore.jpa].
+2022-12-19 15:59:38.973  INFO 95002 --- [main] o.a.serialization.ChainingConverter      : ContentTypeConverter of type [class org.axonframework.serialization.xml.Dom4JToByteArrayConverter] is ignored. It seems to rely on a class that is not available in the class loader: org/dom4j/Document
+2022-12-19 15:59:38.974  INFO 95002 --- [main] o.a.serialization.ChainingConverter      : ContentTypeConverter of type [class org.axonframework.serialization.xml.InputStreamToDom4jConverter] is ignored. It seems to rely on a class that is not available in the class loader: org/dom4j/Document
+2022-12-19 15:59:38.975  INFO 95002 --- [main] o.a.serialization.ChainingConverter      : ContentTypeConverter of type [class org.axonframework.serialization.xml.XomToStringConverter] is ignored. It seems to rely on a class that is not available in the class loader: nu/xom/Document
+2022-12-19 15:59:38.977  INFO 95002 --- [main] o.a.serialization.ChainingConverter      : ContentTypeConverter of type [class org.axonframework.serialization.xml.InputStreamToXomConverter] is ignored. It seems to rely on a class that is not available in the class loader: nu/xom/ParsingException
+2022-12-19 15:59:40.575  INFO 95002 --- [main] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat started on port(s): 9093 (http) with context path ''
+2022-12-19 15:59:41.271  INFO 95002 --- [main] i.a.a.c.impl.AxonServerManagedChannel    : Requesting connection details from localhost:8124
+2022-12-19 15:59:41.490  INFO 95002 --- [main] i.a.a.c.impl.AxonServerManagedChannel    : Successfully connected to localhost:8124
+2022-12-19 15:59:41.509  INFO 95002 --- [main] i.a.a.connector.impl.ControlChannelImpl  : Connected instruction stream for context 'default'. Sending client identification
+2022-12-19 15:59:41.526  INFO 95002 --- [main] i.a.a.c.command.impl.CommandChannelImpl  : CommandChannel for context 'default' connected, 0 command handlers registered
+2022-12-19 15:59:41.528  INFO 95002 --- [main] i.a.a.c.command.impl.CommandChannelImpl  : Registered handler for command 'com.airscholar.CommonService.commands.ValidatePaymentCommand' in context 'default'
+2022-12-19 15:59:41.684  INFO 95002 --- [main] c.a.P.PaymentServiceApplication          : Started PaymentServiceApplication in 7.837 seconds (JVM running for 8.972)
+2022-12-19 15:59:41.692  INFO 95002 --- [EventProcessor[com.airscholar.PaymentService.command.api.events]-0] o.a.e.TrackingEventProcessor             : Worker assigned to segment Segment[0/0] for processing
+2022-12-19 15:59:41.705  INFO 95002 --- [EventProcessor[com.airscholar.PaymentService.command.api.events]-0] o.a.e.TrackingEventProcessor             : Using current Thread for last segment worker: TrackingSegmentWorker{processor=com.airscholar.PaymentService.command.api.events, segment=Segment[0/0]}
+2022-12-19 15:59:41.713  INFO 95002 --- [EventProcessor[com.airscholar.PaymentService.command.api.events]-0] o.a.e.TrackingEventProcessor             : Fetched token: IndexTrackingToken{globalIndex=21} for segment: Segment[0/0]
+2022-12-19 16:14:09.046  INFO 95002 --- [SpringApplicationShutdownHook] o.a.e.TrackingEventProcessor             : Shutdown state set for Processor 'com.airscholar.PaymentService.command.api.events'.
+2022-12-19 16:14:09.053  INFO 95002 --- [SpringApplicationShutdownHook] o.a.e.TrackingEventProcessor             : Processor 'com.airscholar.PaymentService.command.api.events' awaiting termination...
+2022-12-19 16:14:10.033  INFO 95002 --- [EventProcessor[com.airscholar.PaymentService.command.api.events]-0] o.a.e.TrackingEventProcessor             : Released claim
+2022-12-19 16:14:10.037  INFO 95002 --- [EventProcessor[com.airscholar.PaymentService.command.api.events]-0] o.a.e.TrackingEventProcessor             : Worker for segment Segment[0/0] stopped.
+2022-12-19 16:14:10.088  INFO 95002 --- [SpringApplicationShutdownHook] i.a.a.c.command.impl.CommandChannelImpl  : Unregistered handler for command 'com.airscholar.CommonService.commands.ValidatePaymentCommand' in context 'default'
+2022-12-19 16:14:10.193  INFO 95002 --- [SpringApplicationShutdownHook] i.a.a.c.command.impl.CommandChannelImpl  : Waiting for 2 commands to be completed
+2022-12-19 16:14:15.292  INFO 95002 --- [SpringApplicationShutdownHook] i.a.a.c.command.impl.CommandChannelImpl  : Waiting for 2 commands to be completed
+2022-12-19 16:14:20.313  INFO 95002 --- [SpringApplicationShutdownHook] j.LocalContainerEntityManagerFactoryBean : Closing JPA EntityManagerFactory for persistence unit 'default'
+2022-12-19 16:14:20.330  INFO 95002 --- [SpringApplicationShutdownHook] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Shutdown initiated...
+2022-12-19 16:14:20.352  INFO 95002 --- [SpringApplicationShutdownHook] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Shutdown completed.
+2022-12-19 16:14:27.413  INFO 96638 --- [main] c.a.P.PaymentServiceApplication          : Starting PaymentServiceApplication using Java 17.0.1 on ed-dynamic-158-197.wless.cranfield.ac.uk with PID 96638 (/Users/airscholar/IdeaProjects/OrderApp/PaymentService/target/classes started by airscholar in /Users/airscholar/IdeaProjects/OrderApp)
+2022-12-19 16:14:27.434  INFO 96638 --- [main] c.a.P.PaymentServiceApplication          : No active profile set, falling back to 1 default profile: "default"
+2022-12-19 16:14:28.370  INFO 96638 --- [main] .s.d.r.c.RepositoryConfigurationDelegate : Bootstrapping Spring Data JPA repositories in DEFAULT mode.
+2022-12-19 16:14:28.694  INFO 96638 --- [main] .s.d.r.c.RepositoryConfigurationDelegate : Finished Spring Data repository scanning in 316 ms. Found 1 JPA repository interfaces.
+2022-12-19 16:14:29.436  INFO 96638 --- [main] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat initialized with port(s): 9093 (http)
+2022-12-19 16:14:29.445  INFO 96638 --- [main] o.apache.catalina.core.StandardService   : Starting service [Tomcat]
+2022-12-19 16:14:29.445  INFO 96638 --- [main] org.apache.catalina.core.StandardEngine  : Starting Servlet engine: [Apache Tomcat/9.0.65]
+2022-12-19 16:14:29.560  INFO 96638 --- [main] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring embedded WebApplicationContext
+2022-12-19 16:14:29.561  INFO 96638 --- [main] w.s.c.ServletWebServerApplicationContext : Root WebApplicationContext: initialization completed in 2063 ms
+2022-12-19 16:14:29.594  INFO 96638 --- [main] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Starting...
+2022-12-19 16:14:29.806  INFO 96638 --- [main] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Start completed.
+2022-12-19 16:14:29.820  INFO 96638 --- [main] o.s.b.a.h2.H2ConsoleAutoConfiguration    : H2 console available at '/h2-console'. Database available at 'jdbc:h2:file:~/data/paymentDB'
+2022-12-19 16:14:30.017  INFO 96638 --- [main] o.hibernate.jpa.internal.util.LogHelper  : HHH000204: Processing PersistenceUnitInfo [name: default]
+2022-12-19 16:14:30.048  INFO 96638 --- [main] org.hibernate.Version                    : HHH000412: Hibernate ORM core version 5.6.10.Final
+2022-12-19 16:14:30.138  INFO 96638 --- [main] o.hibernate.annotations.common.Version   : HCANN000001: Hibernate Commons Annotations {5.1.2.Final}
+2022-12-19 16:14:30.200  INFO 96638 --- [main] org.hibernate.dialect.Dialect            : HHH000400: Using dialect: org.hibernate.dialect.H2Dialect
+2022-12-19 16:14:30.734  INFO 96638 --- [main] o.h.e.t.j.p.i.JtaPlatformInitiator       : HHH000490: Using JtaPlatform implementation: [org.hibernate.engine.transaction.jta.platform.internal.NoJtaPlatform]
+2022-12-19 16:14:30.738  INFO 96638 --- [main] j.LocalContainerEntityManagerFactoryBean : Initialized JPA EntityManagerFactory for persistence unit 'default'
+2022-12-19 16:14:30.972  WARN 96638 --- [main] JpaBaseConfiguration$JpaWebConfiguration : spring.jpa.open-in-view is enabled by default. Therefore, database queries may be performed during view rendering. Explicitly configure spring.jpa.open-in-view to disable this warning
+2022-12-19 16:14:31.200  INFO 96638 --- [main] o.a.s.a.XStreamAutoConfiguration         : Initializing an XStream instance since none was found. The auto configuration base packages will be used as wildcards for the XStream security settings.
+2022-12-19 16:14:31.325  INFO 96638 --- [main] o.a.s.util.XStreamSecurityTypeUtility    : Constructing wildcard type for base package [com.airscholar.PaymentService].
+2022-12-19 16:14:31.326  INFO 96638 --- [main] o.a.s.util.XStreamSecurityTypeUtility    : Constructing wildcard type for base package [org.axonframework.eventhandling.tokenstore].
+2022-12-19 16:14:31.326  INFO 96638 --- [main] o.a.s.util.XStreamSecurityTypeUtility    : Constructing wildcard type for base package [org.axonframework.eventhandling.deadletter.jpa].
+2022-12-19 16:14:31.326  INFO 96638 --- [main] o.a.s.util.XStreamSecurityTypeUtility    : Constructing wildcard type for base package [org.axonframework.modelling.saga.repository.jpa].
+2022-12-19 16:14:31.326  INFO 96638 --- [main] o.a.s.util.XStreamSecurityTypeUtility    : Constructing wildcard type for base package [org.axonframework.eventsourcing.eventstore.jpa].
+2022-12-19 16:14:31.333  INFO 96638 --- [main] o.a.serialization.ChainingConverter      : ContentTypeConverter of type [class org.axonframework.serialization.xml.Dom4JToByteArrayConverter] is ignored. It seems to rely on a class that is not available in the class loader: org/dom4j/Document
+2022-12-19 16:14:31.333  INFO 96638 --- [main] o.a.serialization.ChainingConverter      : ContentTypeConverter of type [class org.axonframework.serialization.xml.InputStreamToDom4jConverter] is ignored. It seems to rely on a class that is not available in the class loader: org/dom4j/Document
+2022-12-19 16:14:31.334  INFO 96638 --- [main] o.a.serialization.ChainingConverter      : ContentTypeConverter of type [class org.axonframework.serialization.xml.XomToStringConverter] is ignored. It seems to rely on a class that is not available in the class loader: nu/xom/Document
+2022-12-19 16:14:31.334  INFO 96638 --- [main] o.a.serialization.ChainingConverter      : ContentTypeConverter of type [class org.axonframework.serialization.xml.InputStreamToXomConverter] is ignored. It seems to rely on a class that is not available in the class loader: nu/xom/ParsingException
+2022-12-19 16:14:31.697  INFO 96638 --- [main] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat started on port(s): 9093 (http) with context path ''
+2022-12-19 16:14:31.933  INFO 96638 --- [main] i.a.a.c.impl.AxonServerManagedChannel    : Requesting connection details from localhost:8124
+2022-12-19 16:14:32.113  INFO 96638 --- [main] i.a.a.c.impl.AxonServerManagedChannel    : Successfully connected to localhost:8124
+2022-12-19 16:14:32.121  INFO 96638 --- [main] i.a.a.connector.impl.ControlChannelImpl  : Connected instruction stream for context 'default'. Sending client identification
+2022-12-19 16:14:32.131  INFO 96638 --- [main] i.a.a.c.command.impl.CommandChannelImpl  : CommandChannel for context 'default' connected, 0 command handlers registered
+2022-12-19 16:14:32.132  INFO 96638 --- [main] i.a.a.c.command.impl.CommandChannelImpl  : Registered handler for command 'com.airscholar.CommonService.commands.ValidatePaymentCommand' in context 'default'
+2022-12-19 16:14:32.246  INFO 96638 --- [main] c.a.P.PaymentServiceApplication          : Started PaymentServiceApplication in 5.272 seconds (JVM running for 7.037)
+2022-12-19 16:14:32.257  INFO 96638 --- [EventProcessor[com.airscholar.PaymentService.command.api.events]-0] o.a.e.TrackingEventProcessor             : Worker assigned to segment Segment[0/0] for processing
+2022-12-19 16:14:32.265  INFO 96638 --- [EventProcessor[com.airscholar.PaymentService.command.api.events]-0] o.a.e.TrackingEventProcessor             : Using current Thread for last segment worker: TrackingSegmentWorker{processor=com.airscholar.PaymentService.command.api.events, segment=Segment[0/0]}
+2022-12-19 16:14:32.270  INFO 96638 --- [EventProcessor[com.airscholar.PaymentService.command.api.events]-0] o.a.e.TrackingEventProcessor             : Fetched token: IndexTrackingToken{globalIndex=22} for segment: Segment[0/0]
+2022-12-19 16:16:38.108  INFO 96638 --- [SpringApplicationShutdownHook] o.a.e.TrackingEventProcessor             : Shutdown state set for Processor 'com.airscholar.PaymentService.command.api.events'.
+2022-12-19 16:16:38.112  INFO 96638 --- [SpringApplicationShutdownHook] o.a.e.TrackingEventProcessor             : Processor 'com.airscholar.PaymentService.command.api.events' awaiting termination...
+2022-12-19 16:16:38.798  INFO 96638 --- [EventProcessor[com.airscholar.PaymentService.command.api.events]-0] o.a.e.TrackingEventProcessor             : Released claim
+2022-12-19 16:16:38.800  INFO 96638 --- [EventProcessor[com.airscholar.PaymentService.command.api.events]-0] o.a.e.TrackingEventProcessor             : Worker for segment Segment[0/0] stopped.
+2022-12-19 16:16:38.820  INFO 96638 --- [SpringApplicationShutdownHook] i.a.a.c.command.impl.CommandChannelImpl  : Unregistered handler for command 'com.airscholar.CommonService.commands.ValidatePaymentCommand' in context 'default'
+2022-12-19 16:16:38.877  INFO 96638 --- [SpringApplicationShutdownHook] i.a.a.c.command.impl.CommandChannelImpl  : Waiting for 1 commands to be completed
+2022-12-19 16:16:44.118  INFO 96638 --- [SpringApplicationShutdownHook] i.a.a.c.command.impl.CommandChannelImpl  : Waiting for 1 commands to be completed
+2022-12-19 16:16:56.374  INFO 96913 --- [main] c.a.P.PaymentServiceApplication          : Starting PaymentServiceApplication using Java 17.0.1 on ed-dynamic-158-197.wless.cranfield.ac.uk with PID 96913 (/Users/airscholar/IdeaProjects/OrderApp/PaymentService/target/classes started by airscholar in /Users/airscholar/IdeaProjects/OrderApp)
+2022-12-19 16:16:56.379  INFO 96913 --- [main] c.a.P.PaymentServiceApplication          : No active profile set, falling back to 1 default profile: "default"
+2022-12-19 16:16:57.411  INFO 96913 --- [main] .s.d.r.c.RepositoryConfigurationDelegate : Bootstrapping Spring Data JPA repositories in DEFAULT mode.
+2022-12-19 16:16:57.577  INFO 96913 --- [main] .s.d.r.c.RepositoryConfigurationDelegate : Finished Spring Data repository scanning in 159 ms. Found 1 JPA repository interfaces.
+2022-12-19 16:16:58.290  INFO 96913 --- [main] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat initialized with port(s): 9093 (http)
+2022-12-19 16:16:58.297  INFO 96913 --- [main] o.apache.catalina.core.StandardService   : Starting service [Tomcat]
+2022-12-19 16:16:58.297  INFO 96913 --- [main] org.apache.catalina.core.StandardEngine  : Starting Servlet engine: [Apache Tomcat/9.0.65]
+2022-12-19 16:16:58.413  INFO 96913 --- [main] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring embedded WebApplicationContext
+2022-12-19 16:16:58.414  INFO 96913 --- [main] w.s.c.ServletWebServerApplicationContext : Root WebApplicationContext: initialization completed in 1967 ms
+2022-12-19 16:16:58.449  INFO 96913 --- [main] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Starting...
+2022-12-19 16:16:58.666  INFO 96913 --- [main] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Start completed.
+2022-12-19 16:16:58.680  INFO 96913 --- [main] o.s.b.a.h2.H2ConsoleAutoConfiguration    : H2 console available at '/h2-console'. Database available at 'jdbc:h2:file:~/data/paymentDB'
+2022-12-19 16:16:58.866  INFO 96913 --- [main] o.hibernate.jpa.internal.util.LogHelper  : HHH000204: Processing PersistenceUnitInfo [name: default]
+2022-12-19 16:16:58.899  INFO 96913 --- [main] org.hibernate.Version                    : HHH000412: Hibernate ORM core version 5.6.10.Final
+2022-12-19 16:16:58.995  INFO 96913 --- [main] o.hibernate.annotations.common.Version   : HCANN000001: Hibernate Commons Annotations {5.1.2.Final}
+2022-12-19 16:16:59.058  INFO 96913 --- [main] org.hibernate.dialect.Dialect            : HHH000400: Using dialect: org.hibernate.dialect.H2Dialect
+2022-12-19 16:16:59.615  INFO 96913 --- [main] o.h.e.t.j.p.i.JtaPlatformInitiator       : HHH000490: Using JtaPlatform implementation: [org.hibernate.engine.transaction.jta.platform.internal.NoJtaPlatform]
+2022-12-19 16:16:59.619  INFO 96913 --- [main] j.LocalContainerEntityManagerFactoryBean : Initialized JPA EntityManagerFactory for persistence unit 'default'
+2022-12-19 16:16:59.858  WARN 96913 --- [main] JpaBaseConfiguration$JpaWebConfiguration : spring.jpa.open-in-view is enabled by default. Therefore, database queries may be performed during view rendering. Explicitly configure spring.jpa.open-in-view to disable this warning
+2022-12-19 16:17:00.118  INFO 96913 --- [main] o.a.s.a.XStreamAutoConfiguration         : Initializing an XStream instance since none was found. The auto configuration base packages will be used as wildcards for the XStream security settings.
+2022-12-19 16:17:00.241  INFO 96913 --- [main] o.a.s.util.XStreamSecurityTypeUtility    : Constructing wildcard type for base package [com.airscholar.PaymentService].
+2022-12-19 16:17:00.241  INFO 96913 --- [main] o.a.s.util.XStreamSecurityTypeUtility    : Constructing wildcard type for base package [org.axonframework.eventhandling.tokenstore].
+2022-12-19 16:17:00.241  INFO 96913 --- [main] o.a.s.util.XStreamSecurityTypeUtility    : Constructing wildcard type for base package [org.axonframework.eventhandling.deadletter.jpa].
+2022-12-19 16:17:00.241  INFO 96913 --- [main] o.a.s.util.XStreamSecurityTypeUtility    : Constructing wildcard type for base package [org.axonframework.modelling.saga.repository.jpa].
+2022-12-19 16:17:00.241  INFO 96913 --- [main] o.a.s.util.XStreamSecurityTypeUtility    : Constructing wildcard type for base package [org.axonframework.eventsourcing.eventstore.jpa].
+2022-12-19 16:17:00.249  INFO 96913 --- [main] o.a.serialization.ChainingConverter      : ContentTypeConverter of type [class org.axonframework.serialization.xml.Dom4JToByteArrayConverter] is ignored. It seems to rely on a class that is not available in the class loader: org/dom4j/Document
+2022-12-19 16:17:00.249  INFO 96913 --- [main] o.a.serialization.ChainingConverter      : ContentTypeConverter of type [class org.axonframework.serialization.xml.InputStreamToDom4jConverter] is ignored. It seems to rely on a class that is not available in the class loader: org/dom4j/Document
+2022-12-19 16:17:00.250  INFO 96913 --- [main] o.a.serialization.ChainingConverter      : ContentTypeConverter of type [class org.axonframework.serialization.xml.XomToStringConverter] is ignored. It seems to rely on a class that is not available in the class loader: nu/xom/Document
+2022-12-19 16:17:00.250  INFO 96913 --- [main] o.a.serialization.ChainingConverter      : ContentTypeConverter of type [class org.axonframework.serialization.xml.InputStreamToXomConverter] is ignored. It seems to rely on a class that is not available in the class loader: nu/xom/ParsingException
+2022-12-19 16:17:00.611  INFO 96913 --- [main] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat started on port(s): 9093 (http) with context path ''
+2022-12-19 16:17:00.843  INFO 96913 --- [main] i.a.a.c.impl.AxonServerManagedChannel    : Requesting connection details from localhost:8124
+2022-12-19 16:17:01.024  INFO 96913 --- [main] i.a.a.c.impl.AxonServerManagedChannel    : Successfully connected to localhost:8124
+2022-12-19 16:17:01.031  INFO 96913 --- [main] i.a.a.connector.impl.ControlChannelImpl  : Connected instruction stream for context 'default'. Sending client identification
+2022-12-19 16:17:01.043  INFO 96913 --- [main] i.a.a.c.command.impl.CommandChannelImpl  : CommandChannel for context 'default' connected, 0 command handlers registered
+2022-12-19 16:17:01.045  INFO 96913 --- [main] i.a.a.c.command.impl.CommandChannelImpl  : Registered handler for command 'com.airscholar.CommonService.commands.ValidatePaymentCommand' in context 'default'
+2022-12-19 16:17:01.158  INFO 96913 --- [main] c.a.P.PaymentServiceApplication          : Started PaymentServiceApplication in 5.283 seconds (JVM running for 7.379)
+2022-12-19 16:17:01.173  INFO 96913 --- [EventProcessor[com.airscholar.PaymentService.command.api.events]-0] o.a.e.TrackingEventProcessor             : Worker assigned to segment Segment[0/0] for processing
+2022-12-19 16:17:01.181  INFO 96913 --- [EventProcessor[com.airscholar.PaymentService.command.api.events]-0] o.a.e.TrackingEventProcessor             : Using current Thread for last segment worker: TrackingSegmentWorker{processor=com.airscholar.PaymentService.command.api.events, segment=Segment[0/0]}
+2022-12-19 16:17:01.187  INFO 96913 --- [EventProcessor[com.airscholar.PaymentService.command.api.events]-0] o.a.e.TrackingEventProcessor             : Fetched token: IndexTrackingToken{globalIndex=23} for segment: Segment[0/0]
+2022-12-19 16:17:28.624  INFO 96913 --- [SpringApplicationShutdownHook] o.a.e.TrackingEventProcessor             : Shutdown state set for Processor 'com.airscholar.PaymentService.command.api.events'.
+2022-12-19 16:17:28.626  INFO 96913 --- [SpringApplicationShutdownHook] o.a.e.TrackingEventProcessor             : Processor 'com.airscholar.PaymentService.command.api.events' awaiting termination...
+2022-12-19 16:17:29.053  INFO 96913 --- [EventProcessor[com.airscholar.PaymentService.command.api.events]-0] o.a.e.TrackingEventProcessor             : Released claim
+2022-12-19 16:17:29.056  INFO 96913 --- [EventProcessor[com.airscholar.PaymentService.command.api.events]-0] o.a.e.TrackingEventProcessor             : Worker for segment Segment[0/0] stopped.
+2022-12-19 16:17:29.118  INFO 96913 --- [SpringApplicationShutdownHook] i.a.a.c.command.impl.CommandChannelImpl  : Unregistered handler for command 'com.airscholar.CommonService.commands.ValidatePaymentCommand' in context 'default'
+2022-12-19 16:17:29.194  INFO 96913 --- [SpringApplicationShutdownHook] i.a.a.c.command.impl.CommandChannelImpl  : Waiting for 1 commands to be completed
+2022-12-19 16:17:34.709  INFO 96913 --- [SpringApplicationShutdownHook] i.a.a.c.command.impl.CommandChannelImpl  : Waiting for 1 commands to be completed
+2022-12-19 16:17:39.731  INFO 96913 --- [SpringApplicationShutdownHook] j.LocalContainerEntityManagerFactoryBean : Closing JPA EntityManagerFactory for persistence unit 'default'
+2022-12-19 16:17:39.749  INFO 96913 --- [SpringApplicationShutdownHook] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Shutdown initiated...
+2022-12-19 16:17:39.769  INFO 96913 --- [SpringApplicationShutdownHook] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Shutdown completed.
+2022-12-19 16:17:46.662  INFO 97011 --- [main] c.a.P.PaymentServiceApplication          : Starting PaymentServiceApplication using Java 17.0.1 on ed-dynamic-158-197.wless.cranfield.ac.uk with PID 97011 (/Users/airscholar/IdeaProjects/OrderApp/PaymentService/target/classes started by airscholar in /Users/airscholar/IdeaProjects/OrderApp)
+2022-12-19 16:17:46.665  INFO 97011 --- [main] c.a.P.PaymentServiceApplication          : No active profile set, falling back to 1 default profile: "default"
+2022-12-19 16:17:47.583  INFO 97011 --- [main] .s.d.r.c.RepositoryConfigurationDelegate : Bootstrapping Spring Data JPA repositories in DEFAULT mode.
+2022-12-19 16:17:47.726  INFO 97011 --- [main] .s.d.r.c.RepositoryConfigurationDelegate : Finished Spring Data repository scanning in 137 ms. Found 1 JPA repository interfaces.
+2022-12-19 16:17:48.423  INFO 97011 --- [main] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat initialized with port(s): 9093 (http)
+2022-12-19 16:17:48.429  INFO 97011 --- [main] o.apache.catalina.core.StandardService   : Starting service [Tomcat]
+2022-12-19 16:17:48.429  INFO 97011 --- [main] org.apache.catalina.core.StandardEngine  : Starting Servlet engine: [Apache Tomcat/9.0.65]
+2022-12-19 16:17:48.533  INFO 97011 --- [main] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring embedded WebApplicationContext
+2022-12-19 16:17:48.534  INFO 97011 --- [main] w.s.c.ServletWebServerApplicationContext : Root WebApplicationContext: initialization completed in 1789 ms
+2022-12-19 16:17:48.578  INFO 97011 --- [main] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Starting...
+2022-12-19 16:17:48.792  INFO 97011 --- [main] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Start completed.
+2022-12-19 16:17:48.807  INFO 97011 --- [main] o.s.b.a.h2.H2ConsoleAutoConfiguration    : H2 console available at '/h2-console'. Database available at 'jdbc:h2:file:~/data/paymentDB'
+2022-12-19 16:17:48.995  INFO 97011 --- [main] o.hibernate.jpa.internal.util.LogHelper  : HHH000204: Processing PersistenceUnitInfo [name: default]
+2022-12-19 16:17:49.024  INFO 97011 --- [main] org.hibernate.Version                    : HHH000412: Hibernate ORM core version 5.6.10.Final
+2022-12-19 16:17:49.118  INFO 97011 --- [main] o.hibernate.annotations.common.Version   : HCANN000001: Hibernate Commons Annotations {5.1.2.Final}
+2022-12-19 16:17:49.175  INFO 97011 --- [main] org.hibernate.dialect.Dialect            : HHH000400: Using dialect: org.hibernate.dialect.H2Dialect
+2022-12-19 16:17:49.713  INFO 97011 --- [main] o.h.e.t.j.p.i.JtaPlatformInitiator       : HHH000490: Using JtaPlatform implementation: [org.hibernate.engine.transaction.jta.platform.internal.NoJtaPlatform]
+2022-12-19 16:17:49.718  INFO 97011 --- [main] j.LocalContainerEntityManagerFactoryBean : Initialized JPA EntityManagerFactory for persistence unit 'default'
+2022-12-19 16:17:49.952  WARN 97011 --- [main] JpaBaseConfiguration$JpaWebConfiguration : spring.jpa.open-in-view is enabled by default. Therefore, database queries may be performed during view rendering. Explicitly configure spring.jpa.open-in-view to disable this warning
+2022-12-19 16:17:50.201  INFO 97011 --- [main] o.a.s.a.XStreamAutoConfiguration         : Initializing an XStream instance since none was found. The auto configuration base packages will be used as wildcards for the XStream security settings.
+2022-12-19 16:17:50.314  INFO 97011 --- [main] o.a.s.util.XStreamSecurityTypeUtility    : Constructing wildcard type for base package [com.airscholar.PaymentService].
+2022-12-19 16:17:50.315  INFO 97011 --- [main] o.a.s.util.XStreamSecurityTypeUtility    : Constructing wildcard type for base package [org.axonframework.eventhandling.tokenstore].
+2022-12-19 16:17:50.315  INFO 97011 --- [main] o.a.s.util.XStreamSecurityTypeUtility    : Constructing wildcard type for base package [org.axonframework.eventhandling.deadletter.jpa].
+2022-12-19 16:17:50.315  INFO 97011 --- [main] o.a.s.util.XStreamSecurityTypeUtility    : Constructing wildcard type for base package [org.axonframework.modelling.saga.repository.jpa].
+2022-12-19 16:17:50.315  INFO 97011 --- [main] o.a.s.util.XStreamSecurityTypeUtility    : Constructing wildcard type for base package [org.axonframework.eventsourcing.eventstore.jpa].
+2022-12-19 16:17:50.323  INFO 97011 --- [main] o.a.serialization.ChainingConverter      : ContentTypeConverter of type [class org.axonframework.serialization.xml.Dom4JToByteArrayConverter] is ignored. It seems to rely on a class that is not available in the class loader: org/dom4j/Document
+2022-12-19 16:17:50.324  INFO 97011 --- [main] o.a.serialization.ChainingConverter      : ContentTypeConverter of type [class org.axonframework.serialization.xml.InputStreamToDom4jConverter] is ignored. It seems to rely on a class that is not available in the class loader: org/dom4j/Document
+2022-12-19 16:17:50.324  INFO 97011 --- [main] o.a.serialization.ChainingConverter      : ContentTypeConverter of type [class org.axonframework.serialization.xml.XomToStringConverter] is ignored. It seems to rely on a class that is not available in the class loader: nu/xom/Document
+2022-12-19 16:17:50.324  INFO 97011 --- [main] o.a.serialization.ChainingConverter      : ContentTypeConverter of type [class org.axonframework.serialization.xml.InputStreamToXomConverter] is ignored. It seems to rely on a class that is not available in the class loader: nu/xom/ParsingException
+2022-12-19 16:17:50.692  INFO 97011 --- [main] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat started on port(s): 9093 (http) with context path ''
+2022-12-19 16:17:50.913  INFO 97011 --- [main] i.a.a.c.impl.AxonServerManagedChannel    : Requesting connection details from localhost:8124
+2022-12-19 16:17:51.098  INFO 97011 --- [main] i.a.a.c.impl.AxonServerManagedChannel    : Successfully connected to localhost:8124
+2022-12-19 16:17:51.106  INFO 97011 --- [main] i.a.a.connector.impl.ControlChannelImpl  : Connected instruction stream for context 'default'. Sending client identification
+2022-12-19 16:17:51.117  INFO 97011 --- [main] i.a.a.c.command.impl.CommandChannelImpl  : CommandChannel for context 'default' connected, 0 command handlers registered
+2022-12-19 16:17:51.119  INFO 97011 --- [main] i.a.a.c.command.impl.CommandChannelImpl  : Registered handler for command 'com.airscholar.CommonService.commands.ValidatePaymentCommand' in context 'default'
+2022-12-19 16:17:51.207  INFO 97011 --- [main] c.a.P.PaymentServiceApplication          : Started PaymentServiceApplication in 4.96 seconds (JVM running for 5.76)
+2022-12-19 16:17:51.225  INFO 97011 --- [EventProcessor[com.airscholar.PaymentService.command.api.events]-0] o.a.e.TrackingEventProcessor             : Worker assigned to segment Segment[0/0] for processing
+2022-12-19 16:17:51.233  INFO 97011 --- [EventProcessor[com.airscholar.PaymentService.command.api.events]-0] o.a.e.TrackingEventProcessor             : Using current Thread for last segment worker: TrackingSegmentWorker{processor=com.airscholar.PaymentService.command.api.events, segment=Segment[0/0]}
+2022-12-19 16:17:51.238  INFO 97011 --- [EventProcessor[com.airscholar.PaymentService.command.api.events]-0] o.a.e.TrackingEventProcessor             : Fetched token: IndexTrackingToken{globalIndex=24} for segment: Segment[0/0]
+2022-12-19 16:18:43.826  INFO 97011 --- [SpringApplicationShutdownHook] o.a.e.TrackingEventProcessor             : Shutdown state set for Processor 'com.airscholar.PaymentService.command.api.events'.
+2022-12-19 16:18:43.832  INFO 97011 --- [SpringApplicationShutdownHook] o.a.e.TrackingEventProcessor             : Processor 'com.airscholar.PaymentService.command.api.events' awaiting termination...
+2022-12-19 16:18:44.204  INFO 97011 --- [EventProcessor[com.airscholar.PaymentService.command.api.events]-0] o.a.e.TrackingEventProcessor             : Released claim
+2022-12-19 16:18:44.205  INFO 97011 --- [EventProcessor[com.airscholar.PaymentService.command.api.events]-0] o.a.e.TrackingEventProcessor             : Worker for segment Segment[0/0] stopped.
+2022-12-19 16:18:44.246  INFO 97011 --- [SpringApplicationShutdownHook] i.a.a.c.command.impl.CommandChannelImpl  : Unregistered handler for command 'com.airscholar.CommonService.commands.ValidatePaymentCommand' in context 'default'
+2022-12-19 16:18:44.317  INFO 97011 --- [SpringApplicationShutdownHook] i.a.a.c.command.impl.CommandChannelImpl  : Waiting for 1 commands to be completed
+2022-12-19 16:18:49.590  INFO 97011 --- [SpringApplicationShutdownHook] i.a.a.c.command.impl.CommandChannelImpl  : Waiting for 1 commands to be completed
+2022-12-19 16:18:54.610  INFO 97011 --- [SpringApplicationShutdownHook] j.LocalContainerEntityManagerFactoryBean : Closing JPA EntityManagerFactory for persistence unit 'default'
+2022-12-19 16:18:54.636  INFO 97011 --- [SpringApplicationShutdownHook] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Shutdown initiated...
+2022-12-19 16:18:54.667  INFO 97011 --- [SpringApplicationShutdownHook] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Shutdown completed.
+2022-12-19 16:19:04.296  INFO 97197 --- [main] c.a.P.PaymentServiceApplication          : Starting PaymentServiceApplication using Java 17.0.1 on ed-dynamic-158-197.wless.cranfield.ac.uk with PID 97197 (/Users/airscholar/IdeaProjects/OrderApp/PaymentService/target/classes started by airscholar in /Users/airscholar/IdeaProjects/OrderApp)
+2022-12-19 16:19:04.300  INFO 97197 --- [main] c.a.P.PaymentServiceApplication          : No active profile set, falling back to 1 default profile: "default"
+2022-12-19 16:19:05.369  INFO 97197 --- [main] .s.d.r.c.RepositoryConfigurationDelegate : Bootstrapping Spring Data JPA repositories in DEFAULT mode.
+2022-12-19 16:19:05.534  INFO 97197 --- [main] .s.d.r.c.RepositoryConfigurationDelegate : Finished Spring Data repository scanning in 157 ms. Found 1 JPA repository interfaces.
+2022-12-19 16:19:06.369  INFO 97197 --- [main] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat initialized with port(s): 9093 (http)
+2022-12-19 16:19:06.376  INFO 97197 --- [main] o.apache.catalina.core.StandardService   : Starting service [Tomcat]
+2022-12-19 16:19:06.377  INFO 97197 --- [main] org.apache.catalina.core.StandardEngine  : Starting Servlet engine: [Apache Tomcat/9.0.65]
+2022-12-19 16:19:06.507  INFO 97197 --- [main] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring embedded WebApplicationContext
+2022-12-19 16:19:06.508  INFO 97197 --- [main] w.s.c.ServletWebServerApplicationContext : Root WebApplicationContext: initialization completed in 2127 ms
+2022-12-19 16:19:06.549  INFO 97197 --- [main] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Starting...
+2022-12-19 16:19:06.772  INFO 97197 --- [main] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Start completed.
+2022-12-19 16:19:06.789  INFO 97197 --- [main] o.s.b.a.h2.H2ConsoleAutoConfiguration    : H2 console available at '/h2-console'. Database available at 'jdbc:h2:file:~/data/paymentDB'
+2022-12-19 16:19:07.104  INFO 97197 --- [main] o.hibernate.jpa.internal.util.LogHelper  : HHH000204: Processing PersistenceUnitInfo [name: default]
+2022-12-19 16:19:07.244  INFO 97197 --- [main] org.hibernate.Version                    : HHH000412: Hibernate ORM core version 5.6.10.Final
+2022-12-19 16:19:07.609  INFO 97197 --- [main] o.hibernate.annotations.common.Version   : HCANN000001: Hibernate Commons Annotations {5.1.2.Final}
+2022-12-19 16:19:07.768  INFO 97197 --- [main] org.hibernate.dialect.Dialect            : HHH000400: Using dialect: org.hibernate.dialect.H2Dialect
+2022-12-19 16:19:08.783  INFO 97197 --- [main] o.h.e.t.j.p.i.JtaPlatformInitiator       : HHH000490: Using JtaPlatform implementation: [org.hibernate.engine.transaction.jta.platform.internal.NoJtaPlatform]
+2022-12-19 16:19:08.796  INFO 97197 --- [main] j.LocalContainerEntityManagerFactoryBean : Initialized JPA EntityManagerFactory for persistence unit 'default'
+2022-12-19 16:19:09.691  WARN 97197 --- [main] JpaBaseConfiguration$JpaWebConfiguration : spring.jpa.open-in-view is enabled by default. Therefore, database queries may be performed during view rendering. Explicitly configure spring.jpa.open-in-view to disable this warning
+2022-12-19 16:19:10.487  INFO 97197 --- [main] o.a.s.a.XStreamAutoConfiguration         : Initializing an XStream instance since none was found. The auto configuration base packages will be used as wildcards for the XStream security settings.
+2022-12-19 16:19:10.664  INFO 97197 --- [main] o.a.s.util.XStreamSecurityTypeUtility    : Constructing wildcard type for base package [com.airscholar.PaymentService].
+2022-12-19 16:19:10.664  INFO 97197 --- [main] o.a.s.util.XStreamSecurityTypeUtility    : Constructing wildcard type for base package [org.axonframework.eventhandling.tokenstore].
+2022-12-19 16:19:10.665  INFO 97197 --- [main] o.a.s.util.XStreamSecurityTypeUtility    : Constructing wildcard type for base package [org.axonframework.eventhandling.deadletter.jpa].
+2022-12-19 16:19:10.665  INFO 97197 --- [main] o.a.s.util.XStreamSecurityTypeUtility    : Constructing wildcard type for base package [org.axonframework.modelling.saga.repository.jpa].
+2022-12-19 16:19:10.665  INFO 97197 --- [main] o.a.s.util.XStreamSecurityTypeUtility    : Constructing wildcard type for base package [org.axonframework.eventsourcing.eventstore.jpa].
+2022-12-19 16:19:10.674  INFO 97197 --- [main] o.a.serialization.ChainingConverter      : ContentTypeConverter of type [class org.axonframework.serialization.xml.Dom4JToByteArrayConverter] is ignored. It seems to rely on a class that is not available in the class loader: org/dom4j/Document
+2022-12-19 16:19:10.675  INFO 97197 --- [main] o.a.serialization.ChainingConverter      : ContentTypeConverter of type [class org.axonframework.serialization.xml.InputStreamToDom4jConverter] is ignored. It seems to rely on a class that is not available in the class loader: org/dom4j/Document
+2022-12-19 16:19:10.675  INFO 97197 --- [main] o.a.serialization.ChainingConverter      : ContentTypeConverter of type [class org.axonframework.serialization.xml.XomToStringConverter] is ignored. It seems to rely on a class that is not available in the class loader: nu/xom/Document
+2022-12-19 16:19:10.676  INFO 97197 --- [main] o.a.serialization.ChainingConverter      : ContentTypeConverter of type [class org.axonframework.serialization.xml.InputStreamToXomConverter] is ignored. It seems to rely on a class that is not available in the class loader: nu/xom/ParsingException
+2022-12-19 16:19:11.130  INFO 97197 --- [main] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat started on port(s): 9093 (http) with context path ''
+2022-12-19 16:19:11.651  INFO 97197 --- [main] i.a.a.c.impl.AxonServerManagedChannel    : Requesting connection details from localhost:8124
+2022-12-19 16:19:12.166  INFO 97197 --- [main] i.a.a.c.impl.AxonServerManagedChannel    : Successfully connected to localhost:8124
+2022-12-19 16:19:12.199  INFO 97197 --- [main] i.a.a.connector.impl.ControlChannelImpl  : Connected instruction stream for context 'default'. Sending client identification
+2022-12-19 16:19:12.241  INFO 97197 --- [main] i.a.a.c.command.impl.CommandChannelImpl  : CommandChannel for context 'default' connected, 0 command handlers registered
+2022-12-19 16:19:12.246  INFO 97197 --- [main] i.a.a.c.command.impl.CommandChannelImpl  : Registered handler for command 'com.airscholar.CommonService.commands.ValidatePaymentCommand' in context 'default'
+2022-12-19 16:19:12.493  INFO 97197 --- [main] c.a.P.PaymentServiceApplication          : Started PaymentServiceApplication in 8.77 seconds (JVM running for 9.614)
+2022-12-19 16:19:12.494  INFO 97197 --- [EventProcessor[com.airscholar.PaymentService.command.api.events]-0] o.a.e.TrackingEventProcessor             : Worker assigned to segment Segment[0/0] for processing
+2022-12-19 16:19:12.508  INFO 97197 --- [EventProcessor[com.airscholar.PaymentService.command.api.events]-0] o.a.e.TrackingEventProcessor             : Using current Thread for last segment worker: TrackingSegmentWorker{processor=com.airscholar.PaymentService.command.api.events, segment=Segment[0/0]}
+2022-12-19 16:19:12.524  INFO 97197 --- [EventProcessor[com.airscholar.PaymentService.command.api.events]-0] o.a.e.TrackingEventProcessor             : Fetched token: IndexTrackingToken{globalIndex=25} for segment: Segment[0/0]
+2022-12-19 16:22:20.611  INFO 97197 --- [SpringApplicationShutdownHook] o.a.e.TrackingEventProcessor             : Shutdown state set for Processor 'com.airscholar.PaymentService.command.api.events'.
+2022-12-19 16:22:20.618  INFO 97197 --- [SpringApplicationShutdownHook] o.a.e.TrackingEventProcessor             : Processor 'com.airscholar.PaymentService.command.api.events' awaiting termination...
+2022-12-19 16:22:20.992  INFO 97197 --- [EventProcessor[com.airscholar.PaymentService.command.api.events]-0] o.a.e.TrackingEventProcessor             : Released claim
+2022-12-19 16:22:20.999  INFO 97197 --- [EventProcessor[com.airscholar.PaymentService.command.api.events]-0] o.a.e.TrackingEventProcessor             : Worker for segment Segment[0/0] stopped.
+2022-12-19 16:22:21.021  INFO 97197 --- [SpringApplicationShutdownHook] i.a.a.c.command.impl.CommandChannelImpl  : Unregistered handler for command 'com.airscholar.CommonService.commands.ValidatePaymentCommand' in context 'default'
+2022-12-19 16:22:21.111  INFO 97197 --- [SpringApplicationShutdownHook] i.a.a.c.command.impl.CommandChannelImpl  : Waiting for 1 commands to be completed
+2022-12-19 16:22:26.172  INFO 97197 --- [SpringApplicationShutdownHook] i.a.a.c.command.impl.CommandChannelImpl  : Waiting for 1 commands to be completed
+2022-12-19 16:22:33.833  INFO 97611 --- [main] c.a.P.PaymentServiceApplication          : Starting PaymentServiceApplication using Java 17.0.1 on ed-dynamic-158-197.wless.cranfield.ac.uk with PID 97611 (/Users/airscholar/IdeaProjects/OrderApp/PaymentService/target/classes started by airscholar in /Users/airscholar/IdeaProjects/OrderApp)
+2022-12-19 16:22:33.837  INFO 97611 --- [main] c.a.P.PaymentServiceApplication          : No active profile set, falling back to 1 default profile: "default"
+2022-12-19 16:22:35.052  INFO 97611 --- [main] .s.d.r.c.RepositoryConfigurationDelegate : Bootstrapping Spring Data JPA repositories in DEFAULT mode.
+2022-12-19 16:22:35.196  INFO 97611 --- [main] .s.d.r.c.RepositoryConfigurationDelegate : Finished Spring Data repository scanning in 130 ms. Found 1 JPA repository interfaces.
+2022-12-19 16:22:36.204  INFO 97611 --- [main] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat initialized with port(s): 9093 (http)
+2022-12-19 16:22:36.211  INFO 97611 --- [main] o.apache.catalina.core.StandardService   : Starting service [Tomcat]
+2022-12-19 16:22:36.212  INFO 97611 --- [main] org.apache.catalina.core.StandardEngine  : Starting Servlet engine: [Apache Tomcat/9.0.65]
+2022-12-19 16:22:36.350  INFO 97611 --- [main] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring embedded WebApplicationContext
+2022-12-19 16:22:36.351  INFO 97611 --- [main] w.s.c.ServletWebServerApplicationContext : Root WebApplicationContext: initialization completed in 2402 ms
+2022-12-19 16:22:36.389  INFO 97611 --- [main] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Starting...
+2022-12-19 16:22:36.619  INFO 97611 --- [main] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Start completed.
+2022-12-19 16:22:36.632  INFO 97611 --- [main] o.s.b.a.h2.H2ConsoleAutoConfiguration    : H2 console available at '/h2-console'. Database available at 'jdbc:h2:file:~/data/paymentDB'
+2022-12-19 16:22:36.878  INFO 97611 --- [main] o.hibernate.jpa.internal.util.LogHelper  : HHH000204: Processing PersistenceUnitInfo [name: default]
+2022-12-19 16:22:36.914  INFO 97611 --- [main] org.hibernate.Version                    : HHH000412: Hibernate ORM core version 5.6.10.Final
+2022-12-19 16:22:37.034  INFO 97611 --- [main] o.hibernate.annotations.common.Version   : HCANN000001: Hibernate Commons Annotations {5.1.2.Final}
+2022-12-19 16:22:37.112  INFO 97611 --- [main] org.hibernate.dialect.Dialect            : HHH000400: Using dialect: org.hibernate.dialect.H2Dialect
+2022-12-19 16:22:37.738  INFO 97611 --- [main] o.h.e.t.j.p.i.JtaPlatformInitiator       : HHH000490: Using JtaPlatform implementation: [org.hibernate.engine.transaction.jta.platform.internal.NoJtaPlatform]
+2022-12-19 16:22:37.744  INFO 97611 --- [main] j.LocalContainerEntityManagerFactoryBean : Initialized JPA EntityManagerFactory for persistence unit 'default'
+2022-12-19 16:22:38.168  WARN 97611 --- [main] JpaBaseConfiguration$JpaWebConfiguration : spring.jpa.open-in-view is enabled by default. Therefore, database queries may be performed during view rendering. Explicitly configure spring.jpa.open-in-view to disable this warning
+2022-12-19 16:22:38.480  INFO 97611 --- [main] o.a.s.a.XStreamAutoConfiguration         : Initializing an XStream instance since none was found. The auto configuration base packages will be used as wildcards for the XStream security settings.
+2022-12-19 16:22:38.617  INFO 97611 --- [main] o.a.s.util.XStreamSecurityTypeUtility    : Constructing wildcard type for base package [com.airscholar.PaymentService].
+2022-12-19 16:22:38.617  INFO 97611 --- [main] o.a.s.util.XStreamSecurityTypeUtility    : Constructing wildcard type for base package [org.axonframework.eventhandling.tokenstore].
+2022-12-19 16:22:38.617  INFO 97611 --- [main] o.a.s.util.XStreamSecurityTypeUtility    : Constructing wildcard type for base package [org.axonframework.eventhandling.deadletter.jpa].
+2022-12-19 16:22:38.617  INFO 97611 --- [main] o.a.s.util.XStreamSecurityTypeUtility    : Constructing wildcard type for base package [org.axonframework.modelling.saga.repository.jpa].
+2022-12-19 16:22:38.617  INFO 97611 --- [main] o.a.s.util.XStreamSecurityTypeUtility    : Constructing wildcard type for base package [org.axonframework.eventsourcing.eventstore.jpa].
+2022-12-19 16:22:38.626  INFO 97611 --- [main] o.a.serialization.ChainingConverter      : ContentTypeConverter of type [class org.axonframework.serialization.xml.Dom4JToByteArrayConverter] is ignored. It seems to rely on a class that is not available in the class loader: org/dom4j/Document
+2022-12-19 16:22:38.626  INFO 97611 --- [main] o.a.serialization.ChainingConverter      : ContentTypeConverter of type [class org.axonframework.serialization.xml.InputStreamToDom4jConverter] is ignored. It seems to rely on a class that is not available in the class loader: org/dom4j/Document
+2022-12-19 16:22:38.627  INFO 97611 --- [main] o.a.serialization.ChainingConverter      : ContentTypeConverter of type [class org.axonframework.serialization.xml.XomToStringConverter] is ignored. It seems to rely on a class that is not available in the class loader: nu/xom/Document
+2022-12-19 16:22:38.627  INFO 97611 --- [main] o.a.serialization.ChainingConverter      : ContentTypeConverter of type [class org.axonframework.serialization.xml.InputStreamToXomConverter] is ignored. It seems to rely on a class that is not available in the class loader: nu/xom/ParsingException
+2022-12-19 16:22:39.083  INFO 97611 --- [main] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat started on port(s): 9093 (http) with context path ''
+2022-12-19 16:22:39.367  INFO 97611 --- [main] i.a.a.c.impl.AxonServerManagedChannel    : Requesting connection details from localhost:8124
+2022-12-19 16:22:39.577  INFO 97611 --- [main] i.a.a.c.impl.AxonServerManagedChannel    : Successfully connected to localhost:8124
+2022-12-19 16:22:39.586  INFO 97611 --- [main] i.a.a.connector.impl.ControlChannelImpl  : Connected instruction stream for context 'default'. Sending client identification
+2022-12-19 16:22:39.601  INFO 97611 --- [main] i.a.a.c.command.impl.CommandChannelImpl  : CommandChannel for context 'default' connected, 0 command handlers registered
+2022-12-19 16:22:39.603  INFO 97611 --- [main] i.a.a.c.command.impl.CommandChannelImpl  : Registered handler for command 'com.airscholar.CommonService.commands.ValidatePaymentCommand' in context 'default'
+2022-12-19 16:22:39.708  INFO 97611 --- [main] c.a.P.PaymentServiceApplication          : Started PaymentServiceApplication in 6.539 seconds (JVM running for 8.165)
+2022-12-19 16:22:39.720  INFO 97611 --- [EventProcessor[com.airscholar.PaymentService.command.api.events]-0] o.a.e.TrackingEventProcessor             : Worker assigned to segment Segment[0/0] for processing
+2022-12-19 16:22:39.729  INFO 97611 --- [EventProcessor[com.airscholar.PaymentService.command.api.events]-0] o.a.e.TrackingEventProcessor             : Using current Thread for last segment worker: TrackingSegmentWorker{processor=com.airscholar.PaymentService.command.api.events, segment=Segment[0/0]}
+2022-12-19 16:22:39.735  INFO 97611 --- [EventProcessor[com.airscholar.PaymentService.command.api.events]-0] o.a.e.TrackingEventProcessor             : Fetched token: IndexTrackingToken{globalIndex=26} for segment: Segment[0/0]
+2022-12-19 16:25:49.404  WARN 97611 --- [HikariPool-1 housekeeper] com.zaxxer.hikari.pool.HikariPool        : HikariPool-1 - Thread starvation or clock leap detected (housekeeper delta=3m12s676ms).
+2022-12-19 16:25:49.523  INFO 97611 --- [SpringApplicationShutdownHook] o.a.e.TrackingEventProcessor             : Shutdown state set for Processor 'com.airscholar.PaymentService.command.api.events'.
+2022-12-19 16:25:49.525  INFO 97611 --- [SpringApplicationShutdownHook] o.a.e.TrackingEventProcessor             : Processor 'com.airscholar.PaymentService.command.api.events' awaiting termination...
+2022-12-19 16:25:49.531  WARN 97611 --- [EventProcessor[com.airscholar.PaymentService.command.api.events]-0] o.a.e.TrackingEventProcessor             : Error occurred. Starting retry mode.
+
+org.axonframework.axonserver.connector.AxonServerException: The Event Stream has been closed, so no further events can be retrieved
+	at org.axonframework.axonserver.connector.event.axon.EventBuffer.peekNullable(EventBuffer.java:178) ~[axon-server-connector-4.6.0.jar:4.6.0]
+	at org.axonframework.axonserver.connector.event.axon.EventBuffer.hasNextAvailable(EventBuffer.java:144) ~[axon-server-connector-4.6.0.jar:4.6.0]
+	at org.axonframework.eventhandling.TrackingEventProcessor.processBatch(TrackingEventProcessor.java:418) ~[axon-messaging-4.6.0.jar:4.6.0]
+	at org.axonframework.eventhandling.TrackingEventProcessor.processingLoop(TrackingEventProcessor.java:318) ~[axon-messaging-4.6.0.jar:4.6.0]
+	at org.axonframework.eventhandling.TrackingEventProcessor$TrackingSegmentWorker.run(TrackingEventProcessor.java:1145) ~[axon-messaging-4.6.0.jar:4.6.0]
+	at org.axonframework.eventhandling.TrackingEventProcessor$WorkerLauncher.cleanUp(TrackingEventProcessor.java:1340) ~[axon-messaging-4.6.0.jar:4.6.0]
+	at org.axonframework.eventhandling.TrackingEventProcessor$WorkerLauncher.run(TrackingEventProcessor.java:1317) ~[axon-messaging-4.6.0.jar:4.6.0]
+	at java.base/java.lang.Thread.run(Thread.java:833) ~[na:na]
+Caused by: io.grpc.StatusRuntimeException: CANCELLED: RST_STREAM closed stream. HTTP/2 error code: CANCEL
+	at io.grpc.Status.asRuntimeException(Status.java:535) ~[grpc-api-1.44.1.jar:1.44.1]
+	at io.grpc.stub.ClientCalls$StreamObserverToCallListenerAdapter.onClose(ClientCalls.java:479) ~[grpc-stub-1.44.1.jar:1.44.1]
+	at io.grpc.internal.ClientCallImpl.closeObserver(ClientCallImpl.java:562) ~[grpc-core-1.44.1.jar:1.44.1]
+	at io.grpc.internal.ClientCallImpl.access$300(ClientCallImpl.java:70) ~[grpc-core-1.44.1.jar:1.44.1]
+	at io.grpc.internal.ClientCallImpl$ClientStreamListenerImpl$1StreamClosed.runInternal(ClientCallImpl.java:743) ~[grpc-core-1.44.1.jar:1.44.1]
+	at io.grpc.internal.ClientCallImpl$ClientStreamListenerImpl$1StreamClosed.runInContext(ClientCallImpl.java:722) ~[grpc-core-1.44.1.jar:1.44.1]
+	at io.grpc.internal.ContextRunnable.run(ContextRunnable.java:37) ~[grpc-core-1.44.1.jar:1.44.1]
+	at io.grpc.internal.SerializingExecutor.run(SerializingExecutor.java:133) ~[grpc-core-1.44.1.jar:1.44.1]
+	at java.base/java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1136) ~[na:na]
+	at java.base/java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:635) ~[na:na]
+	... 1 common frames omitted
+
+2022-12-19 16:25:49.534  WARN 97611 --- [EventProcessor[com.airscholar.PaymentService.command.api.events]-0] o.a.e.TrackingEventProcessor             : Releasing claim on token and preparing for retry in 1s
+2022-12-19 16:25:49.595  WARN 97611 --- [EventProcessor[com.airscholar.PaymentService.command.api.events]-0] o.h.engine.jdbc.spi.SqlExceptionHelper   : SQL Error: 90121, SQLState: 90121
+2022-12-19 16:25:49.596 ERROR 97611 --- [EventProcessor[com.airscholar.PaymentService.command.api.events]-0] o.h.engine.jdbc.spi.SqlExceptionHelper   : Database is already closed (to disable automatic closing at VM shutdown, add ";DB_CLOSE_ON_EXIT=FALSE" to the db URL) [90121-214]
+2022-12-19 16:25:49.602 ERROR 97611 --- [EventProcessor[com.airscholar.PaymentService.command.api.events]-0] o.s.orm.jpa.EntityManagerFactoryUtils    : Failed to release JPA EntityManager
+
+org.hibernate.exception.JDBCConnectionException: Unable to release JDBC Connection
+	at org.hibernate.exception.internal.SQLExceptionTypeDelegate.convert(SQLExceptionTypeDelegate.java:48) ~[hibernate-core-5.6.10.Final.jar:5.6.10.Final]
+	at org.hibernate.exception.internal.StandardSQLExceptionConverter.convert(StandardSQLExceptionConverter.java:37) ~[hibernate-core-5.6.10.Final.jar:5.6.10.Final]
+	at org.hibernate.engine.jdbc.spi.SqlExceptionHelper.convert(SqlExceptionHelper.java:113) ~[hibernate-core-5.6.10.Final.jar:5.6.10.Final]
+	at org.hibernate.engine.jdbc.spi.SqlExceptionHelper.convert(SqlExceptionHelper.java:99) ~[hibernate-core-5.6.10.Final.jar:5.6.10.Final]
+	at org.hibernate.resource.jdbc.internal.LogicalConnectionManagedImpl.releaseConnection(LogicalConnectionManagedImpl.java:223) ~[hibernate-core-5.6.10.Final.jar:5.6.10.Final]
+	at org.hibernate.resource.jdbc.internal.LogicalConnectionManagedImpl.close(LogicalConnectionManagedImpl.java:261) ~[hibernate-core-5.6.10.Final.jar:5.6.10.Final]
+	at org.hibernate.engine.jdbc.internal.JdbcCoordinatorImpl.close(JdbcCoordinatorImpl.java:175) ~[hibernate-core-5.6.10.Final.jar:5.6.10.Final]
+	at org.hibernate.internal.AbstractSharedSessionContract.close(AbstractSharedSessionContract.java:374) ~[hibernate-core-5.6.10.Final.jar:5.6.10.Final]
+	at org.hibernate.internal.SessionImpl.closeWithoutOpenChecks(SessionImpl.java:413) ~[hibernate-core-5.6.10.Final.jar:5.6.10.Final]
+	at org.hibernate.internal.SessionImpl.close(SessionImpl.java:398) ~[hibernate-core-5.6.10.Final.jar:5.6.10.Final]
+	at org.springframework.orm.jpa.EntityManagerFactoryUtils.closeEntityManager(EntityManagerFactoryUtils.java:427) ~[spring-orm-5.3.22.jar:5.3.22]
+	at org.springframework.orm.jpa.JpaTransactionManager.closeEntityManagerAfterFailedBegin(JpaTransactionManager.java:514) ~[spring-orm-5.3.22.jar:5.3.22]
+	at org.springframework.orm.jpa.JpaTransactionManager.doBegin(JpaTransactionManager.java:466) ~[spring-orm-5.3.22.jar:5.3.22]
+	at org.springframework.transaction.support.AbstractPlatformTransactionManager.startTransaction(AbstractPlatformTransactionManager.java:400) ~[spring-tx-5.3.22.jar:5.3.22]
+	at org.springframework.transaction.support.AbstractPlatformTransactionManager.getTransaction(AbstractPlatformTransactionManager.java:373) ~[spring-tx-5.3.22.jar:5.3.22]
+	at org.axonframework.spring.messaging.unitofwork.SpringTransactionManager.startTransaction(SpringTransactionManager.java:65) ~[axon-spring-4.6.0.jar:4.6.0]
+	at org.axonframework.common.transaction.TransactionManager.executeInTransaction(TransactionManager.java:45) ~[axon-messaging-4.6.0.jar:4.6.0]
+	at org.axonframework.eventhandling.TrackingEventProcessor.releaseToken(TrackingEventProcessor.java:372) ~[axon-messaging-4.6.0.jar:4.6.0]
+	at org.axonframework.eventhandling.TrackingEventProcessor.processingLoop(TrackingEventProcessor.java:345) ~[axon-messaging-4.6.0.jar:4.6.0]
+	at org.axonframework.eventhandling.TrackingEventProcessor$TrackingSegmentWorker.run(TrackingEventProcessor.java:1145) ~[axon-messaging-4.6.0.jar:4.6.0]
+	at org.axonframework.eventhandling.TrackingEventProcessor$WorkerLauncher.cleanUp(TrackingEventProcessor.java:1340) ~[axon-messaging-4.6.0.jar:4.6.0]
+	at org.axonframework.eventhandling.TrackingEventProcessor$WorkerLauncher.run(TrackingEventProcessor.java:1317) ~[axon-messaging-4.6.0.jar:4.6.0]
+	at java.base/java.lang.Thread.run(Thread.java:833) ~[na:na]
+Caused by: org.h2.jdbc.JdbcSQLNonTransientConnectionException: Database is already closed (to disable automatic closing at VM shutdown, add ";DB_CLOSE_ON_EXIT=FALSE" to the db URL) [90121-214]
+	at org.h2.message.DbException.getJdbcSQLException(DbException.java:678) ~[h2-2.1.214.jar:2.1.214]
+	at org.h2.message.DbException.getJdbcSQLException(DbException.java:477) ~[h2-2.1.214.jar:2.1.214]
+	at org.h2.message.DbException.get(DbException.java:223) ~[h2-2.1.214.jar:2.1.214]
+	at org.h2.message.DbException.get(DbException.java:199) ~[h2-2.1.214.jar:2.1.214]
+	at org.h2.message.DbException.get(DbException.java:188) ~[h2-2.1.214.jar:2.1.214]
+	at org.h2.jdbc.JdbcConnection.checkClosed(JdbcConnection.java:1375) ~[h2-2.1.214.jar:2.1.214]
+	at org.h2.jdbc.JdbcConnection.clearWarnings(JdbcConnection.java:610) ~[h2-2.1.214.jar:2.1.214]
+	at com.zaxxer.hikari.pool.ProxyConnection.close(ProxyConnection.java:267) ~[HikariCP-4.0.3.jar:na]
+	at org.hibernate.engine.jdbc.connections.internal.DatasourceConnectionProviderImpl.closeConnection(DatasourceConnectionProviderImpl.java:127) ~[hibernate-core-5.6.10.Final.jar:5.6.10.Final]
+	at org.hibernate.internal.NonContextualJdbcConnectionAccess.releaseConnection(NonContextualJdbcConnectionAccess.java:49) ~[hibernate-core-5.6.10.Final.jar:5.6.10.Final]
+	at org.hibernate.resource.jdbc.internal.LogicalConnectionManagedImpl.releaseConnection(LogicalConnectionManagedImpl.java:219) ~[hibernate-core-5.6.10.Final.jar:5.6.10.Final]
+	... 18 common frames omitted
+
+2022-12-19 16:25:49.604  INFO 97611 --- [EventProcessor[com.airscholar.PaymentService.command.api.events]-0] o.a.e.TrackingEventProcessor             : Release claim failed
+2022-12-19 16:25:49.616  WARN 97611 --- [EventProcessor[com.airscholar.PaymentService.command.api.events]-0] o.h.engine.jdbc.spi.SqlExceptionHelper   : SQL Error: 90121, SQLState: 90121
+2022-12-19 16:25:49.616 ERROR 97611 --- [EventProcessor[com.airscholar.PaymentService.command.api.events]-0] o.h.engine.jdbc.spi.SqlExceptionHelper   : Database is already closed (to disable automatic closing at VM shutdown, add ";DB_CLOSE_ON_EXIT=FALSE" to the db URL) [90121-214]
+2022-12-19 16:25:49.617 ERROR 97611 --- [EventProcessor[com.airscholar.PaymentService.command.api.events]-0] o.s.orm.jpa.EntityManagerFactoryUtils    : Failed to release JPA EntityManager
+
+org.hibernate.exception.JDBCConnectionException: Unable to release JDBC Connection
+	at org.hibernate.exception.internal.SQLExceptionTypeDelegate.convert(SQLExceptionTypeDelegate.java:48) ~[hibernate-core-5.6.10.Final.jar:5.6.10.Final]
+	at org.hibernate.exception.internal.StandardSQLExceptionConverter.convert(StandardSQLExceptionConverter.java:37) ~[hibernate-core-5.6.10.Final.jar:5.6.10.Final]
+	at org.hibernate.engine.jdbc.spi.SqlExceptionHelper.convert(SqlExceptionHelper.java:113) ~[hibernate-core-5.6.10.Final.jar:5.6.10.Final]
+	at org.hibernate.engine.jdbc.spi.SqlExceptionHelper.convert(SqlExceptionHelper.java:99) ~[hibernate-core-5.6.10.Final.jar:5.6.10.Final]
+	at org.hibernate.resource.jdbc.internal.LogicalConnectionManagedImpl.releaseConnection(LogicalConnectionManagedImpl.java:223) ~[hibernate-core-5.6.10.Final.jar:5.6.10.Final]
+	at org.hibernate.resource.jdbc.internal.LogicalConnectionManagedImpl.close(LogicalConnectionManagedImpl.java:261) ~[hibernate-core-5.6.10.Final.jar:5.6.10.Final]
+	at org.hibernate.engine.jdbc.internal.JdbcCoordinatorImpl.close(JdbcCoordinatorImpl.java:175) ~[hibernate-core-5.6.10.Final.jar:5.6.10.Final]
+	at org.hibernate.internal.AbstractSharedSessionContract.close(AbstractSharedSessionContract.java:374) ~[hibernate-core-5.6.10.Final.jar:5.6.10.Final]
+	at org.hibernate.internal.SessionImpl.closeWithoutOpenChecks(SessionImpl.java:413) ~[hibernate-core-5.6.10.Final.jar:5.6.10.Final]
+	at org.hibernate.internal.SessionImpl.close(SessionImpl.java:398) ~[hibernate-core-5.6.10.Final.jar:5.6.10.Final]
+	at org.springframework.orm.jpa.EntityManagerFactoryUtils.closeEntityManager(EntityManagerFactoryUtils.java:427) ~[spring-orm-5.3.22.jar:5.3.22]
+	at org.springframework.orm.jpa.JpaTransactionManager.closeEntityManagerAfterFailedBegin(JpaTransactionManager.java:514) ~[spring-orm-5.3.22.jar:5.3.22]
+	at org.springframework.orm.jpa.JpaTransactionManager.doBegin(JpaTransactionManager.java:466) ~[spring-orm-5.3.22.jar:5.3.22]
+	at org.springframework.transaction.support.AbstractPlatformTransactionManager.startTransaction(AbstractPlatformTransactionManager.java:400) ~[spring-tx-5.3.22.jar:5.3.22]
+	at org.springframework.transaction.support.AbstractPlatformTransactionManager.getTransaction(AbstractPlatformTransactionManager.java:373) ~[spring-tx-5.3.22.jar:5.3.22]
+	at org.axonframework.spring.messaging.unitofwork.SpringTransactionManager.startTransaction(SpringTransactionManager.java:65) ~[axon-spring-4.6.0.jar:4.6.0]
+	at org.axonframework.common.transaction.TransactionManager.executeInTransaction(TransactionManager.java:45) ~[axon-messaging-4.6.0.jar:4.6.0]
+	at org.axonframework.eventhandling.TrackingEventProcessor.releaseToken(TrackingEventProcessor.java:372) ~[axon-messaging-4.6.0.jar:4.6.0]
+	at org.axonframework.eventhandling.TrackingEventProcessor.processingLoop(TrackingEventProcessor.java:354) ~[axon-messaging-4.6.0.jar:4.6.0]
+	at org.axonframework.eventhandling.TrackingEventProcessor$TrackingSegmentWorker.run(TrackingEventProcessor.java:1145) ~[axon-messaging-4.6.0.jar:4.6.0]
+	at org.axonframework.eventhandling.TrackingEventProcessor$WorkerLauncher.cleanUp(TrackingEventProcessor.java:1340) ~[axon-messaging-4.6.0.jar:4.6.0]
+	at org.axonframework.eventhandling.TrackingEventProcessor$WorkerLauncher.run(TrackingEventProcessor.java:1317) ~[axon-messaging-4.6.0.jar:4.6.0]
+	at java.base/java.lang.Thread.run(Thread.java:833) ~[na:na]
+Caused by: org.h2.jdbc.JdbcSQLNonTransientConnectionException: Database is already closed (to disable automatic closing at VM shutdown, add ";DB_CLOSE_ON_EXIT=FALSE" to the db URL) [90121-214]
+	at org.h2.message.DbException.getJdbcSQLException(DbException.java:678) ~[h2-2.1.214.jar:2.1.214]
+	at org.h2.message.DbException.getJdbcSQLException(DbException.java:477) ~[h2-2.1.214.jar:2.1.214]
+	at org.h2.message.DbException.get(DbException.java:223) ~[h2-2.1.214.jar:2.1.214]
+	at org.h2.message.DbException.get(DbException.java:199) ~[h2-2.1.214.jar:2.1.214]
+	at org.h2.message.DbException.get(DbException.java:188) ~[h2-2.1.214.jar:2.1.214]
+	at org.h2.jdbc.JdbcConnection.checkClosed(JdbcConnection.java:1375) ~[h2-2.1.214.jar:2.1.214]
+	at org.h2.jdbc.JdbcConnection.clearWarnings(JdbcConnection.java:610) ~[h2-2.1.214.jar:2.1.214]
+	at com.zaxxer.hikari.pool.ProxyConnection.close(ProxyConnection.java:267) ~[HikariCP-4.0.3.jar:na]
+	at org.hibernate.engine.jdbc.connections.internal.DatasourceConnectionProviderImpl.closeConnection(DatasourceConnectionProviderImpl.java:127) ~[hibernate-core-5.6.10.Final.jar:5.6.10.Final]
+	at org.hibernate.internal.NonContextualJdbcConnectionAccess.releaseConnection(NonContextualJdbcConnectionAccess.java:49) ~[hibernate-core-5.6.10.Final.jar:5.6.10.Final]
+	at org.hibernate.resource.jdbc.internal.LogicalConnectionManagedImpl.releaseConnection(LogicalConnectionManagedImpl.java:219) ~[hibernate-core-5.6.10.Final.jar:5.6.10.Final]
+	... 18 common frames omitted
+
+2022-12-19 16:25:49.618  INFO 97611 --- [EventProcessor[com.airscholar.PaymentService.command.api.events]-0] o.a.e.TrackingEventProcessor             : Release claim failed
+2022-12-19 16:25:49.621  INFO 97611 --- [EventProcessor[com.airscholar.PaymentService.command.api.events]-0] o.a.e.TrackingEventProcessor             : Worker for segment Segment[0/0] stopped.
+2022-12-19 16:25:49.634  INFO 97611 --- [SpringApplicationShutdownHook] i.a.a.c.command.impl.CommandChannelImpl  : CommandChannel for context 'default' connected, 1 command handlers registered
+2022-12-19 16:25:49.669  INFO 97611 --- [SpringApplicationShutdownHook] i.a.a.c.command.impl.CommandChannelImpl  : Unregistered handler for command 'com.airscholar.CommonService.commands.ValidatePaymentCommand' in context 'default'
+2022-12-19 16:25:49.862  INFO 97611 --- [SpringApplicationShutdownHook] i.a.a.c.command.impl.CommandChannelImpl  : Waiting for 1 commands to be completed
+2022-12-19 16:25:50.010  INFO 97611 --- [axon-connector-97611@ed-dynamic-158-197.wless.cranfield.ac.uk-0] i.a.a.connector.impl.ControlChannelImpl  : Connected instruction stream for context 'default'. Sending client identification
+2022-12-19 16:25:55.031  INFO 97611 --- [SpringApplicationShutdownHook] i.a.a.c.command.impl.CommandChannelImpl  : Waiting for 1 commands to be completed
+2022-12-19 16:26:00.047  INFO 97611 --- [SpringApplicationShutdownHook] j.LocalContainerEntityManagerFactoryBean : Closing JPA EntityManagerFactory for persistence unit 'default'
+2022-12-19 16:26:00.056  INFO 97611 --- [SpringApplicationShutdownHook] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Shutdown initiated...
+2022-12-19 16:26:00.070  INFO 97611 --- [SpringApplicationShutdownHook] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Shutdown completed.
+2022-12-19 16:28:04.983  INFO 98233 --- [main] c.a.P.PaymentServiceApplication          : Starting PaymentServiceApplication using Java 17.0.1 on ed-dynamic-158-197.wless.cranfield.ac.uk with PID 98233 (/Users/airscholar/IdeaProjects/OrderApp/PaymentService/target/classes started by airscholar in /Users/airscholar/IdeaProjects/OrderApp)
+2022-12-19 16:28:04.986  INFO 98233 --- [main] c.a.P.PaymentServiceApplication          : No active profile set, falling back to 1 default profile: "default"
+2022-12-19 16:28:05.907  INFO 98233 --- [main] .s.d.r.c.RepositoryConfigurationDelegate : Bootstrapping Spring Data JPA repositories in DEFAULT mode.
+2022-12-19 16:28:06.100  INFO 98233 --- [main] .s.d.r.c.RepositoryConfigurationDelegate : Finished Spring Data repository scanning in 184 ms. Found 1 JPA repository interfaces.
+2022-12-19 16:28:06.999  INFO 98233 --- [main] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat initialized with port(s): 9093 (http)
+2022-12-19 16:28:07.006  INFO 98233 --- [main] o.apache.catalina.core.StandardService   : Starting service [Tomcat]
+2022-12-19 16:28:07.006  INFO 98233 --- [main] org.apache.catalina.core.StandardEngine  : Starting Servlet engine: [Apache Tomcat/9.0.65]
+2022-12-19 16:28:07.236  INFO 98233 --- [main] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring embedded WebApplicationContext
+2022-12-19 16:28:07.238  INFO 98233 --- [main] w.s.c.ServletWebServerApplicationContext : Root WebApplicationContext: initialization completed in 2196 ms
+2022-12-19 16:28:07.314  INFO 98233 --- [main] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Starting...
+2022-12-19 16:28:07.924  INFO 98233 --- [main] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Start completed.
+2022-12-19 16:28:07.961  INFO 98233 --- [main] o.s.b.a.h2.H2ConsoleAutoConfiguration    : H2 console available at '/h2-console'. Database available at 'jdbc:h2:file:~/data/paymentDB'
+2022-12-19 16:28:08.260  INFO 98233 --- [main] o.hibernate.jpa.internal.util.LogHelper  : HHH000204: Processing PersistenceUnitInfo [name: default]
+2022-12-19 16:28:08.308  INFO 98233 --- [main] org.hibernate.Version                    : HHH000412: Hibernate ORM core version 5.6.10.Final
+2022-12-19 16:28:08.488  INFO 98233 --- [main] o.hibernate.annotations.common.Version   : HCANN000001: Hibernate Commons Annotations {5.1.2.Final}
+2022-12-19 16:28:08.580  INFO 98233 --- [main] org.hibernate.dialect.Dialect            : HHH000400: Using dialect: org.hibernate.dialect.H2Dialect
+2022-12-19 16:28:09.402  INFO 98233 --- [main] o.h.e.t.j.p.i.JtaPlatformInitiator       : HHH000490: Using JtaPlatform implementation: [org.hibernate.engine.transaction.jta.platform.internal.NoJtaPlatform]
+2022-12-19 16:28:09.408  INFO 98233 --- [main] j.LocalContainerEntityManagerFactoryBean : Initialized JPA EntityManagerFactory for persistence unit 'default'
+2022-12-19 16:28:09.756  WARN 98233 --- [main] JpaBaseConfiguration$JpaWebConfiguration : spring.jpa.open-in-view is enabled by default. Therefore, database queries may be performed during view rendering. Explicitly configure spring.jpa.open-in-view to disable this warning
+2022-12-19 16:28:10.135  INFO 98233 --- [main] o.a.s.a.XStreamAutoConfiguration         : Initializing an XStream instance since none was found. The auto configuration base packages will be used as wildcards for the XStream security settings.
+2022-12-19 16:28:10.306  INFO 98233 --- [main] o.a.s.util.XStreamSecurityTypeUtility    : Constructing wildcard type for base package [com.airscholar.PaymentService].
+2022-12-19 16:28:10.306  INFO 98233 --- [main] o.a.s.util.XStreamSecurityTypeUtility    : Constructing wildcard type for base package [org.axonframework.eventhandling.tokenstore].
+2022-12-19 16:28:10.306  INFO 98233 --- [main] o.a.s.util.XStreamSecurityTypeUtility    : Constructing wildcard type for base package [org.axonframework.eventhandling.deadletter.jpa].
+2022-12-19 16:28:10.307  INFO 98233 --- [main] o.a.s.util.XStreamSecurityTypeUtility    : Constructing wildcard type for base package [org.axonframework.modelling.saga.repository.jpa].
+2022-12-19 16:28:10.307  INFO 98233 --- [main] o.a.s.util.XStreamSecurityTypeUtility    : Constructing wildcard type for base package [org.axonframework.eventsourcing.eventstore.jpa].
+2022-12-19 16:28:10.317  INFO 98233 --- [main] o.a.serialization.ChainingConverter      : ContentTypeConverter of type [class org.axonframework.serialization.xml.Dom4JToByteArrayConverter] is ignored. It seems to rely on a class that is not available in the class loader: org/dom4j/Document
+2022-12-19 16:28:10.318  INFO 98233 --- [main] o.a.serialization.ChainingConverter      : ContentTypeConverter of type [class org.axonframework.serialization.xml.InputStreamToDom4jConverter] is ignored. It seems to rely on a class that is not available in the class loader: org/dom4j/Document
+2022-12-19 16:28:10.318  INFO 98233 --- [main] o.a.serialization.ChainingConverter      : ContentTypeConverter of type [class org.axonframework.serialization.xml.XomToStringConverter] is ignored. It seems to rely on a class that is not available in the class loader: nu/xom/Document
+2022-12-19 16:28:10.319  INFO 98233 --- [main] o.a.serialization.ChainingConverter      : ContentTypeConverter of type [class org.axonframework.serialization.xml.InputStreamToXomConverter] is ignored. It seems to rely on a class that is not available in the class loader: nu/xom/ParsingException
+2022-12-19 16:28:10.898  INFO 98233 --- [main] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat started on port(s): 9093 (http) with context path ''
+2022-12-19 16:28:11.252  INFO 98233 --- [main] i.a.a.c.impl.AxonServerManagedChannel    : Requesting connection details from localhost:8124
+2022-12-19 16:28:11.559  INFO 98233 --- [main] i.a.a.c.impl.AxonServerManagedChannel    : Successfully connected to localhost:8124
+2022-12-19 16:28:11.573  INFO 98233 --- [main] i.a.a.connector.impl.ControlChannelImpl  : Connected instruction stream for context 'default'. Sending client identification
+2022-12-19 16:28:11.603  INFO 98233 --- [main] i.a.a.c.command.impl.CommandChannelImpl  : CommandChannel for context 'default' connected, 0 command handlers registered
+2022-12-19 16:28:11.610  INFO 98233 --- [main] i.a.a.c.command.impl.CommandChannelImpl  : Registered handler for command 'com.airscholar.CommonService.commands.ValidatePaymentCommand' in context 'default'
+2022-12-19 16:28:11.906  INFO 98233 --- [main] c.a.P.PaymentServiceApplication          : Started PaymentServiceApplication in 7.478 seconds (JVM running for 9.091)
+2022-12-19 16:28:12.041  INFO 98233 --- [EventProcessor[com.airscholar.PaymentService.command.api.events]-0] o.a.e.TrackingEventProcessor             : Worker assigned to segment Segment[0/0] for processing
+2022-12-19 16:28:12.163  INFO 98233 --- [EventProcessor[com.airscholar.PaymentService.command.api.events]-0] o.a.e.TrackingEventProcessor             : Using current Thread for last segment worker: TrackingSegmentWorker{processor=com.airscholar.PaymentService.command.api.events, segment=Segment[0/0]}
+2022-12-19 16:28:12.331  INFO 98233 --- [EventProcessor[com.airscholar.PaymentService.command.api.events]-0] o.a.e.TrackingEventProcessor             : Fetched token: IndexTrackingToken{globalIndex=27} for segment: Segment[0/0]
+2022-12-19 16:40:11.356  INFO 98233 --- [SpringApplicationShutdownHook] o.a.e.TrackingEventProcessor             : Shutdown state set for Processor 'com.airscholar.PaymentService.command.api.events'.
+2022-12-19 16:40:11.395  INFO 98233 --- [SpringApplicationShutdownHook] o.a.e.TrackingEventProcessor             : Processor 'com.airscholar.PaymentService.command.api.events' awaiting termination...
+2022-12-19 16:40:12.439  INFO 98233 --- [EventProcessor[com.airscholar.PaymentService.command.api.events]-0] o.a.e.TrackingEventProcessor             : Released claim
+2022-12-19 16:40:12.462  INFO 98233 --- [EventProcessor[com.airscholar.PaymentService.command.api.events]-0] o.a.e.TrackingEventProcessor             : Worker for segment Segment[0/0] stopped.
+2022-12-19 16:40:12.559  INFO 98233 --- [SpringApplicationShutdownHook] i.a.a.c.command.impl.CommandChannelImpl  : Unregistered handler for command 'com.airscholar.CommonService.commands.ValidatePaymentCommand' in context 'default'
+2022-12-19 16:40:13.102  INFO 98233 --- [SpringApplicationShutdownHook] j.LocalContainerEntityManagerFactoryBean : Closing JPA EntityManagerFactory for persistence unit 'default'
+2022-12-19 16:40:13.148  INFO 98233 --- [SpringApplicationShutdownHook] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Shutdown initiated...
+2022-12-19 16:40:13.189  INFO 98233 --- [SpringApplicationShutdownHook] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Shutdown completed.
+2022-12-19 16:40:34.030  INFO 99696 --- [main] c.a.P.PaymentServiceApplication          : Starting PaymentServiceApplication using Java 17.0.1 on ed-dynamic-158-197.wless.cranfield.ac.uk with PID 99696 (/Users/airscholar/IdeaProjects/OrderApp/PaymentService/target/classes started by airscholar in /Users/airscholar/IdeaProjects/OrderApp)
+2022-12-19 16:40:34.034  INFO 99696 --- [main] c.a.P.PaymentServiceApplication          : No active profile set, falling back to 1 default profile: "default"
+2022-12-19 16:40:35.362  INFO 99696 --- [main] .s.d.r.c.RepositoryConfigurationDelegate : Bootstrapping Spring Data JPA repositories in DEFAULT mode.
+2022-12-19 16:40:35.630  INFO 99696 --- [main] .s.d.r.c.RepositoryConfigurationDelegate : Finished Spring Data repository scanning in 258 ms. Found 1 JPA repository interfaces.
+2022-12-19 16:40:36.829  INFO 99696 --- [main] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat initialized with port(s): 9093 (http)
+2022-12-19 16:40:36.844  INFO 99696 --- [main] o.apache.catalina.core.StandardService   : Starting service [Tomcat]
+2022-12-19 16:40:36.844  INFO 99696 --- [main] org.apache.catalina.core.StandardEngine  : Starting Servlet engine: [Apache Tomcat/9.0.65]
+2022-12-19 16:40:37.150  INFO 99696 --- [main] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring embedded WebApplicationContext
+2022-12-19 16:40:37.151  INFO 99696 --- [main] w.s.c.ServletWebServerApplicationContext : Root WebApplicationContext: initialization completed in 3006 ms
+2022-12-19 16:40:37.298  INFO 99696 --- [main] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Starting...
+2022-12-19 16:40:37.705  INFO 99696 --- [main] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Start completed.
+2022-12-19 16:40:37.723  INFO 99696 --- [main] o.s.b.a.h2.H2ConsoleAutoConfiguration    : H2 console available at '/h2-console'. Database available at 'jdbc:h2:file:~/data/paymentDB'
+2022-12-19 16:40:38.083  INFO 99696 --- [main] o.hibernate.jpa.internal.util.LogHelper  : HHH000204: Processing PersistenceUnitInfo [name: default]
+2022-12-19 16:40:38.135  INFO 99696 --- [main] org.hibernate.Version                    : HHH000412: Hibernate ORM core version 5.6.10.Final
+2022-12-19 16:40:38.287  INFO 99696 --- [main] o.hibernate.annotations.common.Version   : HCANN000001: Hibernate Commons Annotations {5.1.2.Final}
+2022-12-19 16:40:38.358  INFO 99696 --- [main] org.hibernate.dialect.Dialect            : HHH000400: Using dialect: org.hibernate.dialect.H2Dialect
+2022-12-19 16:40:39.485  INFO 99696 --- [main] o.h.e.t.j.p.i.JtaPlatformInitiator       : HHH000490: Using JtaPlatform implementation: [org.hibernate.engine.transaction.jta.platform.internal.NoJtaPlatform]
+2022-12-19 16:40:39.491  INFO 99696 --- [main] j.LocalContainerEntityManagerFactoryBean : Initialized JPA EntityManagerFactory for persistence unit 'default'
+2022-12-19 16:40:39.868  WARN 99696 --- [main] JpaBaseConfiguration$JpaWebConfiguration : spring.jpa.open-in-view is enabled by default. Therefore, database queries may be performed during view rendering. Explicitly configure spring.jpa.open-in-view to disable this warning
+2022-12-19 16:40:40.184  INFO 99696 --- [main] o.a.s.a.XStreamAutoConfiguration         : Initializing an XStream instance since none was found. The auto configuration base packages will be used as wildcards for the XStream security settings.
+2022-12-19 16:40:40.368  INFO 99696 --- [main] o.a.s.util.XStreamSecurityTypeUtility    : Constructing wildcard type for base package [com.airscholar.PaymentService].
+2022-12-19 16:40:40.369  INFO 99696 --- [main] o.a.s.util.XStreamSecurityTypeUtility    : Constructing wildcard type for base package [org.axonframework.eventhandling.tokenstore].
+2022-12-19 16:40:40.369  INFO 99696 --- [main] o.a.s.util.XStreamSecurityTypeUtility    : Constructing wildcard type for base package [org.axonframework.eventhandling.deadletter.jpa].
+2022-12-19 16:40:40.369  INFO 99696 --- [main] o.a.s.util.XStreamSecurityTypeUtility    : Constructing wildcard type for base package [org.axonframework.modelling.saga.repository.jpa].
+2022-12-19 16:40:40.370  INFO 99696 --- [main] o.a.s.util.XStreamSecurityTypeUtility    : Constructing wildcard type for base package [org.axonframework.eventsourcing.eventstore.jpa].
+2022-12-19 16:40:40.382  INFO 99696 --- [main] o.a.serialization.ChainingConverter      : ContentTypeConverter of type [class org.axonframework.serialization.xml.Dom4JToByteArrayConverter] is ignored. It seems to rely on a class that is not available in the class loader: org/dom4j/Document
+2022-12-19 16:40:40.382  INFO 99696 --- [main] o.a.serialization.ChainingConverter      : ContentTypeConverter of type [class org.axonframework.serialization.xml.InputStreamToDom4jConverter] is ignored. It seems to rely on a class that is not available in the class loader: org/dom4j/Document
+2022-12-19 16:40:40.382  INFO 99696 --- [main] o.a.serialization.ChainingConverter      : ContentTypeConverter of type [class org.axonframework.serialization.xml.XomToStringConverter] is ignored. It seems to rely on a class that is not available in the class loader: nu/xom/Document
+2022-12-19 16:40:40.383  INFO 99696 --- [main] o.a.serialization.ChainingConverter      : ContentTypeConverter of type [class org.axonframework.serialization.xml.InputStreamToXomConverter] is ignored. It seems to rely on a class that is not available in the class loader: nu/xom/ParsingException
+2022-12-19 16:40:40.832  INFO 99696 --- [main] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat started on port(s): 9093 (http) with context path ''
+2022-12-19 16:40:41.086  INFO 99696 --- [main] i.a.a.c.impl.AxonServerManagedChannel    : Requesting connection details from localhost:8124
+2022-12-19 16:40:41.288  INFO 99696 --- [main] i.a.a.c.impl.AxonServerManagedChannel    : Successfully connected to localhost:8124
+2022-12-19 16:40:41.299  INFO 99696 --- [main] i.a.a.connector.impl.ControlChannelImpl  : Connected instruction stream for context 'default'. Sending client identification
+2022-12-19 16:40:41.311  INFO 99696 --- [main] i.a.a.c.command.impl.CommandChannelImpl  : CommandChannel for context 'default' connected, 0 command handlers registered
+2022-12-19 16:40:41.312  INFO 99696 --- [main] i.a.a.c.command.impl.CommandChannelImpl  : Registered handler for command 'com.airscholar.CommonService.commands.ValidatePaymentCommand' in context 'default'
+2022-12-19 16:40:41.427  INFO 99696 --- [main] c.a.P.PaymentServiceApplication          : Started PaymentServiceApplication in 8.742 seconds (JVM running for 10.951)
+2022-12-19 16:40:41.442  INFO 99696 --- [EventProcessor[com.airscholar.PaymentService.command.api.events]-0] o.a.e.TrackingEventProcessor             : Worker assigned to segment Segment[0/0] for processing
+2022-12-19 16:40:41.452  INFO 99696 --- [EventProcessor[com.airscholar.PaymentService.command.api.events]-0] o.a.e.TrackingEventProcessor             : Using current Thread for last segment worker: TrackingSegmentWorker{processor=com.airscholar.PaymentService.command.api.events, segment=Segment[0/0]}
+2022-12-19 16:40:41.457  INFO 99696 --- [EventProcessor[com.airscholar.PaymentService.command.api.events]-0] o.a.e.TrackingEventProcessor             : Fetched token: IndexTrackingToken{globalIndex=28} for segment: Segment[0/0]
+2022-12-19 16:44:31.245  INFO 99696 --- [SpringApplicationShutdownHook] o.a.e.TrackingEventProcessor             : Shutdown state set for Processor 'com.airscholar.PaymentService.command.api.events'.
+2022-12-19 16:44:31.251  INFO 99696 --- [SpringApplicationShutdownHook] o.a.e.TrackingEventProcessor             : Processor 'com.airscholar.PaymentService.command.api.events' awaiting termination...
+2022-12-19 16:44:31.725  INFO 99696 --- [EventProcessor[com.airscholar.PaymentService.command.api.events]-0] o.a.e.TrackingEventProcessor             : Released claim
+2022-12-19 16:44:31.732  INFO 99696 --- [EventProcessor[com.airscholar.PaymentService.command.api.events]-0] o.a.e.TrackingEventProcessor             : Worker for segment Segment[0/0] stopped.
+2022-12-19 16:44:31.773  INFO 99696 --- [SpringApplicationShutdownHook] i.a.a.c.command.impl.CommandChannelImpl  : Unregistered handler for command 'com.airscholar.CommonService.commands.ValidatePaymentCommand' in context 'default'
+2022-12-19 16:44:31.946  INFO 99696 --- [SpringApplicationShutdownHook] i.a.a.c.command.impl.CommandChannelImpl  : Waiting for 1 commands to be completed
+2022-12-19 16:44:37.418  INFO 99696 --- [SpringApplicationShutdownHook] i.a.a.c.command.impl.CommandChannelImpl  : Waiting for 1 commands to be completed
+2022-12-19 16:44:42.436  INFO 99696 --- [SpringApplicationShutdownHook] j.LocalContainerEntityManagerFactoryBean : Closing JPA EntityManagerFactory for persistence unit 'default'
+2022-12-19 16:44:42.449  INFO 99696 --- [SpringApplicationShutdownHook] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Shutdown initiated...
+2022-12-19 16:44:42.480  INFO 99696 --- [SpringApplicationShutdownHook] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Shutdown completed.
+2022-12-19 16:45:01.514  INFO 319 --- [main] c.a.P.PaymentServiceApplication          : Starting PaymentServiceApplication using Java 17.0.1 on ed-dynamic-158-197.wless.cranfield.ac.uk with PID 319 (/Users/airscholar/IdeaProjects/OrderApp/PaymentService/target/classes started by airscholar in /Users/airscholar/IdeaProjects/OrderApp)
+2022-12-19 16:45:01.518  INFO 319 --- [main] c.a.P.PaymentServiceApplication          : No active profile set, falling back to 1 default profile: "default"
+2022-12-19 16:45:02.647  INFO 319 --- [main] .s.d.r.c.RepositoryConfigurationDelegate : Bootstrapping Spring Data JPA repositories in DEFAULT mode.
+2022-12-19 16:45:02.803  INFO 319 --- [main] .s.d.r.c.RepositoryConfigurationDelegate : Finished Spring Data repository scanning in 150 ms. Found 1 JPA repository interfaces.
+2022-12-19 16:45:03.559  INFO 319 --- [main] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat initialized with port(s): 9093 (http)
+2022-12-19 16:45:03.565  INFO 319 --- [main] o.apache.catalina.core.StandardService   : Starting service [Tomcat]
+2022-12-19 16:45:03.565  INFO 319 --- [main] org.apache.catalina.core.StandardEngine  : Starting Servlet engine: [Apache Tomcat/9.0.65]
+2022-12-19 16:45:03.674  INFO 319 --- [main] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring embedded WebApplicationContext
+2022-12-19 16:45:03.674  INFO 319 --- [main] w.s.c.ServletWebServerApplicationContext : Root WebApplicationContext: initialization completed in 2021 ms
+2022-12-19 16:45:03.710  INFO 319 --- [main] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Starting...
+2022-12-19 16:45:03.929  INFO 319 --- [main] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Start completed.
+2022-12-19 16:45:03.943  INFO 319 --- [main] o.s.b.a.h2.H2ConsoleAutoConfiguration    : H2 console available at '/h2-console'. Database available at 'jdbc:h2:file:~/data/paymentDB'
+2022-12-19 16:45:04.128  INFO 319 --- [main] o.hibernate.jpa.internal.util.LogHelper  : HHH000204: Processing PersistenceUnitInfo [name: default]
+2022-12-19 16:45:04.160  INFO 319 --- [main] org.hibernate.Version                    : HHH000412: Hibernate ORM core version 5.6.10.Final
+2022-12-19 16:45:04.250  INFO 319 --- [main] o.hibernate.annotations.common.Version   : HCANN000001: Hibernate Commons Annotations {5.1.2.Final}
+2022-12-19 16:45:04.305  INFO 319 --- [main] org.hibernate.dialect.Dialect            : HHH000400: Using dialect: org.hibernate.dialect.H2Dialect
+2022-12-19 16:45:04.842  INFO 319 --- [main] o.h.e.t.j.p.i.JtaPlatformInitiator       : HHH000490: Using JtaPlatform implementation: [org.hibernate.engine.transaction.jta.platform.internal.NoJtaPlatform]
+2022-12-19 16:45:04.850  INFO 319 --- [main] j.LocalContainerEntityManagerFactoryBean : Initialized JPA EntityManagerFactory for persistence unit 'default'
+2022-12-19 16:45:05.097  WARN 319 --- [main] JpaBaseConfiguration$JpaWebConfiguration : spring.jpa.open-in-view is enabled by default. Therefore, database queries may be performed during view rendering. Explicitly configure spring.jpa.open-in-view to disable this warning
+2022-12-19 16:45:05.373  INFO 319 --- [main] o.a.s.a.XStreamAutoConfiguration         : Initializing an XStream instance since none was found. The auto configuration base packages will be used as wildcards for the XStream security settings.
+2022-12-19 16:45:05.489  INFO 319 --- [main] o.a.s.util.XStreamSecurityTypeUtility    : Constructing wildcard type for base package [com.airscholar.PaymentService].
+2022-12-19 16:45:05.490  INFO 319 --- [main] o.a.s.util.XStreamSecurityTypeUtility    : Constructing wildcard type for base package [org.axonframework.eventhandling.tokenstore].
+2022-12-19 16:45:05.490  INFO 319 --- [main] o.a.s.util.XStreamSecurityTypeUtility    : Constructing wildcard type for base package [org.axonframework.eventhandling.deadletter.jpa].
+2022-12-19 16:45:05.490  INFO 319 --- [main] o.a.s.util.XStreamSecurityTypeUtility    : Constructing wildcard type for base package [org.axonframework.modelling.saga.repository.jpa].
+2022-12-19 16:45:05.490  INFO 319 --- [main] o.a.s.util.XStreamSecurityTypeUtility    : Constructing wildcard type for base package [org.axonframework.eventsourcing.eventstore.jpa].
+2022-12-19 16:45:05.497  INFO 319 --- [main] o.a.serialization.ChainingConverter      : ContentTypeConverter of type [class org.axonframework.serialization.xml.Dom4JToByteArrayConverter] is ignored. It seems to rely on a class that is not available in the class loader: org/dom4j/Document
+2022-12-19 16:45:05.497  INFO 319 --- [main] o.a.serialization.ChainingConverter      : ContentTypeConverter of type [class org.axonframework.serialization.xml.InputStreamToDom4jConverter] is ignored. It seems to rely on a class that is not available in the class loader: org/dom4j/Document
+2022-12-19 16:45:05.497  INFO 319 --- [main] o.a.serialization.ChainingConverter      : ContentTypeConverter of type [class org.axonframework.serialization.xml.XomToStringConverter] is ignored. It seems to rely on a class that is not available in the class loader: nu/xom/Document
+2022-12-19 16:45:05.498  INFO 319 --- [main] o.a.serialization.ChainingConverter      : ContentTypeConverter of type [class org.axonframework.serialization.xml.InputStreamToXomConverter] is ignored. It seems to rely on a class that is not available in the class loader: nu/xom/ParsingException
+2022-12-19 16:45:05.857  INFO 319 --- [main] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat started on port(s): 9093 (http) with context path ''
+2022-12-19 16:45:06.078  INFO 319 --- [main] i.a.a.c.impl.AxonServerManagedChannel    : Requesting connection details from localhost:8124
+2022-12-19 16:45:06.242  INFO 319 --- [main] i.a.a.c.impl.AxonServerManagedChannel    : Successfully connected to localhost:8124
+2022-12-19 16:45:06.249  INFO 319 --- [main] i.a.a.connector.impl.ControlChannelImpl  : Connected instruction stream for context 'default'. Sending client identification
+2022-12-19 16:45:06.258  INFO 319 --- [main] i.a.a.c.command.impl.CommandChannelImpl  : CommandChannel for context 'default' connected, 0 command handlers registered
+2022-12-19 16:45:06.260  INFO 319 --- [main] i.a.a.c.command.impl.CommandChannelImpl  : Registered handler for command 'com.airscholar.CommonService.commands.ValidatePaymentCommand' in context 'default'
+2022-12-19 16:45:06.352  INFO 319 --- [main] c.a.P.PaymentServiceApplication          : Started PaymentServiceApplication in 5.501 seconds (JVM running for 6.472)
+2022-12-19 16:45:06.364  INFO 319 --- [EventProcessor[com.airscholar.PaymentService.command.api.events]-0] o.a.e.TrackingEventProcessor             : Worker assigned to segment Segment[0/0] for processing
+2022-12-19 16:45:06.372  INFO 319 --- [EventProcessor[com.airscholar.PaymentService.command.api.events]-0] o.a.e.TrackingEventProcessor             : Using current Thread for last segment worker: TrackingSegmentWorker{processor=com.airscholar.PaymentService.command.api.events, segment=Segment[0/0]}
+2022-12-19 16:45:06.378  INFO 319 --- [EventProcessor[com.airscholar.PaymentService.command.api.events]-0] o.a.e.TrackingEventProcessor             : Fetched token: IndexTrackingToken{globalIndex=29} for segment: Segment[0/0]
+2022-12-19 16:52:17.707  INFO 319 --- [SpringApplicationShutdownHook] o.a.e.TrackingEventProcessor             : Shutdown state set for Processor 'com.airscholar.PaymentService.command.api.events'.
+2022-12-19 16:52:17.859  INFO 319 --- [SpringApplicationShutdownHook] o.a.e.TrackingEventProcessor             : Processor 'com.airscholar.PaymentService.command.api.events' awaiting termination...
+2022-12-19 16:52:19.545  INFO 319 --- [EventProcessor[com.airscholar.PaymentService.command.api.events]-0] o.a.e.TrackingEventProcessor             : Released claim
+2022-12-19 16:52:19.593  INFO 319 --- [EventProcessor[com.airscholar.PaymentService.command.api.events]-0] o.a.e.TrackingEventProcessor             : Worker for segment Segment[0/0] stopped.
+2022-12-19 16:52:19.796  INFO 319 --- [SpringApplicationShutdownHook] i.a.a.c.command.impl.CommandChannelImpl  : Unregistered handler for command 'com.airscholar.CommonService.commands.ValidatePaymentCommand' in context 'default'
+2022-12-19 16:52:20.391  INFO 319 --- [SpringApplicationShutdownHook] i.a.a.c.command.impl.CommandChannelImpl  : Waiting for 1 commands to be completed
+2022-12-19 16:52:26.038  INFO 319 --- [SpringApplicationShutdownHook] i.a.a.c.command.impl.CommandChannelImpl  : Waiting for 1 commands to be completed
+2022-12-19 16:52:31.110  INFO 319 --- [SpringApplicationShutdownHook] j.LocalContainerEntityManagerFactoryBean : Closing JPA EntityManagerFactory for persistence unit 'default'
+2022-12-19 16:52:31.135  INFO 319 --- [SpringApplicationShutdownHook] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Shutdown initiated...
+2022-12-19 16:52:31.247  INFO 319 --- [SpringApplicationShutdownHook] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Shutdown completed.

@@ -1,6 +1,6 @@
 package com.airscholar.ShipmentService.command.api.events;
 
-import com.airscholar.OrderService.command.api.events.OrderShippedEvent;
+import com.airscholar.CommonService.events.OrderShippedEvent;
 import com.airscholar.ShipmentService.command.api.data.Shipment;
 import com.airscholar.ShipmentService.command.api.data.ShipmentRepository;
 import org.axonframework.eventhandling.EventHandler;

@@ -6,7 +6,6 @@ import lombok.NoArgsConstructor;
 
 @Data
 @AllArgsConstructor
-@NoArgsConstructor
 public class GetUserPaymentDetailsQuery {
     private String userId;
 }

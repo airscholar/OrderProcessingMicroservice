@@ -1,7 +1,7 @@
 package com.airscholar.ShipmentService.command.api.aggregate;
 
 import com.airscholar.CommonService.commands.ShipOrderCommand;
-import com.airscholar.OrderService.command.api.events.OrderShippedEvent;
+import com.airscholar.CommonService.events.OrderShippedEvent;
 import lombok.NoArgsConstructor;
 import org.axonframework.commandhandling.CommandHandler;
 import org.axonframework.eventsourcing.EventSourcingHandler;

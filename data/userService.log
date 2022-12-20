@@ -1,0 +1,911 @@
+2022-12-19 14:41:51.525  INFO 85861 --- [main] c.a.UserService.UserServiceApplication   : Starting UserServiceApplication using Java 17.0.1 on ed-dynamic-158-197.wless.cranfield.ac.uk with PID 85861 (/Users/airscholar/IdeaProjects/OrderApp/UserService/target/classes started by airscholar in /Users/airscholar/IdeaProjects/OrderApp)
+2022-12-19 14:41:51.529  INFO 85861 --- [main] c.a.UserService.UserServiceApplication   : No active profile set, falling back to 1 default profile: "default"
+2022-12-19 14:41:52.806  INFO 85861 --- [main] .s.d.r.c.RepositoryConfigurationDelegate : Bootstrapping Spring Data JPA repositories in DEFAULT mode.
+2022-12-19 14:41:52.976  INFO 85861 --- [main] .s.d.r.c.RepositoryConfigurationDelegate : Finished Spring Data repository scanning in 162 ms. Found 1 JPA repository interfaces.
+2022-12-19 14:41:53.793  INFO 85861 --- [main] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat initialized with port(s): 9092 (http)
+2022-12-19 14:41:53.803  INFO 85861 --- [main] o.apache.catalina.core.StandardService   : Starting service [Tomcat]
+2022-12-19 14:41:53.803  INFO 85861 --- [main] org.apache.catalina.core.StandardEngine  : Starting Servlet engine: [Apache Tomcat/9.0.65]
+2022-12-19 14:41:53.929  INFO 85861 --- [main] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring embedded WebApplicationContext
+2022-12-19 14:41:53.930  INFO 85861 --- [main] w.s.c.ServletWebServerApplicationContext : Root WebApplicationContext: initialization completed in 2257 ms
+2022-12-19 14:41:53.995  INFO 85861 --- [main] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Starting...
+2022-12-19 14:41:54.256  INFO 85861 --- [main] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Start completed.
+2022-12-19 14:41:54.270  INFO 85861 --- [main] o.s.b.a.h2.H2ConsoleAutoConfiguration    : H2 console available at '/h2-console'. Database available at 'jdbc:h2:file:~/data/userDB'
+2022-12-19 14:41:54.479  INFO 85861 --- [main] o.hibernate.jpa.internal.util.LogHelper  : HHH000204: Processing PersistenceUnitInfo [name: default]
+2022-12-19 14:41:54.509  INFO 85861 --- [main] org.hibernate.Version                    : HHH000412: Hibernate ORM core version 5.6.10.Final
+2022-12-19 14:41:54.601  INFO 85861 --- [main] o.hibernate.annotations.common.Version   : HCANN000001: Hibernate Commons Annotations {5.1.2.Final}
+2022-12-19 14:41:54.657  INFO 85861 --- [main] org.hibernate.dialect.Dialect            : HHH000400: Using dialect: org.hibernate.dialect.H2Dialect
+2022-12-19 14:41:55.261  INFO 85861 --- [main] o.h.e.t.j.p.i.JtaPlatformInitiator       : HHH000490: Using JtaPlatform implementation: [org.hibernate.engine.transaction.jta.platform.internal.NoJtaPlatform]
+2022-12-19 14:41:55.266  INFO 85861 --- [main] j.LocalContainerEntityManagerFactoryBean : Initialized JPA EntityManagerFactory for persistence unit 'default'
+2022-12-19 14:41:55.411  WARN 85861 --- [main] ConfigServletWebServerApplicationContext : Exception encountered during context initialization - cancelling refresh attempt: org.springframework.beans.factory.UnsatisfiedDependencyException: Error creating bean with name 'userController' defined in file [/Users/airscholar/IdeaProjects/OrderApp/UserService/target/classes/com/airscholar/UserService/controller/UserController.class]: Unsatisfied dependency expressed through constructor parameter 0; nested exception is org.springframework.beans.factory.BeanCreationException: Error creating bean with name 'userRepository' defined in com.airscholar.UserService.data.UserRepository defined in @EnableJpaRepositories declared on JpaRepositoriesRegistrar.EnableJpaRepositoriesConfiguration: Invocation of init method failed; nested exception is java.lang.IllegalArgumentException: Not a managed type: class com.airscholar.CommonService.data.User
+2022-12-19 14:41:55.411  INFO 85861 --- [main] j.LocalContainerEntityManagerFactoryBean : Closing JPA EntityManagerFactory for persistence unit 'default'
+2022-12-19 14:41:55.413  INFO 85861 --- [main] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Shutdown initiated...
+2022-12-19 14:41:55.464  INFO 85861 --- [main] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Shutdown completed.
+2022-12-19 14:41:55.466  INFO 85861 --- [main] o.apache.catalina.core.StandardService   : Stopping service [Tomcat]
+2022-12-19 14:41:55.483  INFO 85861 --- [main] ConditionEvaluationReportLoggingListener : 
+
+Error starting ApplicationContext. To display the conditions report re-run your application with 'debug' enabled.
+2022-12-19 14:41:55.507 ERROR 85861 --- [main] o.s.boot.SpringApplication               : Application run failed
+
+org.springframework.beans.factory.UnsatisfiedDependencyException: Error creating bean with name 'userController' defined in file [/Users/airscholar/IdeaProjects/OrderApp/UserService/target/classes/com/airscholar/UserService/controller/UserController.class]: Unsatisfied dependency expressed through constructor parameter 0; nested exception is org.springframework.beans.factory.BeanCreationException: Error creating bean with name 'userRepository' defined in com.airscholar.UserService.data.UserRepository defined in @EnableJpaRepositories declared on JpaRepositoriesRegistrar.EnableJpaRepositoriesConfiguration: Invocation of init method failed; nested exception is java.lang.IllegalArgumentException: Not a managed type: class com.airscholar.CommonService.data.User
+	at org.springframework.beans.factory.support.ConstructorResolver.createArgumentArray(ConstructorResolver.java:800) ~[spring-beans-5.3.22.jar:5.3.22]
+	at org.springframework.beans.factory.support.ConstructorResolver.autowireConstructor(ConstructorResolver.java:229) ~[spring-beans-5.3.22.jar:5.3.22]
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.autowireConstructor(AbstractAutowireCapableBeanFactory.java:1372) ~[spring-beans-5.3.22.jar:5.3.22]
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.createBeanInstance(AbstractAutowireCapableBeanFactory.java:1222) ~[spring-beans-5.3.22.jar:5.3.22]
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.doCreateBean(AbstractAutowireCapableBeanFactory.java:582) ~[spring-beans-5.3.22.jar:5.3.22]
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.createBean(AbstractAutowireCapableBeanFactory.java:542) ~[spring-beans-5.3.22.jar:5.3.22]
+	at org.springframework.beans.factory.support.AbstractBeanFactory.lambda$doGetBean$0(AbstractBeanFactory.java:335) ~[spring-beans-5.3.22.jar:5.3.22]
+	at org.springframework.beans.factory.support.DefaultSingletonBeanRegistry.getSingleton(DefaultSingletonBeanRegistry.java:234) ~[spring-beans-5.3.22.jar:5.3.22]
+	at org.springframework.beans.factory.support.AbstractBeanFactory.doGetBean(AbstractBeanFactory.java:333) ~[spring-beans-5.3.22.jar:5.3.22]
+	at org.springframework.beans.factory.support.AbstractBeanFactory.getBean(AbstractBeanFactory.java:208) ~[spring-beans-5.3.22.jar:5.3.22]
+	at org.springframework.beans.factory.support.DefaultListableBeanFactory.preInstantiateSingletons(DefaultListableBeanFactory.java:955) ~[spring-beans-5.3.22.jar:5.3.22]
+	at org.springframework.context.support.AbstractApplicationContext.finishBeanFactoryInitialization(AbstractApplicationContext.java:918) ~[spring-context-5.3.22.jar:5.3.22]
+	at org.springframework.context.support.AbstractApplicationContext.refresh(AbstractApplicationContext.java:583) ~[spring-context-5.3.22.jar:5.3.22]
+	at org.springframework.boot.web.servlet.context.ServletWebServerApplicationContext.refresh(ServletWebServerApplicationContext.java:147) ~[spring-boot-2.7.3.jar:2.7.3]
+	at org.springframework.boot.SpringApplication.refresh(SpringApplication.java:734) ~[spring-boot-2.7.3.jar:2.7.3]
+	at org.springframework.boot.SpringApplication.refreshContext(SpringApplication.java:408) ~[spring-boot-2.7.3.jar:2.7.3]
+	at org.springframework.boot.SpringApplication.run(SpringApplication.java:308) ~[spring-boot-2.7.3.jar:2.7.3]
+	at org.springframework.boot.SpringApplication.run(SpringApplication.java:1306) ~[spring-boot-2.7.3.jar:2.7.3]
+	at org.springframework.boot.SpringApplication.run(SpringApplication.java:1295) ~[spring-boot-2.7.3.jar:2.7.3]
+	at com.airscholar.UserService.UserServiceApplication.main(UserServiceApplication.java:11) ~[classes/:na]
+Caused by: org.springframework.beans.factory.BeanCreationException: Error creating bean with name 'userRepository' defined in com.airscholar.UserService.data.UserRepository defined in @EnableJpaRepositories declared on JpaRepositoriesRegistrar.EnableJpaRepositoriesConfiguration: Invocation of init method failed; nested exception is java.lang.IllegalArgumentException: Not a managed type: class com.airscholar.CommonService.data.User
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.initializeBean(AbstractAutowireCapableBeanFactory.java:1804) ~[spring-beans-5.3.22.jar:5.3.22]
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.doCreateBean(AbstractAutowireCapableBeanFactory.java:620) ~[spring-beans-5.3.22.jar:5.3.22]
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.createBean(AbstractAutowireCapableBeanFactory.java:542) ~[spring-beans-5.3.22.jar:5.3.22]
+	at org.springframework.beans.factory.support.AbstractBeanFactory.lambda$doGetBean$0(AbstractBeanFactory.java:335) ~[spring-beans-5.3.22.jar:5.3.22]
+	at org.springframework.beans.factory.support.DefaultSingletonBeanRegistry.getSingleton(DefaultSingletonBeanRegistry.java:234) ~[spring-beans-5.3.22.jar:5.3.22]
+	at org.springframework.beans.factory.support.AbstractBeanFactory.doGetBean(AbstractBeanFactory.java:333) ~[spring-beans-5.3.22.jar:5.3.22]
+	at org.springframework.beans.factory.support.AbstractBeanFactory.getBean(AbstractBeanFactory.java:208) ~[spring-beans-5.3.22.jar:5.3.22]
+	at org.springframework.beans.factory.config.DependencyDescriptor.resolveCandidate(DependencyDescriptor.java:276) ~[spring-beans-5.3.22.jar:5.3.22]
+	at org.springframework.beans.factory.support.DefaultListableBeanFactory.doResolveDependency(DefaultListableBeanFactory.java:1391) ~[spring-beans-5.3.22.jar:5.3.22]
+	at org.springframework.beans.factory.support.DefaultListableBeanFactory.resolveDependency(DefaultListableBeanFactory.java:1311) ~[spring-beans-5.3.22.jar:5.3.22]
+	at org.springframework.beans.factory.support.ConstructorResolver.resolveAutowiredArgument(ConstructorResolver.java:887) ~[spring-beans-5.3.22.jar:5.3.22]
+	at org.springframework.beans.factory.support.ConstructorResolver.createArgumentArray(ConstructorResolver.java:791) ~[spring-beans-5.3.22.jar:5.3.22]
+	... 19 common frames omitted
+Caused by: java.lang.IllegalArgumentException: Not a managed type: class com.airscholar.CommonService.data.User
+	at org.hibernate.metamodel.internal.MetamodelImpl.managedType(MetamodelImpl.java:582) ~[hibernate-core-5.6.10.Final.jar:5.6.10.Final]
+	at org.hibernate.metamodel.internal.MetamodelImpl.managedType(MetamodelImpl.java:85) ~[hibernate-core-5.6.10.Final.jar:5.6.10.Final]
+	at org.springframework.data.jpa.repository.support.JpaMetamodelEntityInformation.<init>(JpaMetamodelEntityInformation.java:75) ~[spring-data-jpa-2.7.2.jar:2.7.2]
+	at org.springframework.data.jpa.repository.support.JpaEntityInformationSupport.getEntityInformation(JpaEntityInformationSupport.java:66) ~[spring-data-jpa-2.7.2.jar:2.7.2]
+	at org.springframework.data.jpa.repository.support.JpaRepositoryFactory.getEntityInformation(JpaRepositoryFactory.java:233) ~[spring-data-jpa-2.7.2.jar:2.7.2]
+	at org.springframework.data.jpa.repository.support.JpaRepositoryFactory.getTargetRepository(JpaRepositoryFactory.java:182) ~[spring-data-jpa-2.7.2.jar:2.7.2]
+	at org.springframework.data.jpa.repository.support.JpaRepositoryFactory.getTargetRepository(JpaRepositoryFactory.java:165) ~[spring-data-jpa-2.7.2.jar:2.7.2]
+	at org.springframework.data.jpa.repository.support.JpaRepositoryFactory.getTargetRepository(JpaRepositoryFactory.java:76) ~[spring-data-jpa-2.7.2.jar:2.7.2]
+	at org.springframework.data.repository.core.support.RepositoryFactorySupport.getRepository(RepositoryFactorySupport.java:325) ~[spring-data-commons-2.7.2.jar:2.7.2]
+	at org.springframework.data.repository.core.support.RepositoryFactoryBeanSupport.lambda$afterPropertiesSet$5(RepositoryFactoryBeanSupport.java:323) ~[spring-data-commons-2.7.2.jar:2.7.2]
+	at org.springframework.data.util.Lazy.getNullable(Lazy.java:231) ~[spring-data-commons-2.7.2.jar:2.7.2]
+	at org.springframework.data.util.Lazy.get(Lazy.java:115) ~[spring-data-commons-2.7.2.jar:2.7.2]
+	at org.springframework.data.repository.core.support.RepositoryFactoryBeanSupport.afterPropertiesSet(RepositoryFactoryBeanSupport.java:329) ~[spring-data-commons-2.7.2.jar:2.7.2]
+	at org.springframework.data.jpa.repository.support.JpaRepositoryFactoryBean.afterPropertiesSet(JpaRepositoryFactoryBean.java:144) ~[spring-data-jpa-2.7.2.jar:2.7.2]
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.invokeInitMethods(AbstractAutowireCapableBeanFactory.java:1863) ~[spring-beans-5.3.22.jar:5.3.22]
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.initializeBean(AbstractAutowireCapableBeanFactory.java:1800) ~[spring-beans-5.3.22.jar:5.3.22]
+	... 30 common frames omitted
+
+2022-12-19 14:44:36.096  INFO 86200 --- [main] c.a.UserService.UserServiceApplication   : Starting UserServiceApplication using Java 17.0.1 on ed-dynamic-158-197.wless.cranfield.ac.uk with PID 86200 (/Users/airscholar/IdeaProjects/OrderApp/UserService/target/classes started by airscholar in /Users/airscholar/IdeaProjects/OrderApp)
+2022-12-19 14:44:36.101  INFO 86200 --- [main] c.a.UserService.UserServiceApplication   : No active profile set, falling back to 1 default profile: "default"
+2022-12-19 14:44:37.119  INFO 86200 --- [main] .s.d.r.c.RepositoryConfigurationDelegate : Bootstrapping Spring Data JPA repositories in DEFAULT mode.
+2022-12-19 14:44:37.271  INFO 86200 --- [main] .s.d.r.c.RepositoryConfigurationDelegate : Finished Spring Data repository scanning in 145 ms. Found 1 JPA repository interfaces.
+2022-12-19 14:44:38.068  INFO 86200 --- [main] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat initialized with port(s): 9092 (http)
+2022-12-19 14:44:38.074  INFO 86200 --- [main] o.apache.catalina.core.StandardService   : Starting service [Tomcat]
+2022-12-19 14:44:38.074  INFO 86200 --- [main] org.apache.catalina.core.StandardEngine  : Starting Servlet engine: [Apache Tomcat/9.0.65]
+2022-12-19 14:44:38.200  INFO 86200 --- [main] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring embedded WebApplicationContext
+2022-12-19 14:44:38.201  INFO 86200 --- [main] w.s.c.ServletWebServerApplicationContext : Root WebApplicationContext: initialization completed in 1986 ms
+2022-12-19 14:44:38.246  INFO 86200 --- [main] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Starting...
+2022-12-19 14:44:38.464  INFO 86200 --- [main] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Start completed.
+2022-12-19 14:44:38.478  INFO 86200 --- [main] o.s.b.a.h2.H2ConsoleAutoConfiguration    : H2 console available at '/h2-console'. Database available at 'jdbc:h2:file:~/data/userDB'
+2022-12-19 14:44:38.672  INFO 86200 --- [main] o.hibernate.jpa.internal.util.LogHelper  : HHH000204: Processing PersistenceUnitInfo [name: default]
+2022-12-19 14:44:38.707  INFO 86200 --- [main] org.hibernate.Version                    : HHH000412: Hibernate ORM core version 5.6.10.Final
+2022-12-19 14:44:38.805  INFO 86200 --- [main] o.hibernate.annotations.common.Version   : HCANN000001: Hibernate Commons Annotations {5.1.2.Final}
+2022-12-19 14:44:38.871  INFO 86200 --- [main] org.hibernate.dialect.Dialect            : HHH000400: Using dialect: org.hibernate.dialect.H2Dialect
+2022-12-19 14:44:39.376  INFO 86200 --- [main] o.h.e.t.j.p.i.JtaPlatformInitiator       : HHH000490: Using JtaPlatform implementation: [org.hibernate.engine.transaction.jta.platform.internal.NoJtaPlatform]
+2022-12-19 14:44:39.380  INFO 86200 --- [main] j.LocalContainerEntityManagerFactoryBean : Initialized JPA EntityManagerFactory for persistence unit 'default'
+2022-12-19 14:44:39.523  WARN 86200 --- [main] ConfigServletWebServerApplicationContext : Exception encountered during context initialization - cancelling refresh attempt: org.springframework.beans.factory.UnsatisfiedDependencyException: Error creating bean with name 'userController' defined in file [/Users/airscholar/IdeaProjects/OrderApp/UserService/target/classes/com/airscholar/UserService/controller/UserController.class]: Unsatisfied dependency expressed through constructor parameter 0; nested exception is org.springframework.beans.factory.BeanCreationException: Error creating bean with name 'userRepository' defined in com.airscholar.UserService.data.UserRepository defined in @EnableJpaRepositories declared on JpaRepositoriesRegistrar.EnableJpaRepositoriesConfiguration: Invocation of init method failed; nested exception is java.lang.IllegalArgumentException: Not a managed type: class com.airscholar.CommonService.data.User
+2022-12-19 14:44:39.523  INFO 86200 --- [main] j.LocalContainerEntityManagerFactoryBean : Closing JPA EntityManagerFactory for persistence unit 'default'
+2022-12-19 14:44:39.525  INFO 86200 --- [main] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Shutdown initiated...
+2022-12-19 14:44:39.541  INFO 86200 --- [main] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Shutdown completed.
+2022-12-19 14:44:39.542  INFO 86200 --- [main] o.apache.catalina.core.StandardService   : Stopping service [Tomcat]
+2022-12-19 14:44:39.559  INFO 86200 --- [main] ConditionEvaluationReportLoggingListener : 
+
+Error starting ApplicationContext. To display the conditions report re-run your application with 'debug' enabled.
+2022-12-19 14:44:39.576 ERROR 86200 --- [main] o.s.boot.SpringApplication               : Application run failed
+
+org.springframework.beans.factory.UnsatisfiedDependencyException: Error creating bean with name 'userController' defined in file [/Users/airscholar/IdeaProjects/OrderApp/UserService/target/classes/com/airscholar/UserService/controller/UserController.class]: Unsatisfied dependency expressed through constructor parameter 0; nested exception is org.springframework.beans.factory.BeanCreationException: Error creating bean with name 'userRepository' defined in com.airscholar.UserService.data.UserRepository defined in @EnableJpaRepositories declared on JpaRepositoriesRegistrar.EnableJpaRepositoriesConfiguration: Invocation of init method failed; nested exception is java.lang.IllegalArgumentException: Not a managed type: class com.airscholar.CommonService.data.User
+	at org.springframework.beans.factory.support.ConstructorResolver.createArgumentArray(ConstructorResolver.java:800) ~[spring-beans-5.3.22.jar:5.3.22]
+	at org.springframework.beans.factory.support.ConstructorResolver.autowireConstructor(ConstructorResolver.java:229) ~[spring-beans-5.3.22.jar:5.3.22]
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.autowireConstructor(AbstractAutowireCapableBeanFactory.java:1372) ~[spring-beans-5.3.22.jar:5.3.22]
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.createBeanInstance(AbstractAutowireCapableBeanFactory.java:1222) ~[spring-beans-5.3.22.jar:5.3.22]
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.doCreateBean(AbstractAutowireCapableBeanFactory.java:582) ~[spring-beans-5.3.22.jar:5.3.22]
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.createBean(AbstractAutowireCapableBeanFactory.java:542) ~[spring-beans-5.3.22.jar:5.3.22]
+	at org.springframework.beans.factory.support.AbstractBeanFactory.lambda$doGetBean$0(AbstractBeanFactory.java:335) ~[spring-beans-5.3.22.jar:5.3.22]
+	at org.springframework.beans.factory.support.DefaultSingletonBeanRegistry.getSingleton(DefaultSingletonBeanRegistry.java:234) ~[spring-beans-5.3.22.jar:5.3.22]
+	at org.springframework.beans.factory.support.AbstractBeanFactory.doGetBean(AbstractBeanFactory.java:333) ~[spring-beans-5.3.22.jar:5.3.22]
+	at org.springframework.beans.factory.support.AbstractBeanFactory.getBean(AbstractBeanFactory.java:208) ~[spring-beans-5.3.22.jar:5.3.22]
+	at org.springframework.beans.factory.support.DefaultListableBeanFactory.preInstantiateSingletons(DefaultListableBeanFactory.java:955) ~[spring-beans-5.3.22.jar:5.3.22]
+	at org.springframework.context.support.AbstractApplicationContext.finishBeanFactoryInitialization(AbstractApplicationContext.java:918) ~[spring-context-5.3.22.jar:5.3.22]
+	at org.springframework.context.support.AbstractApplicationContext.refresh(AbstractApplicationContext.java:583) ~[spring-context-5.3.22.jar:5.3.22]
+	at org.springframework.boot.web.servlet.context.ServletWebServerApplicationContext.refresh(ServletWebServerApplicationContext.java:147) ~[spring-boot-2.7.3.jar:2.7.3]
+	at org.springframework.boot.SpringApplication.refresh(SpringApplication.java:734) ~[spring-boot-2.7.3.jar:2.7.3]
+	at org.springframework.boot.SpringApplication.refreshContext(SpringApplication.java:408) ~[spring-boot-2.7.3.jar:2.7.3]
+	at org.springframework.boot.SpringApplication.run(SpringApplication.java:308) ~[spring-boot-2.7.3.jar:2.7.3]
+	at org.springframework.boot.SpringApplication.run(SpringApplication.java:1306) ~[spring-boot-2.7.3.jar:2.7.3]
+	at org.springframework.boot.SpringApplication.run(SpringApplication.java:1295) ~[spring-boot-2.7.3.jar:2.7.3]
+	at com.airscholar.UserService.UserServiceApplication.main(UserServiceApplication.java:11) ~[classes/:na]
+Caused by: org.springframework.beans.factory.BeanCreationException: Error creating bean with name 'userRepository' defined in com.airscholar.UserService.data.UserRepository defined in @EnableJpaRepositories declared on JpaRepositoriesRegistrar.EnableJpaRepositoriesConfiguration: Invocation of init method failed; nested exception is java.lang.IllegalArgumentException: Not a managed type: class com.airscholar.CommonService.data.User
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.initializeBean(AbstractAutowireCapableBeanFactory.java:1804) ~[spring-beans-5.3.22.jar:5.3.22]
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.doCreateBean(AbstractAutowireCapableBeanFactory.java:620) ~[spring-beans-5.3.22.jar:5.3.22]
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.createBean(AbstractAutowireCapableBeanFactory.java:542) ~[spring-beans-5.3.22.jar:5.3.22]
+	at org.springframework.beans.factory.support.AbstractBeanFactory.lambda$doGetBean$0(AbstractBeanFactory.java:335) ~[spring-beans-5.3.22.jar:5.3.22]
+	at org.springframework.beans.factory.support.DefaultSingletonBeanRegistry.getSingleton(DefaultSingletonBeanRegistry.java:234) ~[spring-beans-5.3.22.jar:5.3.22]
+	at org.springframework.beans.factory.support.AbstractBeanFactory.doGetBean(AbstractBeanFactory.java:333) ~[spring-beans-5.3.22.jar:5.3.22]
+	at org.springframework.beans.factory.support.AbstractBeanFactory.getBean(AbstractBeanFactory.java:208) ~[spring-beans-5.3.22.jar:5.3.22]
+	at org.springframework.beans.factory.config.DependencyDescriptor.resolveCandidate(DependencyDescriptor.java:276) ~[spring-beans-5.3.22.jar:5.3.22]
+	at org.springframework.beans.factory.support.DefaultListableBeanFactory.doResolveDependency(DefaultListableBeanFactory.java:1391) ~[spring-beans-5.3.22.jar:5.3.22]
+	at org.springframework.beans.factory.support.DefaultListableBeanFactory.resolveDependency(DefaultListableBeanFactory.java:1311) ~[spring-beans-5.3.22.jar:5.3.22]
+	at org.springframework.beans.factory.support.ConstructorResolver.resolveAutowiredArgument(ConstructorResolver.java:887) ~[spring-beans-5.3.22.jar:5.3.22]
+	at org.springframework.beans.factory.support.ConstructorResolver.createArgumentArray(ConstructorResolver.java:791) ~[spring-beans-5.3.22.jar:5.3.22]
+	... 19 common frames omitted
+Caused by: java.lang.IllegalArgumentException: Not a managed type: class com.airscholar.CommonService.data.User
+	at org.hibernate.metamodel.internal.MetamodelImpl.managedType(MetamodelImpl.java:582) ~[hibernate-core-5.6.10.Final.jar:5.6.10.Final]
+	at org.hibernate.metamodel.internal.MetamodelImpl.managedType(MetamodelImpl.java:85) ~[hibernate-core-5.6.10.Final.jar:5.6.10.Final]
+	at org.springframework.data.jpa.repository.support.JpaMetamodelEntityInformation.<init>(JpaMetamodelEntityInformation.java:75) ~[spring-data-jpa-2.7.2.jar:2.7.2]
+	at org.springframework.data.jpa.repository.support.JpaEntityInformationSupport.getEntityInformation(JpaEntityInformationSupport.java:66) ~[spring-data-jpa-2.7.2.jar:2.7.2]
+	at org.springframework.data.jpa.repository.support.JpaRepositoryFactory.getEntityInformation(JpaRepositoryFactory.java:233) ~[spring-data-jpa-2.7.2.jar:2.7.2]
+	at org.springframework.data.jpa.repository.support.JpaRepositoryFactory.getTargetRepository(JpaRepositoryFactory.java:182) ~[spring-data-jpa-2.7.2.jar:2.7.2]
+	at org.springframework.data.jpa.repository.support.JpaRepositoryFactory.getTargetRepository(JpaRepositoryFactory.java:165) ~[spring-data-jpa-2.7.2.jar:2.7.2]
+	at org.springframework.data.jpa.repository.support.JpaRepositoryFactory.getTargetRepository(JpaRepositoryFactory.java:76) ~[spring-data-jpa-2.7.2.jar:2.7.2]
+	at org.springframework.data.repository.core.support.RepositoryFactorySupport.getRepository(RepositoryFactorySupport.java:325) ~[spring-data-commons-2.7.2.jar:2.7.2]
+	at org.springframework.data.repository.core.support.RepositoryFactoryBeanSupport.lambda$afterPropertiesSet$5(RepositoryFactoryBeanSupport.java:323) ~[spring-data-commons-2.7.2.jar:2.7.2]
+	at org.springframework.data.util.Lazy.getNullable(Lazy.java:231) ~[spring-data-commons-2.7.2.jar:2.7.2]
+	at org.springframework.data.util.Lazy.get(Lazy.java:115) ~[spring-data-commons-2.7.2.jar:2.7.2]
+	at org.springframework.data.repository.core.support.RepositoryFactoryBeanSupport.afterPropertiesSet(RepositoryFactoryBeanSupport.java:329) ~[spring-data-commons-2.7.2.jar:2.7.2]
+	at org.springframework.data.jpa.repository.support.JpaRepositoryFactoryBean.afterPropertiesSet(JpaRepositoryFactoryBean.java:144) ~[spring-data-jpa-2.7.2.jar:2.7.2]
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.invokeInitMethods(AbstractAutowireCapableBeanFactory.java:1863) ~[spring-beans-5.3.22.jar:5.3.22]
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.initializeBean(AbstractAutowireCapableBeanFactory.java:1800) ~[spring-beans-5.3.22.jar:5.3.22]
+	... 30 common frames omitted
+
+2022-12-19 14:47:21.970  INFO 86549 --- [main] c.a.UserService.UserServiceApplication   : Starting UserServiceApplication using Java 17.0.1 on ed-dynamic-158-197.wless.cranfield.ac.uk with PID 86549 (/Users/airscholar/IdeaProjects/OrderApp/UserService/target/classes started by airscholar in /Users/airscholar/IdeaProjects/OrderApp)
+2022-12-19 14:47:21.998  INFO 86549 --- [main] c.a.UserService.UserServiceApplication   : No active profile set, falling back to 1 default profile: "default"
+2022-12-19 14:47:22.914  INFO 86549 --- [main] .s.d.r.c.RepositoryConfigurationDelegate : Bootstrapping Spring Data JPA repositories in DEFAULT mode.
+2022-12-19 14:47:23.068  INFO 86549 --- [main] .s.d.r.c.RepositoryConfigurationDelegate : Finished Spring Data repository scanning in 146 ms. Found 1 JPA repository interfaces.
+2022-12-19 14:47:23.812  INFO 86549 --- [main] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat initialized with port(s): 9092 (http)
+2022-12-19 14:47:23.818  INFO 86549 --- [main] o.apache.catalina.core.StandardService   : Starting service [Tomcat]
+2022-12-19 14:47:23.818  INFO 86549 --- [main] org.apache.catalina.core.StandardEngine  : Starting Servlet engine: [Apache Tomcat/9.0.65]
+2022-12-19 14:47:23.939  INFO 86549 --- [main] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring embedded WebApplicationContext
+2022-12-19 14:47:23.940  INFO 86549 --- [main] w.s.c.ServletWebServerApplicationContext : Root WebApplicationContext: initialization completed in 1870 ms
+2022-12-19 14:47:23.976  INFO 86549 --- [main] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Starting...
+2022-12-19 14:47:24.200  INFO 86549 --- [main] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Start completed.
+2022-12-19 14:47:24.215  INFO 86549 --- [main] o.s.b.a.h2.H2ConsoleAutoConfiguration    : H2 console available at '/h2-console'. Database available at 'jdbc:h2:file:~/data/userDB'
+2022-12-19 14:47:24.409  INFO 86549 --- [main] o.hibernate.jpa.internal.util.LogHelper  : HHH000204: Processing PersistenceUnitInfo [name: default]
+2022-12-19 14:47:24.440  INFO 86549 --- [main] org.hibernate.Version                    : HHH000412: Hibernate ORM core version 5.6.10.Final
+2022-12-19 14:47:24.533  INFO 86549 --- [main] o.hibernate.annotations.common.Version   : HCANN000001: Hibernate Commons Annotations {5.1.2.Final}
+2022-12-19 14:47:24.594  INFO 86549 --- [main] org.hibernate.dialect.Dialect            : HHH000400: Using dialect: org.hibernate.dialect.H2Dialect
+2022-12-19 14:47:25.127  INFO 86549 --- [main] o.h.e.t.j.p.i.JtaPlatformInitiator       : HHH000490: Using JtaPlatform implementation: [org.hibernate.engine.transaction.jta.platform.internal.NoJtaPlatform]
+2022-12-19 14:47:25.133  INFO 86549 --- [main] j.LocalContainerEntityManagerFactoryBean : Initialized JPA EntityManagerFactory for persistence unit 'default'
+2022-12-19 14:47:25.271  WARN 86549 --- [main] ConfigServletWebServerApplicationContext : Exception encountered during context initialization - cancelling refresh attempt: org.springframework.beans.factory.UnsatisfiedDependencyException: Error creating bean with name 'userController' defined in file [/Users/airscholar/IdeaProjects/OrderApp/UserService/target/classes/com/airscholar/UserService/controller/UserController.class]: Unsatisfied dependency expressed through constructor parameter 0; nested exception is org.springframework.beans.factory.BeanCreationException: Error creating bean with name 'userRepository' defined in com.airscholar.UserService.data.UserRepository defined in @EnableJpaRepositories declared on JpaRepositoriesRegistrar.EnableJpaRepositoriesConfiguration: Invocation of init method failed; nested exception is java.lang.IllegalArgumentException: Not a managed type: class com.airscholar.UserService.data.User
+2022-12-19 14:47:25.271  INFO 86549 --- [main] j.LocalContainerEntityManagerFactoryBean : Closing JPA EntityManagerFactory for persistence unit 'default'
+2022-12-19 14:47:25.273  INFO 86549 --- [main] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Shutdown initiated...
+2022-12-19 14:47:25.309  INFO 86549 --- [main] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Shutdown completed.
+2022-12-19 14:47:25.312  INFO 86549 --- [main] o.apache.catalina.core.StandardService   : Stopping service [Tomcat]
+2022-12-19 14:47:25.330  INFO 86549 --- [main] ConditionEvaluationReportLoggingListener : 
+
+Error starting ApplicationContext. To display the conditions report re-run your application with 'debug' enabled.
+2022-12-19 14:47:25.344 ERROR 86549 --- [main] o.s.boot.SpringApplication               : Application run failed
+
+org.springframework.beans.factory.UnsatisfiedDependencyException: Error creating bean with name 'userController' defined in file [/Users/airscholar/IdeaProjects/OrderApp/UserService/target/classes/com/airscholar/UserService/controller/UserController.class]: Unsatisfied dependency expressed through constructor parameter 0; nested exception is org.springframework.beans.factory.BeanCreationException: Error creating bean with name 'userRepository' defined in com.airscholar.UserService.data.UserRepository defined in @EnableJpaRepositories declared on JpaRepositoriesRegistrar.EnableJpaRepositoriesConfiguration: Invocation of init method failed; nested exception is java.lang.IllegalArgumentException: Not a managed type: class com.airscholar.UserService.data.User
+	at org.springframework.beans.factory.support.ConstructorResolver.createArgumentArray(ConstructorResolver.java:800) ~[spring-beans-5.3.22.jar:5.3.22]
+	at org.springframework.beans.factory.support.ConstructorResolver.autowireConstructor(ConstructorResolver.java:229) ~[spring-beans-5.3.22.jar:5.3.22]
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.autowireConstructor(AbstractAutowireCapableBeanFactory.java:1372) ~[spring-beans-5.3.22.jar:5.3.22]
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.createBeanInstance(AbstractAutowireCapableBeanFactory.java:1222) ~[spring-beans-5.3.22.jar:5.3.22]
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.doCreateBean(AbstractAutowireCapableBeanFactory.java:582) ~[spring-beans-5.3.22.jar:5.3.22]
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.createBean(AbstractAutowireCapableBeanFactory.java:542) ~[spring-beans-5.3.22.jar:5.3.22]
+	at org.springframework.beans.factory.support.AbstractBeanFactory.lambda$doGetBean$0(AbstractBeanFactory.java:335) ~[spring-beans-5.3.22.jar:5.3.22]
+	at org.springframework.beans.factory.support.DefaultSingletonBeanRegistry.getSingleton(DefaultSingletonBeanRegistry.java:234) ~[spring-beans-5.3.22.jar:5.3.22]
+	at org.springframework.beans.factory.support.AbstractBeanFactory.doGetBean(AbstractBeanFactory.java:333) ~[spring-beans-5.3.22.jar:5.3.22]
+	at org.springframework.beans.factory.support.AbstractBeanFactory.getBean(AbstractBeanFactory.java:208) ~[spring-beans-5.3.22.jar:5.3.22]
+	at org.springframework.beans.factory.support.DefaultListableBeanFactory.preInstantiateSingletons(DefaultListableBeanFactory.java:955) ~[spring-beans-5.3.22.jar:5.3.22]
+	at org.springframework.context.support.AbstractApplicationContext.finishBeanFactoryInitialization(AbstractApplicationContext.java:918) ~[spring-context-5.3.22.jar:5.3.22]
+	at org.springframework.context.support.AbstractApplicationContext.refresh(AbstractApplicationContext.java:583) ~[spring-context-5.3.22.jar:5.3.22]
+	at org.springframework.boot.web.servlet.context.ServletWebServerApplicationContext.refresh(ServletWebServerApplicationContext.java:147) ~[spring-boot-2.7.3.jar:2.7.3]
+	at org.springframework.boot.SpringApplication.refresh(SpringApplication.java:734) ~[spring-boot-2.7.3.jar:2.7.3]
+	at org.springframework.boot.SpringApplication.refreshContext(SpringApplication.java:408) ~[spring-boot-2.7.3.jar:2.7.3]
+	at org.springframework.boot.SpringApplication.run(SpringApplication.java:308) ~[spring-boot-2.7.3.jar:2.7.3]
+	at org.springframework.boot.SpringApplication.run(SpringApplication.java:1306) ~[spring-boot-2.7.3.jar:2.7.3]
+	at org.springframework.boot.SpringApplication.run(SpringApplication.java:1295) ~[spring-boot-2.7.3.jar:2.7.3]
+	at com.airscholar.UserService.UserServiceApplication.main(UserServiceApplication.java:11) ~[classes/:na]
+Caused by: org.springframework.beans.factory.BeanCreationException: Error creating bean with name 'userRepository' defined in com.airscholar.UserService.data.UserRepository defined in @EnableJpaRepositories declared on JpaRepositoriesRegistrar.EnableJpaRepositoriesConfiguration: Invocation of init method failed; nested exception is java.lang.IllegalArgumentException: Not a managed type: class com.airscholar.UserService.data.User
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.initializeBean(AbstractAutowireCapableBeanFactory.java:1804) ~[spring-beans-5.3.22.jar:5.3.22]
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.doCreateBean(AbstractAutowireCapableBeanFactory.java:620) ~[spring-beans-5.3.22.jar:5.3.22]
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.createBean(AbstractAutowireCapableBeanFactory.java:542) ~[spring-beans-5.3.22.jar:5.3.22]
+	at org.springframework.beans.factory.support.AbstractBeanFactory.lambda$doGetBean$0(AbstractBeanFactory.java:335) ~[spring-beans-5.3.22.jar:5.3.22]
+	at org.springframework.beans.factory.support.DefaultSingletonBeanRegistry.getSingleton(DefaultSingletonBeanRegistry.java:234) ~[spring-beans-5.3.22.jar:5.3.22]
+	at org.springframework.beans.factory.support.AbstractBeanFactory.doGetBean(AbstractBeanFactory.java:333) ~[spring-beans-5.3.22.jar:5.3.22]
+	at org.springframework.beans.factory.support.AbstractBeanFactory.getBean(AbstractBeanFactory.java:208) ~[spring-beans-5.3.22.jar:5.3.22]
+	at org.springframework.beans.factory.config.DependencyDescriptor.resolveCandidate(DependencyDescriptor.java:276) ~[spring-beans-5.3.22.jar:5.3.22]
+	at org.springframework.beans.factory.support.DefaultListableBeanFactory.doResolveDependency(DefaultListableBeanFactory.java:1391) ~[spring-beans-5.3.22.jar:5.3.22]
+	at org.springframework.beans.factory.support.DefaultListableBeanFactory.resolveDependency(DefaultListableBeanFactory.java:1311) ~[spring-beans-5.3.22.jar:5.3.22]
+	at org.springframework.beans.factory.support.ConstructorResolver.resolveAutowiredArgument(ConstructorResolver.java:887) ~[spring-beans-5.3.22.jar:5.3.22]
+	at org.springframework.beans.factory.support.ConstructorResolver.createArgumentArray(ConstructorResolver.java:791) ~[spring-beans-5.3.22.jar:5.3.22]
+	... 19 common frames omitted
+Caused by: java.lang.IllegalArgumentException: Not a managed type: class com.airscholar.UserService.data.User
+	at org.hibernate.metamodel.internal.MetamodelImpl.managedType(MetamodelImpl.java:582) ~[hibernate-core-5.6.10.Final.jar:5.6.10.Final]
+	at org.hibernate.metamodel.internal.MetamodelImpl.managedType(MetamodelImpl.java:85) ~[hibernate-core-5.6.10.Final.jar:5.6.10.Final]
+	at org.springframework.data.jpa.repository.support.JpaMetamodelEntityInformation.<init>(JpaMetamodelEntityInformation.java:75) ~[spring-data-jpa-2.7.2.jar:2.7.2]
+	at org.springframework.data.jpa.repository.support.JpaEntityInformationSupport.getEntityInformation(JpaEntityInformationSupport.java:66) ~[spring-data-jpa-2.7.2.jar:2.7.2]
+	at org.springframework.data.jpa.repository.support.JpaRepositoryFactory.getEntityInformation(JpaRepositoryFactory.java:233) ~[spring-data-jpa-2.7.2.jar:2.7.2]
+	at org.springframework.data.jpa.repository.support.JpaRepositoryFactory.getTargetRepository(JpaRepositoryFactory.java:182) ~[spring-data-jpa-2.7.2.jar:2.7.2]
+	at org.springframework.data.jpa.repository.support.JpaRepositoryFactory.getTargetRepository(JpaRepositoryFactory.java:165) ~[spring-data-jpa-2.7.2.jar:2.7.2]
+	at org.springframework.data.jpa.repository.support.JpaRepositoryFactory.getTargetRepository(JpaRepositoryFactory.java:76) ~[spring-data-jpa-2.7.2.jar:2.7.2]
+	at org.springframework.data.repository.core.support.RepositoryFactorySupport.getRepository(RepositoryFactorySupport.java:325) ~[spring-data-commons-2.7.2.jar:2.7.2]
+	at org.springframework.data.repository.core.support.RepositoryFactoryBeanSupport.lambda$afterPropertiesSet$5(RepositoryFactoryBeanSupport.java:323) ~[spring-data-commons-2.7.2.jar:2.7.2]
+	at org.springframework.data.util.Lazy.getNullable(Lazy.java:231) ~[spring-data-commons-2.7.2.jar:2.7.2]
+	at org.springframework.data.util.Lazy.get(Lazy.java:115) ~[spring-data-commons-2.7.2.jar:2.7.2]
+	at org.springframework.data.repository.core.support.RepositoryFactoryBeanSupport.afterPropertiesSet(RepositoryFactoryBeanSupport.java:329) ~[spring-data-commons-2.7.2.jar:2.7.2]
+	at org.springframework.data.jpa.repository.support.JpaRepositoryFactoryBean.afterPropertiesSet(JpaRepositoryFactoryBean.java:144) ~[spring-data-jpa-2.7.2.jar:2.7.2]
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.invokeInitMethods(AbstractAutowireCapableBeanFactory.java:1863) ~[spring-beans-5.3.22.jar:5.3.22]
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.initializeBean(AbstractAutowireCapableBeanFactory.java:1800) ~[spring-beans-5.3.22.jar:5.3.22]
+	... 30 common frames omitted
+
+2022-12-19 14:49:33.361  INFO 86792 --- [main] c.a.UserService.UserServiceApplication   : Starting UserServiceApplication using Java 17.0.1 on ed-dynamic-158-197.wless.cranfield.ac.uk with PID 86792 (/Users/airscholar/IdeaProjects/OrderApp/UserService/target/classes started by airscholar in /Users/airscholar/IdeaProjects/OrderApp)
+2022-12-19 14:49:33.365  INFO 86792 --- [main] c.a.UserService.UserServiceApplication   : No active profile set, falling back to 1 default profile: "default"
+2022-12-19 14:49:34.343  INFO 86792 --- [main] .s.d.r.c.RepositoryConfigurationDelegate : Bootstrapping Spring Data JPA repositories in DEFAULT mode.
+2022-12-19 14:49:34.524  INFO 86792 --- [main] .s.d.r.c.RepositoryConfigurationDelegate : Finished Spring Data repository scanning in 172 ms. Found 1 JPA repository interfaces.
+2022-12-19 14:49:35.425  INFO 86792 --- [main] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat initialized with port(s): 9092 (http)
+2022-12-19 14:49:35.432  INFO 86792 --- [main] o.apache.catalina.core.StandardService   : Starting service [Tomcat]
+2022-12-19 14:49:35.432  INFO 86792 --- [main] org.apache.catalina.core.StandardEngine  : Starting Servlet engine: [Apache Tomcat/9.0.65]
+2022-12-19 14:49:35.553  INFO 86792 --- [main] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring embedded WebApplicationContext
+2022-12-19 14:49:35.553  INFO 86792 --- [main] w.s.c.ServletWebServerApplicationContext : Root WebApplicationContext: initialization completed in 2090 ms
+2022-12-19 14:49:35.590  INFO 86792 --- [main] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Starting...
+2022-12-19 14:49:35.818  INFO 86792 --- [main] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Start completed.
+2022-12-19 14:49:35.833  INFO 86792 --- [main] o.s.b.a.h2.H2ConsoleAutoConfiguration    : H2 console available at '/h2-console'. Database available at 'jdbc:h2:file:~/data/userDB'
+2022-12-19 14:49:36.035  INFO 86792 --- [main] o.hibernate.jpa.internal.util.LogHelper  : HHH000204: Processing PersistenceUnitInfo [name: default]
+2022-12-19 14:49:36.065  INFO 86792 --- [main] org.hibernate.Version                    : HHH000412: Hibernate ORM core version 5.6.10.Final
+2022-12-19 14:49:36.160  INFO 86792 --- [main] o.hibernate.annotations.common.Version   : HCANN000001: Hibernate Commons Annotations {5.1.2.Final}
+2022-12-19 14:49:36.223  INFO 86792 --- [main] org.hibernate.dialect.Dialect            : HHH000400: Using dialect: org.hibernate.dialect.H2Dialect
+2022-12-19 14:49:36.843  INFO 86792 --- [main] o.h.e.t.j.p.i.JtaPlatformInitiator       : HHH000490: Using JtaPlatform implementation: [org.hibernate.engine.transaction.jta.platform.internal.NoJtaPlatform]
+2022-12-19 14:49:36.853  INFO 86792 --- [main] j.LocalContainerEntityManagerFactoryBean : Initialized JPA EntityManagerFactory for persistence unit 'default'
+2022-12-19 14:49:37.308  INFO 86792 --- [main] o.a.s.a.XStreamAutoConfiguration         : Initializing an XStream instance since none was found. The auto configuration base packages will be used as wildcards for the XStream security settings.
+2022-12-19 14:49:37.465  INFO 86792 --- [main] o.a.s.util.XStreamSecurityTypeUtility    : Constructing wildcard type for base package [com.airscholar.UserService].
+2022-12-19 14:49:37.466  INFO 86792 --- [main] o.a.s.util.XStreamSecurityTypeUtility    : Constructing wildcard type for base package [org.axonframework.eventhandling.tokenstore].
+2022-12-19 14:49:37.466  INFO 86792 --- [main] o.a.s.util.XStreamSecurityTypeUtility    : Constructing wildcard type for base package [org.axonframework.eventhandling.deadletter.jpa].
+2022-12-19 14:49:37.466  INFO 86792 --- [main] o.a.s.util.XStreamSecurityTypeUtility    : Constructing wildcard type for base package [org.axonframework.modelling.saga.repository.jpa].
+2022-12-19 14:49:37.466  INFO 86792 --- [main] o.a.s.util.XStreamSecurityTypeUtility    : Constructing wildcard type for base package [org.axonframework.eventsourcing.eventstore.jpa].
+2022-12-19 14:49:37.472  INFO 86792 --- [main] o.a.serialization.ChainingConverter      : ContentTypeConverter of type [class org.axonframework.serialization.xml.Dom4JToByteArrayConverter] is ignored. It seems to rely on a class that is not available in the class loader: org/dom4j/Document
+2022-12-19 14:49:37.473  INFO 86792 --- [main] o.a.serialization.ChainingConverter      : ContentTypeConverter of type [class org.axonframework.serialization.xml.InputStreamToDom4jConverter] is ignored. It seems to rely on a class that is not available in the class loader: org/dom4j/Document
+2022-12-19 14:49:37.473  INFO 86792 --- [main] o.a.serialization.ChainingConverter      : ContentTypeConverter of type [class org.axonframework.serialization.xml.XomToStringConverter] is ignored. It seems to rely on a class that is not available in the class loader: nu/xom/Document
+2022-12-19 14:49:37.474  INFO 86792 --- [main] o.a.serialization.ChainingConverter      : ContentTypeConverter of type [class org.axonframework.serialization.xml.InputStreamToXomConverter] is ignored. It seems to rely on a class that is not available in the class loader: nu/xom/ParsingException
+2022-12-19 14:49:37.599  WARN 86792 --- [main] JpaBaseConfiguration$JpaWebConfiguration : spring.jpa.open-in-view is enabled by default. Therefore, database queries may be performed during view rendering. Explicitly configure spring.jpa.open-in-view to disable this warning
+2022-12-19 14:49:38.073  INFO 86792 --- [main] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat started on port(s): 9092 (http) with context path ''
+2022-12-19 14:49:38.308  INFO 86792 --- [main] i.a.a.c.impl.AxonServerManagedChannel    : Requesting connection details from localhost:8124
+2022-12-19 14:49:38.543  INFO 86792 --- [main] i.a.a.c.impl.AxonServerManagedChannel    : Successfully connected to localhost:8124
+2022-12-19 14:49:38.552  INFO 86792 --- [main] i.a.a.connector.impl.ControlChannelImpl  : Connected instruction stream for context 'default'. Sending client identification
+2022-12-19 14:49:38.571  INFO 86792 --- [main] i.a.a.c.query.impl.QueryChannelImpl      : QueryChannel for context 'default' connected, 0 registrations resubscribed
+2022-12-19 14:49:38.580  INFO 86792 --- [main] i.a.a.c.query.impl.QueryChannelImpl      : Registered handler for query 'com.airscholar.CommonService.queries.GetUserPaymentDetailsQuery : com.airscholar.CommonService.data.User' in context 'default'
+2022-12-19 14:49:38.606  INFO 86792 --- [main] c.a.UserService.UserServiceApplication   : Started UserServiceApplication in 5.768 seconds (JVM running for 6.719)
+2022-12-19 14:50:15.321  INFO 86792 --- [SpringApplicationShutdownHook] j.LocalContainerEntityManagerFactoryBean : Closing JPA EntityManagerFactory for persistence unit 'default'
+2022-12-19 14:50:15.333  INFO 86792 --- [SpringApplicationShutdownHook] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Shutdown initiated...
+2022-12-19 14:50:15.357  INFO 86792 --- [SpringApplicationShutdownHook] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Shutdown completed.
+2022-12-19 14:50:22.214  INFO 86882 --- [main] c.a.UserService.UserServiceApplication   : Starting UserServiceApplication using Java 17.0.1 on ed-dynamic-158-197.wless.cranfield.ac.uk with PID 86882 (/Users/airscholar/IdeaProjects/OrderApp/UserService/target/classes started by airscholar in /Users/airscholar/IdeaProjects/OrderApp)
+2022-12-19 14:50:22.218  INFO 86882 --- [main] c.a.UserService.UserServiceApplication   : No active profile set, falling back to 1 default profile: "default"
+2022-12-19 14:50:23.389  INFO 86882 --- [main] .s.d.r.c.RepositoryConfigurationDelegate : Bootstrapping Spring Data JPA repositories in DEFAULT mode.
+2022-12-19 14:50:23.539  INFO 86882 --- [main] .s.d.r.c.RepositoryConfigurationDelegate : Finished Spring Data repository scanning in 143 ms. Found 1 JPA repository interfaces.
+2022-12-19 14:50:24.281  INFO 86882 --- [main] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat initialized with port(s): 9092 (http)
+2022-12-19 14:50:24.287  INFO 86882 --- [main] o.apache.catalina.core.StandardService   : Starting service [Tomcat]
+2022-12-19 14:50:24.287  INFO 86882 --- [main] org.apache.catalina.core.StandardEngine  : Starting Servlet engine: [Apache Tomcat/9.0.65]
+2022-12-19 14:50:24.406  INFO 86882 --- [main] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring embedded WebApplicationContext
+2022-12-19 14:50:24.407  INFO 86882 --- [main] w.s.c.ServletWebServerApplicationContext : Root WebApplicationContext: initialization completed in 2088 ms
+2022-12-19 14:50:24.443  INFO 86882 --- [main] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Starting...
+2022-12-19 14:50:24.661  INFO 86882 --- [main] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Start completed.
+2022-12-19 14:50:24.675  INFO 86882 --- [main] o.s.b.a.h2.H2ConsoleAutoConfiguration    : H2 console available at '/h2-console'. Database available at 'jdbc:h2:file:~/data/userDB'
+2022-12-19 14:50:24.853  INFO 86882 --- [main] o.hibernate.jpa.internal.util.LogHelper  : HHH000204: Processing PersistenceUnitInfo [name: default]
+2022-12-19 14:50:24.886  INFO 86882 --- [main] org.hibernate.Version                    : HHH000412: Hibernate ORM core version 5.6.10.Final
+2022-12-19 14:50:24.978  INFO 86882 --- [main] o.hibernate.annotations.common.Version   : HCANN000001: Hibernate Commons Annotations {5.1.2.Final}
+2022-12-19 14:50:25.035  INFO 86882 --- [main] org.hibernate.dialect.Dialect            : HHH000400: Using dialect: org.hibernate.dialect.H2Dialect
+2022-12-19 14:50:25.619  INFO 86882 --- [main] o.h.e.t.j.p.i.JtaPlatformInitiator       : HHH000490: Using JtaPlatform implementation: [org.hibernate.engine.transaction.jta.platform.internal.NoJtaPlatform]
+2022-12-19 14:50:25.628  INFO 86882 --- [main] j.LocalContainerEntityManagerFactoryBean : Initialized JPA EntityManagerFactory for persistence unit 'default'
+2022-12-19 14:50:25.982  INFO 86882 --- [main] o.a.s.a.XStreamAutoConfiguration         : Initializing an XStream instance since none was found. The auto configuration base packages will be used as wildcards for the XStream security settings.
+2022-12-19 14:50:26.104  INFO 86882 --- [main] o.a.s.util.XStreamSecurityTypeUtility    : Constructing wildcard type for base package [com.airscholar.UserService].
+2022-12-19 14:50:26.104  INFO 86882 --- [main] o.a.s.util.XStreamSecurityTypeUtility    : Constructing wildcard type for base package [org.axonframework.eventhandling.tokenstore].
+2022-12-19 14:50:26.104  INFO 86882 --- [main] o.a.s.util.XStreamSecurityTypeUtility    : Constructing wildcard type for base package [org.axonframework.eventhandling.deadletter.jpa].
+2022-12-19 14:50:26.104  INFO 86882 --- [main] o.a.s.util.XStreamSecurityTypeUtility    : Constructing wildcard type for base package [org.axonframework.modelling.saga.repository.jpa].
+2022-12-19 14:50:26.104  INFO 86882 --- [main] o.a.s.util.XStreamSecurityTypeUtility    : Constructing wildcard type for base package [org.axonframework.eventsourcing.eventstore.jpa].
+2022-12-19 14:50:26.110  INFO 86882 --- [main] o.a.serialization.ChainingConverter      : ContentTypeConverter of type [class org.axonframework.serialization.xml.Dom4JToByteArrayConverter] is ignored. It seems to rely on a class that is not available in the class loader: org/dom4j/Document
+2022-12-19 14:50:26.111  INFO 86882 --- [main] o.a.serialization.ChainingConverter      : ContentTypeConverter of type [class org.axonframework.serialization.xml.InputStreamToDom4jConverter] is ignored. It seems to rely on a class that is not available in the class loader: org/dom4j/Document
+2022-12-19 14:50:26.111  INFO 86882 --- [main] o.a.serialization.ChainingConverter      : ContentTypeConverter of type [class org.axonframework.serialization.xml.XomToStringConverter] is ignored. It seems to rely on a class that is not available in the class loader: nu/xom/Document
+2022-12-19 14:50:26.112  INFO 86882 --- [main] o.a.serialization.ChainingConverter      : ContentTypeConverter of type [class org.axonframework.serialization.xml.InputStreamToXomConverter] is ignored. It seems to rely on a class that is not available in the class loader: nu/xom/ParsingException
+2022-12-19 14:50:26.234  WARN 86882 --- [main] JpaBaseConfiguration$JpaWebConfiguration : spring.jpa.open-in-view is enabled by default. Therefore, database queries may be performed during view rendering. Explicitly configure spring.jpa.open-in-view to disable this warning
+2022-12-19 14:50:26.649  INFO 86882 --- [main] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat started on port(s): 9092 (http) with context path ''
+2022-12-19 14:50:26.890  INFO 86882 --- [main] i.a.a.c.impl.AxonServerManagedChannel    : Requesting connection details from localhost:8124
+2022-12-19 14:50:27.113  INFO 86882 --- [main] i.a.a.c.impl.AxonServerManagedChannel    : Successfully connected to localhost:8124
+2022-12-19 14:50:27.120  INFO 86882 --- [main] i.a.a.connector.impl.ControlChannelImpl  : Connected instruction stream for context 'default'. Sending client identification
+2022-12-19 14:50:27.133  INFO 86882 --- [main] i.a.a.c.query.impl.QueryChannelImpl      : QueryChannel for context 'default' connected, 0 registrations resubscribed
+2022-12-19 14:50:27.138  INFO 86882 --- [main] i.a.a.c.query.impl.QueryChannelImpl      : Registered handler for query 'com.airscholar.CommonService.queries.GetUserPaymentDetailsQuery : com.airscholar.UserService.data.User' in context 'default'
+2022-12-19 14:50:27.170  INFO 86882 --- [main] c.a.UserService.UserServiceApplication   : Started UserServiceApplication in 5.455 seconds (JVM running for 6.792)
+2022-12-19 14:50:34.562  INFO 86882 --- [http-nio-9092-exec-2] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring DispatcherServlet 'dispatcherServlet'
+2022-12-19 14:50:34.564  INFO 86882 --- [http-nio-9092-exec-2] o.s.web.servlet.DispatcherServlet        : Initializing Servlet 'dispatcherServlet'
+2022-12-19 14:50:34.571  INFO 86882 --- [http-nio-9092-exec-2] o.s.web.servlet.DispatcherServlet        : Completed initialization in 3 ms
+2022-12-19 14:50:34.728  WARN 86882 --- [QueryProcessor-0] o.a.a.c.query.QueryProcessingTask        : Query Processor had an exception when processing query [com.airscholar.CommonService.queries.GetUserPaymentDetailsQuery]
+
+com.thoughtworks.xstream.security.ForbiddenClassException: com.airscholar.CommonService.queries.GetUserPaymentDetailsQuery
+	at com.thoughtworks.xstream.security.NoTypePermission.allows(NoTypePermission.java:26) ~[xstream-1.4.19.jar:1.4.19]
+	at com.thoughtworks.xstream.mapper.SecurityMapper.realClass(SecurityMapper.java:74) ~[xstream-1.4.19.jar:1.4.19]
+	at com.thoughtworks.xstream.mapper.MapperWrapper.realClass(MapperWrapper.java:125) ~[xstream-1.4.19.jar:1.4.19]
+	at com.thoughtworks.xstream.mapper.CachingMapper.realClass(CachingMapper.java:47) ~[xstream-1.4.19.jar:1.4.19]
+	at org.axonframework.serialization.AbstractXStreamSerializer.classForType(AbstractXStreamSerializer.java:170) ~[axon-messaging-4.6.0.jar:4.6.0]
+	at org.axonframework.serialization.LazyDeserializingObject.<init>(LazyDeserializingObject.java:83) ~[axon-messaging-4.6.0.jar:4.6.0]
+	at org.axonframework.serialization.LazyDeserializingObject.<init>(LazyDeserializingObject.java:63) ~[axon-messaging-4.6.0.jar:4.6.0]
+	at org.axonframework.axonserver.connector.query.GrpcBackedQueryMessage.<init>(GrpcBackedQueryMessage.java:62) ~[axon-server-connector-4.6.0.jar:4.6.0]
+	at org.axonframework.axonserver.connector.query.QuerySerializer.deserializeRequest(QuerySerializer.java:203) ~[axon-server-connector-4.6.0.jar:4.6.0]
+	at org.axonframework.axonserver.connector.query.QueryProcessingTask.run(QueryProcessingTask.java:142) ~[axon-server-connector-4.6.0.jar:4.6.0]
+	at org.axonframework.axonserver.connector.PriorityRunnable.run(PriorityRunnable.java:58) ~[axon-server-connector-4.6.0.jar:4.6.0]
+	at java.base/java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1136) ~[na:na]
+	at java.base/java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:635) ~[na:na]
+	at java.base/java.lang.Thread.run(Thread.java:833) ~[na:na]
+
+2022-12-19 14:50:34.762 ERROR 86882 --- [http-nio-9092-exec-2] o.a.c.c.C.[.[.[/].[dispatcherServlet]    : Servlet.service() for servlet [dispatcherServlet] in context with path [] threw exception [Request processing failed; nested exception is java.util.concurrent.CompletionException: org.axonframework.queryhandling.QueryExecutionException: com.airscholar.CommonService.queries.GetUserPaymentDetailsQuery] with root cause
+
+org.axonframework.axonserver.connector.query.AxonServerRemoteQueryHandlingException: An exception was thrown by the remote message handling component: com.airscholar.CommonService.queries.GetUserPaymentDetailsQuery
+	at org.axonframework.axonserver.connector.ErrorCode.lambda$static$16(ErrorCode.java:118) ~[axon-server-connector-4.6.0.jar:4.6.0]
+	at org.axonframework.axonserver.connector.ErrorCode.convert(ErrorCode.java:201) ~[axon-server-connector-4.6.0.jar:4.6.0]
+	at org.axonframework.axonserver.connector.query.GrpcBackedResponseMessage.<init>(GrpcBackedResponseMessage.java:65) ~[axon-server-connector-4.6.0.jar:4.6.0]
+	at org.axonframework.axonserver.connector.query.QuerySerializer.deserializeResponse(QuerySerializer.java:215) ~[axon-server-connector-4.6.0.jar:4.6.0]
+	at org.axonframework.axonserver.connector.query.AxonServerQueryBus$ResponseProcessingTask.run(AxonServerQueryBus.java:868) ~[axon-server-connector-4.6.0.jar:4.6.0]
+	at org.axonframework.tracing.Span.run(Span.java:72) ~[axon-messaging-4.6.0.jar:4.6.0]
+	at org.axonframework.tracing.Span.lambda$wrapRunnable$0(Span.java:90) ~[axon-messaging-4.6.0.jar:4.6.0]
+	at org.axonframework.axonserver.connector.PriorityRunnable.run(PriorityRunnable.java:58) ~[axon-server-connector-4.6.0.jar:4.6.0]
+	at java.base/java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1136) ~[na:na]
+	at java.base/java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:635) ~[na:na]
+	at java.base/java.lang.Thread.run(Thread.java:833) ~[na:na]
+
+2022-12-19 14:52:13.419  INFO 86882 --- [SpringApplicationShutdownHook] j.LocalContainerEntityManagerFactoryBean : Closing JPA EntityManagerFactory for persistence unit 'default'
+2022-12-19 14:52:13.436  INFO 86882 --- [SpringApplicationShutdownHook] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Shutdown initiated...
+2022-12-19 14:52:13.442  INFO 86882 --- [SpringApplicationShutdownHook] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Shutdown completed.
+2022-12-19 14:52:20.317  INFO 87101 --- [main] c.a.UserService.UserServiceApplication   : Starting UserServiceApplication using Java 17.0.1 on ed-dynamic-158-197.wless.cranfield.ac.uk with PID 87101 (/Users/airscholar/IdeaProjects/OrderApp/UserService/target/classes started by airscholar in /Users/airscholar/IdeaProjects/OrderApp)
+2022-12-19 14:52:20.320  INFO 87101 --- [main] c.a.UserService.UserServiceApplication   : No active profile set, falling back to 1 default profile: "default"
+2022-12-19 14:52:21.251  INFO 87101 --- [main] .s.d.r.c.RepositoryConfigurationDelegate : Bootstrapping Spring Data JPA repositories in DEFAULT mode.
+2022-12-19 14:52:21.421  INFO 87101 --- [main] .s.d.r.c.RepositoryConfigurationDelegate : Finished Spring Data repository scanning in 163 ms. Found 1 JPA repository interfaces.
+2022-12-19 14:52:23.067  INFO 87101 --- [main] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat initialized with port(s): 9092 (http)
+2022-12-19 14:52:23.077  INFO 87101 --- [main] o.apache.catalina.core.StandardService   : Starting service [Tomcat]
+2022-12-19 14:52:23.078  INFO 87101 --- [main] org.apache.catalina.core.StandardEngine  : Starting Servlet engine: [Apache Tomcat/9.0.65]
+2022-12-19 14:52:23.432  INFO 87101 --- [main] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring embedded WebApplicationContext
+2022-12-19 14:52:23.432  INFO 87101 --- [main] w.s.c.ServletWebServerApplicationContext : Root WebApplicationContext: initialization completed in 3023 ms
+2022-12-19 14:52:23.578  INFO 87101 --- [main] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Starting...
+2022-12-19 14:52:23.945  INFO 87101 --- [main] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Start completed.
+2022-12-19 14:52:23.963  INFO 87101 --- [main] o.s.b.a.h2.H2ConsoleAutoConfiguration    : H2 console available at '/h2-console'. Database available at 'jdbc:h2:file:~/data/userDB'
+2022-12-19 14:52:24.181  INFO 87101 --- [main] o.hibernate.jpa.internal.util.LogHelper  : HHH000204: Processing PersistenceUnitInfo [name: default]
+2022-12-19 14:52:24.213  INFO 87101 --- [main] org.hibernate.Version                    : HHH000412: Hibernate ORM core version 5.6.10.Final
+2022-12-19 14:52:24.308  INFO 87101 --- [main] o.hibernate.annotations.common.Version   : HCANN000001: Hibernate Commons Annotations {5.1.2.Final}
+2022-12-19 14:52:24.390  INFO 87101 --- [main] org.hibernate.dialect.Dialect            : HHH000400: Using dialect: org.hibernate.dialect.H2Dialect
+2022-12-19 14:52:24.991  INFO 87101 --- [main] o.h.e.t.j.p.i.JtaPlatformInitiator       : HHH000490: Using JtaPlatform implementation: [org.hibernate.engine.transaction.jta.platform.internal.NoJtaPlatform]
+2022-12-19 14:52:24.996  INFO 87101 --- [main] j.LocalContainerEntityManagerFactoryBean : Initialized JPA EntityManagerFactory for persistence unit 'default'
+2022-12-19 14:52:25.398  INFO 87101 --- [main] o.a.s.a.XStreamAutoConfiguration         : Initializing an XStream instance since none was found. The auto configuration base packages will be used as wildcards for the XStream security settings.
+2022-12-19 14:52:25.518  INFO 87101 --- [main] o.a.s.util.XStreamSecurityTypeUtility    : Constructing wildcard type for base package [com.airscholar.UserService].
+2022-12-19 14:52:25.518  INFO 87101 --- [main] o.a.s.util.XStreamSecurityTypeUtility    : Constructing wildcard type for base package [org.axonframework.eventhandling.tokenstore].
+2022-12-19 14:52:25.518  INFO 87101 --- [main] o.a.s.util.XStreamSecurityTypeUtility    : Constructing wildcard type for base package [org.axonframework.eventhandling.deadletter.jpa].
+2022-12-19 14:52:25.518  INFO 87101 --- [main] o.a.s.util.XStreamSecurityTypeUtility    : Constructing wildcard type for base package [org.axonframework.modelling.saga.repository.jpa].
+2022-12-19 14:52:25.518  INFO 87101 --- [main] o.a.s.util.XStreamSecurityTypeUtility    : Constructing wildcard type for base package [org.axonframework.eventsourcing.eventstore.jpa].
+2022-12-19 14:52:25.523  INFO 87101 --- [main] o.a.serialization.ChainingConverter      : ContentTypeConverter of type [class org.axonframework.serialization.xml.Dom4JToByteArrayConverter] is ignored. It seems to rely on a class that is not available in the class loader: org/dom4j/Document
+2022-12-19 14:52:25.524  INFO 87101 --- [main] o.a.serialization.ChainingConverter      : ContentTypeConverter of type [class org.axonframework.serialization.xml.InputStreamToDom4jConverter] is ignored. It seems to rely on a class that is not available in the class loader: org/dom4j/Document
+2022-12-19 14:52:25.524  INFO 87101 --- [main] o.a.serialization.ChainingConverter      : ContentTypeConverter of type [class org.axonframework.serialization.xml.XomToStringConverter] is ignored. It seems to rely on a class that is not available in the class loader: nu/xom/Document
+2022-12-19 14:52:25.524  INFO 87101 --- [main] o.a.serialization.ChainingConverter      : ContentTypeConverter of type [class org.axonframework.serialization.xml.InputStreamToXomConverter] is ignored. It seems to rely on a class that is not available in the class loader: nu/xom/ParsingException
+2022-12-19 14:52:25.647  WARN 87101 --- [main] JpaBaseConfiguration$JpaWebConfiguration : spring.jpa.open-in-view is enabled by default. Therefore, database queries may be performed during view rendering. Explicitly configure spring.jpa.open-in-view to disable this warning
+2022-12-19 14:52:26.170  INFO 87101 --- [main] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat started on port(s): 9092 (http) with context path ''
+2022-12-19 14:52:26.423  INFO 87101 --- [main] i.a.a.c.impl.AxonServerManagedChannel    : Requesting connection details from localhost:8124
+2022-12-19 14:52:27.978  INFO 87101 --- [main] i.a.a.c.impl.AxonServerManagedChannel    : Successfully connected to localhost:8124
+2022-12-19 14:52:27.989  INFO 87101 --- [main] i.a.a.connector.impl.ControlChannelImpl  : Connected instruction stream for context 'default'. Sending client identification
+2022-12-19 14:52:28.013  INFO 87101 --- [main] i.a.a.c.query.impl.QueryChannelImpl      : QueryChannel for context 'default' connected, 0 registrations resubscribed
+2022-12-19 14:52:28.022  INFO 87101 --- [main] i.a.a.c.query.impl.QueryChannelImpl      : Registered handler for query 'com.airscholar.CommonService.queries.GetUserPaymentDetailsQuery : com.airscholar.UserService.data.User' in context 'default'
+2022-12-19 14:52:28.061  INFO 87101 --- [main] c.a.UserService.UserServiceApplication   : Started UserServiceApplication in 8.241 seconds (JVM running for 9.098)
+2022-12-19 14:52:32.081  INFO 87101 --- [http-nio-9092-exec-1] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring DispatcherServlet 'dispatcherServlet'
+2022-12-19 14:52:32.088  INFO 87101 --- [http-nio-9092-exec-1] o.s.web.servlet.DispatcherServlet        : Initializing Servlet 'dispatcherServlet'
+2022-12-19 14:52:32.144  INFO 87101 --- [http-nio-9092-exec-1] o.s.web.servlet.DispatcherServlet        : Completed initialization in 33 ms
+2022-12-19 14:53:04.127  INFO 87101 --- [SpringApplicationShutdownHook] j.LocalContainerEntityManagerFactoryBean : Closing JPA EntityManagerFactory for persistence unit 'default'
+2022-12-19 14:53:04.135  INFO 87101 --- [SpringApplicationShutdownHook] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Shutdown initiated...
+2022-12-19 14:53:04.139  INFO 87101 --- [SpringApplicationShutdownHook] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Shutdown completed.
+2022-12-19 14:53:11.112  INFO 87194 --- [main] c.a.UserService.UserServiceApplication   : Starting UserServiceApplication using Java 17.0.1 on ed-dynamic-158-197.wless.cranfield.ac.uk with PID 87194 (/Users/airscholar/IdeaProjects/OrderApp/UserService/target/classes started by airscholar in /Users/airscholar/IdeaProjects/OrderApp)
+2022-12-19 14:53:11.115  INFO 87194 --- [main] c.a.UserService.UserServiceApplication   : No active profile set, falling back to 1 default profile: "default"
+2022-12-19 14:53:12.035  INFO 87194 --- [main] .s.d.r.c.RepositoryConfigurationDelegate : Bootstrapping Spring Data JPA repositories in DEFAULT mode.
+2022-12-19 14:53:12.195  INFO 87194 --- [main] .s.d.r.c.RepositoryConfigurationDelegate : Finished Spring Data repository scanning in 153 ms. Found 1 JPA repository interfaces.
+2022-12-19 14:53:12.917  INFO 87194 --- [main] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat initialized with port(s): 9092 (http)
+2022-12-19 14:53:12.923  INFO 87194 --- [main] o.apache.catalina.core.StandardService   : Starting service [Tomcat]
+2022-12-19 14:53:12.923  INFO 87194 --- [main] org.apache.catalina.core.StandardEngine  : Starting Servlet engine: [Apache Tomcat/9.0.65]
+2022-12-19 14:53:13.037  INFO 87194 --- [main] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring embedded WebApplicationContext
+2022-12-19 14:53:13.037  INFO 87194 --- [main] w.s.c.ServletWebServerApplicationContext : Root WebApplicationContext: initialization completed in 1835 ms
+2022-12-19 14:53:13.077  INFO 87194 --- [main] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Starting...
+2022-12-19 14:53:13.291  INFO 87194 --- [main] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Start completed.
+2022-12-19 14:53:13.305  INFO 87194 --- [main] o.s.b.a.h2.H2ConsoleAutoConfiguration    : H2 console available at '/h2-console'. Database available at 'jdbc:h2:file:~/data/userDB'
+2022-12-19 14:53:13.492  INFO 87194 --- [main] o.hibernate.jpa.internal.util.LogHelper  : HHH000204: Processing PersistenceUnitInfo [name: default]
+2022-12-19 14:53:13.523  INFO 87194 --- [main] org.hibernate.Version                    : HHH000412: Hibernate ORM core version 5.6.10.Final
+2022-12-19 14:53:13.615  INFO 87194 --- [main] o.hibernate.annotations.common.Version   : HCANN000001: Hibernate Commons Annotations {5.1.2.Final}
+2022-12-19 14:53:13.672  INFO 87194 --- [main] org.hibernate.dialect.Dialect            : HHH000400: Using dialect: org.hibernate.dialect.H2Dialect
+2022-12-19 14:53:14.258  INFO 87194 --- [main] o.h.e.t.j.p.i.JtaPlatformInitiator       : HHH000490: Using JtaPlatform implementation: [org.hibernate.engine.transaction.jta.platform.internal.NoJtaPlatform]
+2022-12-19 14:53:14.265  INFO 87194 --- [main] j.LocalContainerEntityManagerFactoryBean : Initialized JPA EntityManagerFactory for persistence unit 'default'
+2022-12-19 14:53:14.579  INFO 87194 --- [main] o.a.s.a.XStreamAutoConfiguration         : Initializing an XStream instance since none was found. The auto configuration base packages will be used as wildcards for the XStream security settings.
+2022-12-19 14:53:14.712  INFO 87194 --- [main] o.a.s.util.XStreamSecurityTypeUtility    : Constructing wildcard type for base package [com.airscholar.UserService].
+2022-12-19 14:53:14.713  INFO 87194 --- [main] o.a.s.util.XStreamSecurityTypeUtility    : Constructing wildcard type for base package [org.axonframework.eventhandling.tokenstore].
+2022-12-19 14:53:14.713  INFO 87194 --- [main] o.a.s.util.XStreamSecurityTypeUtility    : Constructing wildcard type for base package [org.axonframework.eventhandling.deadletter.jpa].
+2022-12-19 14:53:14.713  INFO 87194 --- [main] o.a.s.util.XStreamSecurityTypeUtility    : Constructing wildcard type for base package [org.axonframework.modelling.saga.repository.jpa].
+2022-12-19 14:53:14.713  INFO 87194 --- [main] o.a.s.util.XStreamSecurityTypeUtility    : Constructing wildcard type for base package [org.axonframework.eventsourcing.eventstore.jpa].
+2022-12-19 14:53:14.720  INFO 87194 --- [main] o.a.serialization.ChainingConverter      : ContentTypeConverter of type [class org.axonframework.serialization.xml.Dom4JToByteArrayConverter] is ignored. It seems to rely on a class that is not available in the class loader: org/dom4j/Document
+2022-12-19 14:53:14.721  INFO 87194 --- [main] o.a.serialization.ChainingConverter      : ContentTypeConverter of type [class org.axonframework.serialization.xml.InputStreamToDom4jConverter] is ignored. It seems to rely on a class that is not available in the class loader: org/dom4j/Document
+2022-12-19 14:53:14.721  INFO 87194 --- [main] o.a.serialization.ChainingConverter      : ContentTypeConverter of type [class org.axonframework.serialization.xml.XomToStringConverter] is ignored. It seems to rely on a class that is not available in the class loader: nu/xom/Document
+2022-12-19 14:53:14.721  INFO 87194 --- [main] o.a.serialization.ChainingConverter      : ContentTypeConverter of type [class org.axonframework.serialization.xml.InputStreamToXomConverter] is ignored. It seems to rely on a class that is not available in the class loader: nu/xom/ParsingException
+2022-12-19 14:53:14.835  WARN 87194 --- [main] JpaBaseConfiguration$JpaWebConfiguration : spring.jpa.open-in-view is enabled by default. Therefore, database queries may be performed during view rendering. Explicitly configure spring.jpa.open-in-view to disable this warning
+2022-12-19 14:53:15.300  INFO 87194 --- [main] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat started on port(s): 9092 (http) with context path ''
+2022-12-19 14:53:16.267  INFO 87194 --- [main] i.a.a.c.impl.AxonServerManagedChannel    : Requesting connection details from localhost:8124
+2022-12-19 14:53:16.785  INFO 87194 --- [main] i.a.a.c.impl.AxonServerManagedChannel    : Successfully connected to localhost:8124
+2022-12-19 14:53:16.814  INFO 87194 --- [main] i.a.a.connector.impl.ControlChannelImpl  : Connected instruction stream for context 'default'. Sending client identification
+2022-12-19 14:53:16.853  INFO 87194 --- [main] i.a.a.c.query.impl.QueryChannelImpl      : QueryChannel for context 'default' connected, 0 registrations resubscribed
+2022-12-19 14:53:16.876  INFO 87194 --- [main] i.a.a.c.query.impl.QueryChannelImpl      : Registered handler for query 'com.airscholar.CommonService.queries.GetUserPaymentDetailsQuery : com.airscholar.UserService.data.User' in context 'default'
+2022-12-19 14:53:16.962  INFO 87194 --- [main] c.a.UserService.UserServiceApplication   : Started UserServiceApplication in 6.355 seconds (JVM running for 7.209)
+2022-12-19 14:53:20.630  INFO 87194 --- [http-nio-9092-exec-2] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring DispatcherServlet 'dispatcherServlet'
+2022-12-19 14:53:20.650  INFO 87194 --- [http-nio-9092-exec-2] o.s.web.servlet.DispatcherServlet        : Initializing Servlet 'dispatcherServlet'
+2022-12-19 14:53:20.678  INFO 87194 --- [http-nio-9092-exec-2] o.s.web.servlet.DispatcherServlet        : Completed initialization in 18 ms
+2022-12-19 14:53:20.812  INFO 87194 --- [http-nio-9092-exec-2] c.a.U.controller.UserController          : Sending query to get user details for user => 123
+2022-12-19 14:53:28.578  INFO 87194 --- [http-nio-9092-exec-3] c.a.U.controller.UserController          : Sending query to get user details for user => 123
+2022-12-19 14:53:44.392  INFO 87194 --- [http-nio-9092-exec-5] c.a.U.controller.UserController          : Sending query to get user details for user => 123
+2022-12-19 14:54:02.823  INFO 87194 --- [SpringApplicationShutdownHook] j.LocalContainerEntityManagerFactoryBean : Closing JPA EntityManagerFactory for persistence unit 'default'
+2022-12-19 14:54:02.829  INFO 87194 --- [SpringApplicationShutdownHook] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Shutdown initiated...
+2022-12-19 14:54:02.832  INFO 87194 --- [SpringApplicationShutdownHook] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Shutdown completed.
+2022-12-19 14:54:07.997  INFO 87297 --- [main] c.a.UserService.UserServiceApplication   : Starting UserServiceApplication using Java 17.0.1 on ed-dynamic-158-197.wless.cranfield.ac.uk with PID 87297 (/Users/airscholar/IdeaProjects/OrderApp/UserService/target/classes started by airscholar in /Users/airscholar/IdeaProjects/OrderApp)
+2022-12-19 14:54:08.001  INFO 87297 --- [main] c.a.UserService.UserServiceApplication   : No active profile set, falling back to 1 default profile: "default"
+2022-12-19 14:54:09.001  INFO 87297 --- [main] .s.d.r.c.RepositoryConfigurationDelegate : Bootstrapping Spring Data JPA repositories in DEFAULT mode.
+2022-12-19 14:54:09.153  INFO 87297 --- [main] .s.d.r.c.RepositoryConfigurationDelegate : Finished Spring Data repository scanning in 143 ms. Found 1 JPA repository interfaces.
+2022-12-19 14:54:10.050  INFO 87297 --- [main] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat initialized with port(s): 9092 (http)
+2022-12-19 14:54:10.056  INFO 87297 --- [main] o.apache.catalina.core.StandardService   : Starting service [Tomcat]
+2022-12-19 14:54:10.057  INFO 87297 --- [main] org.apache.catalina.core.StandardEngine  : Starting Servlet engine: [Apache Tomcat/9.0.65]
+2022-12-19 14:54:10.169  INFO 87297 --- [main] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring embedded WebApplicationContext
+2022-12-19 14:54:10.169  INFO 87297 --- [main] w.s.c.ServletWebServerApplicationContext : Root WebApplicationContext: initialization completed in 2076 ms
+2022-12-19 14:54:10.203  INFO 87297 --- [main] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Starting...
+2022-12-19 14:54:10.433  INFO 87297 --- [main] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Start completed.
+2022-12-19 14:54:10.448  INFO 87297 --- [main] o.s.b.a.h2.H2ConsoleAutoConfiguration    : H2 console available at '/h2-console'. Database available at 'jdbc:h2:file:~/data/userDB'
+2022-12-19 14:54:10.654  INFO 87297 --- [main] o.hibernate.jpa.internal.util.LogHelper  : HHH000204: Processing PersistenceUnitInfo [name: default]
+2022-12-19 14:54:10.683  INFO 87297 --- [main] org.hibernate.Version                    : HHH000412: Hibernate ORM core version 5.6.10.Final
+2022-12-19 14:54:10.781  INFO 87297 --- [main] o.hibernate.annotations.common.Version   : HCANN000001: Hibernate Commons Annotations {5.1.2.Final}
+2022-12-19 14:54:10.836  INFO 87297 --- [main] org.hibernate.dialect.Dialect            : HHH000400: Using dialect: org.hibernate.dialect.H2Dialect
+2022-12-19 14:54:11.997  INFO 87297 --- [main] o.h.e.t.j.p.i.JtaPlatformInitiator       : HHH000490: Using JtaPlatform implementation: [org.hibernate.engine.transaction.jta.platform.internal.NoJtaPlatform]
+2022-12-19 14:54:12.002  INFO 87297 --- [main] j.LocalContainerEntityManagerFactoryBean : Initialized JPA EntityManagerFactory for persistence unit 'default'
+2022-12-19 14:54:12.433  INFO 87297 --- [main] o.a.s.a.XStreamAutoConfiguration         : Initializing an XStream instance since none was found. The auto configuration base packages will be used as wildcards for the XStream security settings.
+2022-12-19 14:54:12.563  INFO 87297 --- [main] o.a.s.util.XStreamSecurityTypeUtility    : Constructing wildcard type for base package [com.airscholar.UserService].
+2022-12-19 14:54:12.563  INFO 87297 --- [main] o.a.s.util.XStreamSecurityTypeUtility    : Constructing wildcard type for base package [org.axonframework.eventhandling.tokenstore].
+2022-12-19 14:54:12.563  INFO 87297 --- [main] o.a.s.util.XStreamSecurityTypeUtility    : Constructing wildcard type for base package [org.axonframework.eventhandling.deadletter.jpa].
+2022-12-19 14:54:12.564  INFO 87297 --- [main] o.a.s.util.XStreamSecurityTypeUtility    : Constructing wildcard type for base package [org.axonframework.modelling.saga.repository.jpa].
+2022-12-19 14:54:12.564  INFO 87297 --- [main] o.a.s.util.XStreamSecurityTypeUtility    : Constructing wildcard type for base package [org.axonframework.eventsourcing.eventstore.jpa].
+2022-12-19 14:54:12.570  INFO 87297 --- [main] o.a.serialization.ChainingConverter      : ContentTypeConverter of type [class org.axonframework.serialization.xml.Dom4JToByteArrayConverter] is ignored. It seems to rely on a class that is not available in the class loader: org/dom4j/Document
+2022-12-19 14:54:12.570  INFO 87297 --- [main] o.a.serialization.ChainingConverter      : ContentTypeConverter of type [class org.axonframework.serialization.xml.InputStreamToDom4jConverter] is ignored. It seems to rely on a class that is not available in the class loader: org/dom4j/Document
+2022-12-19 14:54:12.571  INFO 87297 --- [main] o.a.serialization.ChainingConverter      : ContentTypeConverter of type [class org.axonframework.serialization.xml.XomToStringConverter] is ignored. It seems to rely on a class that is not available in the class loader: nu/xom/Document
+2022-12-19 14:54:12.571  INFO 87297 --- [main] o.a.serialization.ChainingConverter      : ContentTypeConverter of type [class org.axonframework.serialization.xml.InputStreamToXomConverter] is ignored. It seems to rely on a class that is not available in the class loader: nu/xom/ParsingException
+2022-12-19 14:54:12.687  WARN 87297 --- [main] JpaBaseConfiguration$JpaWebConfiguration : spring.jpa.open-in-view is enabled by default. Therefore, database queries may be performed during view rendering. Explicitly configure spring.jpa.open-in-view to disable this warning
+2022-12-19 14:54:13.097  INFO 87297 --- [main] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat started on port(s): 9092 (http) with context path ''
+2022-12-19 14:54:13.297  INFO 87297 --- [main] i.a.a.c.impl.AxonServerManagedChannel    : Requesting connection details from localhost:8124
+2022-12-19 14:54:13.507  INFO 87297 --- [main] i.a.a.c.impl.AxonServerManagedChannel    : Successfully connected to localhost:8124
+2022-12-19 14:54:13.515  INFO 87297 --- [main] i.a.a.connector.impl.ControlChannelImpl  : Connected instruction stream for context 'default'. Sending client identification
+2022-12-19 14:54:13.529  INFO 87297 --- [main] i.a.a.c.query.impl.QueryChannelImpl      : QueryChannel for context 'default' connected, 0 registrations resubscribed
+2022-12-19 14:54:13.535  INFO 87297 --- [main] i.a.a.c.query.impl.QueryChannelImpl      : Registered handler for query 'com.airscholar.CommonService.queries.GetUserPaymentDetailsQuery : com.airscholar.UserService.data.User' in context 'default'
+2022-12-19 14:54:13.562  INFO 87297 --- [main] c.a.UserService.UserServiceApplication   : Started UserServiceApplication in 6.349 seconds (JVM running for 7.226)
+2022-12-19 14:54:20.028  WARN 87297 --- [QueryProcessor-0] o.a.a.c.query.QueryProcessingTask        : Query Processor had an exception when processing query [com.airscholar.CommonService.queries.GetUserPaymentDetailsQuery]
+
+com.thoughtworks.xstream.security.ForbiddenClassException: com.airscholar.CommonService.queries.GetUserPaymentDetailsQuery
+	at com.thoughtworks.xstream.security.NoTypePermission.allows(NoTypePermission.java:26) ~[xstream-1.4.19.jar:1.4.19]
+	at com.thoughtworks.xstream.mapper.SecurityMapper.realClass(SecurityMapper.java:74) ~[xstream-1.4.19.jar:1.4.19]
+	at com.thoughtworks.xstream.mapper.MapperWrapper.realClass(MapperWrapper.java:125) ~[xstream-1.4.19.jar:1.4.19]
+	at com.thoughtworks.xstream.mapper.CachingMapper.realClass(CachingMapper.java:47) ~[xstream-1.4.19.jar:1.4.19]
+	at org.axonframework.serialization.AbstractXStreamSerializer.classForType(AbstractXStreamSerializer.java:170) ~[axon-messaging-4.6.0.jar:4.6.0]
+	at org.axonframework.serialization.LazyDeserializingObject.<init>(LazyDeserializingObject.java:83) ~[axon-messaging-4.6.0.jar:4.6.0]
+	at org.axonframework.serialization.LazyDeserializingObject.<init>(LazyDeserializingObject.java:63) ~[axon-messaging-4.6.0.jar:4.6.0]
+	at org.axonframework.axonserver.connector.query.GrpcBackedQueryMessage.<init>(GrpcBackedQueryMessage.java:62) ~[axon-server-connector-4.6.0.jar:4.6.0]
+	at org.axonframework.axonserver.connector.query.QuerySerializer.deserializeRequest(QuerySerializer.java:203) ~[axon-server-connector-4.6.0.jar:4.6.0]
+	at org.axonframework.axonserver.connector.query.QueryProcessingTask.run(QueryProcessingTask.java:142) ~[axon-server-connector-4.6.0.jar:4.6.0]
+	at org.axonframework.axonserver.connector.PriorityRunnable.run(PriorityRunnable.java:58) ~[axon-server-connector-4.6.0.jar:4.6.0]
+	at java.base/java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1136) ~[na:na]
+	at java.base/java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:635) ~[na:na]
+	at java.base/java.lang.Thread.run(Thread.java:833) ~[na:na]
+
+2022-12-19 14:54:37.114  WARN 87297 --- [QueryProcessor-4] o.a.a.c.query.QueryProcessingTask        : Query Processor had an exception when processing query [com.airscholar.CommonService.queries.GetUserPaymentDetailsQuery]
+
+com.thoughtworks.xstream.security.ForbiddenClassException: com.airscholar.CommonService.queries.GetUserPaymentDetailsQuery
+	at com.thoughtworks.xstream.security.NoTypePermission.allows(NoTypePermission.java:26) ~[xstream-1.4.19.jar:1.4.19]
+	at com.thoughtworks.xstream.mapper.SecurityMapper.realClass(SecurityMapper.java:74) ~[xstream-1.4.19.jar:1.4.19]
+	at com.thoughtworks.xstream.mapper.MapperWrapper.realClass(MapperWrapper.java:125) ~[xstream-1.4.19.jar:1.4.19]
+	at com.thoughtworks.xstream.mapper.CachingMapper.realClass(CachingMapper.java:47) ~[xstream-1.4.19.jar:1.4.19]
+	at org.axonframework.serialization.AbstractXStreamSerializer.classForType(AbstractXStreamSerializer.java:170) ~[axon-messaging-4.6.0.jar:4.6.0]
+	at org.axonframework.serialization.LazyDeserializingObject.<init>(LazyDeserializingObject.java:83) ~[axon-messaging-4.6.0.jar:4.6.0]
+	at org.axonframework.serialization.LazyDeserializingObject.<init>(LazyDeserializingObject.java:63) ~[axon-messaging-4.6.0.jar:4.6.0]
+	at org.axonframework.axonserver.connector.query.GrpcBackedQueryMessage.<init>(GrpcBackedQueryMessage.java:62) ~[axon-server-connector-4.6.0.jar:4.6.0]
+	at org.axonframework.axonserver.connector.query.QuerySerializer.deserializeRequest(QuerySerializer.java:203) ~[axon-server-connector-4.6.0.jar:4.6.0]
+	at org.axonframework.axonserver.connector.query.QueryProcessingTask.run(QueryProcessingTask.java:142) ~[axon-server-connector-4.6.0.jar:4.6.0]
+	at org.axonframework.axonserver.connector.PriorityRunnable.run(PriorityRunnable.java:58) ~[axon-server-connector-4.6.0.jar:4.6.0]
+	at java.base/java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1136) ~[na:na]
+	at java.base/java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:635) ~[na:na]
+	at java.base/java.lang.Thread.run(Thread.java:833) ~[na:na]
+
+2022-12-19 14:56:00.201  WARN 87297 --- [QueryProcessor-8] o.a.a.c.query.QueryProcessingTask        : Query Processor had an exception when processing query [com.airscholar.CommonService.queries.GetUserPaymentDetailsQuery]
+
+com.thoughtworks.xstream.security.ForbiddenClassException: com.airscholar.CommonService.queries.GetUserPaymentDetailsQuery
+	at com.thoughtworks.xstream.security.NoTypePermission.allows(NoTypePermission.java:26) ~[xstream-1.4.19.jar:1.4.19]
+	at com.thoughtworks.xstream.mapper.SecurityMapper.realClass(SecurityMapper.java:74) ~[xstream-1.4.19.jar:1.4.19]
+	at com.thoughtworks.xstream.mapper.MapperWrapper.realClass(MapperWrapper.java:125) ~[xstream-1.4.19.jar:1.4.19]
+	at com.thoughtworks.xstream.mapper.CachingMapper.realClass(CachingMapper.java:47) ~[xstream-1.4.19.jar:1.4.19]
+	at org.axonframework.serialization.AbstractXStreamSerializer.classForType(AbstractXStreamSerializer.java:170) ~[axon-messaging-4.6.0.jar:4.6.0]
+	at org.axonframework.serialization.LazyDeserializingObject.<init>(LazyDeserializingObject.java:83) ~[axon-messaging-4.6.0.jar:4.6.0]
+	at org.axonframework.serialization.LazyDeserializingObject.<init>(LazyDeserializingObject.java:63) ~[axon-messaging-4.6.0.jar:4.6.0]
+	at org.axonframework.axonserver.connector.query.GrpcBackedQueryMessage.<init>(GrpcBackedQueryMessage.java:62) ~[axon-server-connector-4.6.0.jar:4.6.0]
+	at org.axonframework.axonserver.connector.query.QuerySerializer.deserializeRequest(QuerySerializer.java:203) ~[axon-server-connector-4.6.0.jar:4.6.0]
+	at org.axonframework.axonserver.connector.query.QueryProcessingTask.run(QueryProcessingTask.java:142) ~[axon-server-connector-4.6.0.jar:4.6.0]
+	at org.axonframework.axonserver.connector.PriorityRunnable.run(PriorityRunnable.java:58) ~[axon-server-connector-4.6.0.jar:4.6.0]
+	at java.base/java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1136) ~[na:na]
+	at java.base/java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:635) ~[na:na]
+	at java.base/java.lang.Thread.run(Thread.java:833) ~[na:na]
+
+2022-12-19 14:57:09.006  WARN 87297 --- [QueryProcessor-3] o.a.a.c.query.QueryProcessingTask        : Query Processor had an exception when processing query [com.airscholar.CommonService.queries.GetUserPaymentDetailsQuery]
+
+com.thoughtworks.xstream.security.ForbiddenClassException: com.airscholar.CommonService.queries.GetUserPaymentDetailsQuery
+	at com.thoughtworks.xstream.security.NoTypePermission.allows(NoTypePermission.java:26) ~[xstream-1.4.19.jar:1.4.19]
+	at com.thoughtworks.xstream.mapper.SecurityMapper.realClass(SecurityMapper.java:74) ~[xstream-1.4.19.jar:1.4.19]
+	at com.thoughtworks.xstream.mapper.MapperWrapper.realClass(MapperWrapper.java:125) ~[xstream-1.4.19.jar:1.4.19]
+	at com.thoughtworks.xstream.mapper.CachingMapper.realClass(CachingMapper.java:47) ~[xstream-1.4.19.jar:1.4.19]
+	at org.axonframework.serialization.AbstractXStreamSerializer.classForType(AbstractXStreamSerializer.java:170) ~[axon-messaging-4.6.0.jar:4.6.0]
+	at org.axonframework.serialization.LazyDeserializingObject.<init>(LazyDeserializingObject.java:83) ~[axon-messaging-4.6.0.jar:4.6.0]
+	at org.axonframework.serialization.LazyDeserializingObject.<init>(LazyDeserializingObject.java:63) ~[axon-messaging-4.6.0.jar:4.6.0]
+	at org.axonframework.axonserver.connector.query.GrpcBackedQueryMessage.<init>(GrpcBackedQueryMessage.java:62) ~[axon-server-connector-4.6.0.jar:4.6.0]
+	at org.axonframework.axonserver.connector.query.QuerySerializer.deserializeRequest(QuerySerializer.java:203) ~[axon-server-connector-4.6.0.jar:4.6.0]
+	at org.axonframework.axonserver.connector.query.QueryProcessingTask.run(QueryProcessingTask.java:142) ~[axon-server-connector-4.6.0.jar:4.6.0]
+	at org.axonframework.axonserver.connector.PriorityRunnable.run(PriorityRunnable.java:58) ~[axon-server-connector-4.6.0.jar:4.6.0]
+	at java.base/java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1136) ~[na:na]
+	at java.base/java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:635) ~[na:na]
+	at java.base/java.lang.Thread.run(Thread.java:833) ~[na:na]
+
+2022-12-19 14:57:22.508  WARN 87297 --- [QueryProcessor-7] o.a.a.c.query.QueryProcessingTask        : Query Processor had an exception when processing query [com.airscholar.CommonService.queries.GetUserPaymentDetailsQuery]
+
+com.thoughtworks.xstream.security.ForbiddenClassException: com.airscholar.CommonService.queries.GetUserPaymentDetailsQuery
+	at com.thoughtworks.xstream.security.NoTypePermission.allows(NoTypePermission.java:26) ~[xstream-1.4.19.jar:1.4.19]
+	at com.thoughtworks.xstream.mapper.SecurityMapper.realClass(SecurityMapper.java:74) ~[xstream-1.4.19.jar:1.4.19]
+	at com.thoughtworks.xstream.mapper.MapperWrapper.realClass(MapperWrapper.java:125) ~[xstream-1.4.19.jar:1.4.19]
+	at com.thoughtworks.xstream.mapper.CachingMapper.realClass(CachingMapper.java:47) ~[xstream-1.4.19.jar:1.4.19]
+	at org.axonframework.serialization.AbstractXStreamSerializer.classForType(AbstractXStreamSerializer.java:170) ~[axon-messaging-4.6.0.jar:4.6.0]
+	at org.axonframework.serialization.LazyDeserializingObject.<init>(LazyDeserializingObject.java:83) ~[axon-messaging-4.6.0.jar:4.6.0]
+	at org.axonframework.serialization.LazyDeserializingObject.<init>(LazyDeserializingObject.java:63) ~[axon-messaging-4.6.0.jar:4.6.0]
+	at org.axonframework.axonserver.connector.query.GrpcBackedQueryMessage.<init>(GrpcBackedQueryMessage.java:62) ~[axon-server-connector-4.6.0.jar:4.6.0]
+	at org.axonframework.axonserver.connector.query.QuerySerializer.deserializeRequest(QuerySerializer.java:203) ~[axon-server-connector-4.6.0.jar:4.6.0]
+	at org.axonframework.axonserver.connector.query.QueryProcessingTask.run(QueryProcessingTask.java:142) ~[axon-server-connector-4.6.0.jar:4.6.0]
+	at org.axonframework.axonserver.connector.PriorityRunnable.run(PriorityRunnable.java:58) ~[axon-server-connector-4.6.0.jar:4.6.0]
+	at java.base/java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1136) ~[na:na]
+	at java.base/java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:635) ~[na:na]
+	at java.base/java.lang.Thread.run(Thread.java:833) ~[na:na]
+
+2022-12-19 15:02:22.582  INFO 87297 --- [SpringApplicationShutdownHook] j.LocalContainerEntityManagerFactoryBean : Closing JPA EntityManagerFactory for persistence unit 'default'
+2022-12-19 15:02:22.687  INFO 87297 --- [SpringApplicationShutdownHook] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Shutdown initiated...
+2022-12-19 15:02:22.697  INFO 87297 --- [SpringApplicationShutdownHook] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Shutdown completed.
+2022-12-19 15:12:12.421  INFO 89369 --- [main] c.a.UserService.UserServiceApplication   : Starting UserServiceApplication using Java 17.0.1 on ed-dynamic-158-197.wless.cranfield.ac.uk with PID 89369 (/Users/airscholar/IdeaProjects/OrderApp/UserService/target/classes started by airscholar in /Users/airscholar/IdeaProjects/OrderApp)
+2022-12-19 15:12:12.424  INFO 89369 --- [main] c.a.UserService.UserServiceApplication   : No active profile set, falling back to 1 default profile: "default"
+2022-12-19 15:12:13.319  INFO 89369 --- [main] .s.d.r.c.RepositoryConfigurationDelegate : Bootstrapping Spring Data JPA repositories in DEFAULT mode.
+2022-12-19 15:12:13.372  INFO 89369 --- [main] .s.d.r.c.RepositoryConfigurationDelegate : Finished Spring Data repository scanning in 46 ms. Found 0 JPA repository interfaces.
+2022-12-19 15:12:14.302  INFO 89369 --- [main] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat initialized with port(s): 9092 (http)
+2022-12-19 15:12:14.308  INFO 89369 --- [main] o.apache.catalina.core.StandardService   : Starting service [Tomcat]
+2022-12-19 15:12:14.308  INFO 89369 --- [main] org.apache.catalina.core.StandardEngine  : Starting Servlet engine: [Apache Tomcat/9.0.65]
+2022-12-19 15:12:14.423  INFO 89369 --- [main] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring embedded WebApplicationContext
+2022-12-19 15:12:14.424  INFO 89369 --- [main] w.s.c.ServletWebServerApplicationContext : Root WebApplicationContext: initialization completed in 1942 ms
+2022-12-19 15:12:14.462  INFO 89369 --- [main] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Starting...
+2022-12-19 15:12:14.675  INFO 89369 --- [main] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Start completed.
+2022-12-19 15:12:14.690  INFO 89369 --- [main] o.s.b.a.h2.H2ConsoleAutoConfiguration    : H2 console available at '/h2-console'. Database available at 'jdbc:h2:file:~/data/userDB'
+2022-12-19 15:12:14.850  INFO 89369 --- [main] o.hibernate.jpa.internal.util.LogHelper  : HHH000204: Processing PersistenceUnitInfo [name: default]
+2022-12-19 15:12:14.913  INFO 89369 --- [main] org.hibernate.Version                    : HHH000412: Hibernate ORM core version 5.6.10.Final
+2022-12-19 15:12:15.023  INFO 89369 --- [main] o.hibernate.annotations.common.Version   : HCANN000001: Hibernate Commons Annotations {5.1.2.Final}
+2022-12-19 15:12:15.083  INFO 89369 --- [main] org.hibernate.dialect.Dialect            : HHH000400: Using dialect: org.hibernate.dialect.H2Dialect
+2022-12-19 15:12:15.706  INFO 89369 --- [main] o.h.e.t.j.p.i.JtaPlatformInitiator       : HHH000490: Using JtaPlatform implementation: [org.hibernate.engine.transaction.jta.platform.internal.NoJtaPlatform]
+2022-12-19 15:12:15.711  INFO 89369 --- [main] j.LocalContainerEntityManagerFactoryBean : Initialized JPA EntityManagerFactory for persistence unit 'default'
+2022-12-19 15:12:15.839  INFO 89369 --- [main] o.a.s.a.XStreamAutoConfiguration         : Initializing an XStream instance since none was found. The auto configuration base packages will be used as wildcards for the XStream security settings.
+2022-12-19 15:12:15.961  INFO 89369 --- [main] o.a.s.util.XStreamSecurityTypeUtility    : Constructing wildcard type for base package [com.airscholar.UserService].
+2022-12-19 15:12:15.961  INFO 89369 --- [main] o.a.s.util.XStreamSecurityTypeUtility    : Constructing wildcard type for base package [org.axonframework.eventhandling.tokenstore].
+2022-12-19 15:12:15.961  INFO 89369 --- [main] o.a.s.util.XStreamSecurityTypeUtility    : Constructing wildcard type for base package [org.axonframework.eventhandling.deadletter.jpa].
+2022-12-19 15:12:15.961  INFO 89369 --- [main] o.a.s.util.XStreamSecurityTypeUtility    : Constructing wildcard type for base package [org.axonframework.modelling.saga.repository.jpa].
+2022-12-19 15:12:15.961  INFO 89369 --- [main] o.a.s.util.XStreamSecurityTypeUtility    : Constructing wildcard type for base package [org.axonframework.eventsourcing.eventstore.jpa].
+2022-12-19 15:12:15.969  INFO 89369 --- [main] o.a.serialization.ChainingConverter      : ContentTypeConverter of type [class org.axonframework.serialization.xml.Dom4JToByteArrayConverter] is ignored. It seems to rely on a class that is not available in the class loader: org/dom4j/Document
+2022-12-19 15:12:15.970  INFO 89369 --- [main] o.a.serialization.ChainingConverter      : ContentTypeConverter of type [class org.axonframework.serialization.xml.InputStreamToDom4jConverter] is ignored. It seems to rely on a class that is not available in the class loader: org/dom4j/Document
+2022-12-19 15:12:15.970  INFO 89369 --- [main] o.a.serialization.ChainingConverter      : ContentTypeConverter of type [class org.axonframework.serialization.xml.XomToStringConverter] is ignored. It seems to rely on a class that is not available in the class loader: nu/xom/Document
+2022-12-19 15:12:15.971  INFO 89369 --- [main] o.a.serialization.ChainingConverter      : ContentTypeConverter of type [class org.axonframework.serialization.xml.InputStreamToXomConverter] is ignored. It seems to rely on a class that is not available in the class loader: nu/xom/ParsingException
+2022-12-19 15:12:16.104  WARN 89369 --- [main] JpaBaseConfiguration$JpaWebConfiguration : spring.jpa.open-in-view is enabled by default. Therefore, database queries may be performed during view rendering. Explicitly configure spring.jpa.open-in-view to disable this warning
+2022-12-19 15:12:16.499  INFO 89369 --- [main] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat started on port(s): 9092 (http) with context path ''
+2022-12-19 15:12:16.668  INFO 89369 --- [main] i.a.a.c.impl.AxonServerManagedChannel    : Requesting connection details from localhost:8124
+2022-12-19 15:12:17.071  INFO 89369 --- [main] i.a.a.c.impl.AxonServerManagedChannel    : Successfully connected to localhost:8124
+2022-12-19 15:12:17.079  INFO 89369 --- [main] i.a.a.connector.impl.ControlChannelImpl  : Connected instruction stream for context 'default'. Sending client identification
+2022-12-19 15:12:17.094  INFO 89369 --- [main] i.a.a.c.query.impl.QueryChannelImpl      : QueryChannel for context 'default' connected, 0 registrations resubscribed
+2022-12-19 15:12:17.100  INFO 89369 --- [main] i.a.a.c.query.impl.QueryChannelImpl      : Registered handler for query 'com.airscholar.CommonService.queries.GetUserPaymentDetailsQuery : com.airscholar.CommonService.data.User' in context 'default'
+2022-12-19 15:12:17.126  INFO 89369 --- [main] c.a.UserService.UserServiceApplication   : Started UserServiceApplication in 5.165 seconds (JVM running for 7.497)
+2022-12-19 15:22:52.108  INFO 89369 --- [SpringApplicationShutdownHook] j.LocalContainerEntityManagerFactoryBean : Closing JPA EntityManagerFactory for persistence unit 'default'
+2022-12-19 15:22:52.139  INFO 89369 --- [SpringApplicationShutdownHook] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Shutdown initiated...
+2022-12-19 15:22:52.153  INFO 89369 --- [SpringApplicationShutdownHook] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Shutdown completed.
+2022-12-19 15:36:39.480  INFO 91998 --- [main] c.a.UserService.UserServiceApplication   : Starting UserServiceApplication using Java 17.0.1 on ed-dynamic-158-197.wless.cranfield.ac.uk with PID 91998 (/Users/airscholar/IdeaProjects/OrderApp/UserService/target/classes started by airscholar in /Users/airscholar/IdeaProjects/OrderApp)
+2022-12-19 15:36:39.563  INFO 91998 --- [main] c.a.UserService.UserServiceApplication   : No active profile set, falling back to 1 default profile: "default"
+2022-12-19 15:36:48.101  INFO 91998 --- [main] .s.d.r.c.RepositoryConfigurationDelegate : Bootstrapping Spring Data JPA repositories in DEFAULT mode.
+2022-12-19 15:36:48.642  INFO 91998 --- [main] .s.d.r.c.RepositoryConfigurationDelegate : Finished Spring Data repository scanning in 462 ms. Found 0 JPA repository interfaces.
+2022-12-19 15:36:53.945  INFO 91998 --- [main] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat initialized with port(s): 9092 (http)
+2022-12-19 15:36:54.045  INFO 91998 --- [main] o.apache.catalina.core.StandardService   : Starting service [Tomcat]
+2022-12-19 15:36:54.049  INFO 91998 --- [main] org.apache.catalina.core.StandardEngine  : Starting Servlet engine: [Apache Tomcat/9.0.65]
+2022-12-19 15:36:55.823  INFO 91998 --- [main] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring embedded WebApplicationContext
+2022-12-19 15:36:55.835  INFO 91998 --- [main] w.s.c.ServletWebServerApplicationContext : Root WebApplicationContext: initialization completed in 15733 ms
+2022-12-19 15:36:58.871  INFO 91998 --- [main] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Starting...
+2022-12-19 15:37:03.305  INFO 91998 --- [main] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Start completed.
+2022-12-19 15:37:03.648  INFO 91998 --- [main] o.s.b.a.h2.H2ConsoleAutoConfiguration    : H2 console available at '/h2-console'. Database available at 'jdbc:h2:file:~/data/userDB'
+2022-12-19 15:37:05.161  INFO 91998 --- [main] o.hibernate.jpa.internal.util.LogHelper  : HHH000204: Processing PersistenceUnitInfo [name: default]
+2022-12-19 15:37:06.260  INFO 91998 --- [main] org.hibernate.Version                    : HHH000412: Hibernate ORM core version 5.6.10.Final
+2022-12-19 15:37:13.700  INFO 91998 --- [main] o.hibernate.annotations.common.Version   : HCANN000001: Hibernate Commons Annotations {5.1.2.Final}
+2022-12-19 15:37:15.806  INFO 91998 --- [main] org.hibernate.dialect.Dialect            : HHH000400: Using dialect: org.hibernate.dialect.H2Dialect
+2022-12-19 15:37:31.199  INFO 91998 --- [main] o.h.e.t.j.p.i.JtaPlatformInitiator       : HHH000490: Using JtaPlatform implementation: [org.hibernate.engine.transaction.jta.platform.internal.NoJtaPlatform]
+2022-12-19 15:37:31.359  INFO 91998 --- [main] j.LocalContainerEntityManagerFactoryBean : Initialized JPA EntityManagerFactory for persistence unit 'default'
+2022-12-19 15:37:38.324  INFO 91998 --- [main] o.a.s.a.XStreamAutoConfiguration         : Initializing an XStream instance since none was found. The auto configuration base packages will be used as wildcards for the XStream security settings.
+2022-12-19 15:37:43.976  INFO 91998 --- [main] o.a.s.util.XStreamSecurityTypeUtility    : Constructing wildcard type for base package [com.airscholar.UserService].
+2022-12-19 15:37:44.021  INFO 91998 --- [main] o.a.s.util.XStreamSecurityTypeUtility    : Constructing wildcard type for base package [org.axonframework.eventhandling.tokenstore].
+2022-12-19 15:37:44.022  INFO 91998 --- [main] o.a.s.util.XStreamSecurityTypeUtility    : Constructing wildcard type for base package [org.axonframework.eventhandling.deadletter.jpa].
+2022-12-19 15:37:44.022  INFO 91998 --- [main] o.a.s.util.XStreamSecurityTypeUtility    : Constructing wildcard type for base package [org.axonframework.modelling.saga.repository.jpa].
+2022-12-19 15:37:44.022  INFO 91998 --- [main] o.a.s.util.XStreamSecurityTypeUtility    : Constructing wildcard type for base package [org.axonframework.eventsourcing.eventstore.jpa].
+2022-12-19 15:37:44.262  INFO 91998 --- [main] o.a.serialization.ChainingConverter      : ContentTypeConverter of type [class org.axonframework.serialization.xml.Dom4JToByteArrayConverter] is ignored. It seems to rely on a class that is not available in the class loader: org/dom4j/Document
+2022-12-19 15:37:44.267  INFO 91998 --- [main] o.a.serialization.ChainingConverter      : ContentTypeConverter of type [class org.axonframework.serialization.xml.InputStreamToDom4jConverter] is ignored. It seems to rely on a class that is not available in the class loader: org/dom4j/Document
+2022-12-19 15:37:44.270  INFO 91998 --- [main] o.a.serialization.ChainingConverter      : ContentTypeConverter of type [class org.axonframework.serialization.xml.XomToStringConverter] is ignored. It seems to rely on a class that is not available in the class loader: nu/xom/Document
+2022-12-19 15:37:44.283  INFO 91998 --- [main] o.a.serialization.ChainingConverter      : ContentTypeConverter of type [class org.axonframework.serialization.xml.InputStreamToXomConverter] is ignored. It seems to rely on a class that is not available in the class loader: nu/xom/ParsingException
+2022-12-19 15:37:46.148  WARN 91998 --- [main] JpaBaseConfiguration$JpaWebConfiguration : spring.jpa.open-in-view is enabled by default. Therefore, database queries may be performed during view rendering. Explicitly configure spring.jpa.open-in-view to disable this warning
+2022-12-19 15:37:50.324  INFO 91998 --- [main] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat started on port(s): 9092 (http) with context path ''
+2022-12-19 15:38:00.813  INFO 91998 --- [main] i.a.a.c.impl.AxonServerManagedChannel    : Requesting connection details from localhost:8124
+2022-12-19 15:38:08.205  WARN 91998 --- [main] i.a.a.c.impl.AxonServerManagedChannel    : Connecting to AxonServer node [localhost:8124] failed.
+
+io.grpc.StatusRuntimeException: DEADLINE_EXCEEDED: deadline exceeded after 0.213530209s. [closed=[], open=[[buffered_nanos=265582500, waiting_for_connection]]]
+	at io.grpc.stub.ClientCalls.toStatusRuntimeException(ClientCalls.java:262) ~[grpc-stub-1.44.1.jar:1.44.1]
+	at io.grpc.stub.ClientCalls.getUnchecked(ClientCalls.java:243) ~[grpc-stub-1.44.1.jar:1.44.1]
+	at io.grpc.stub.ClientCalls.blockingUnaryCall(ClientCalls.java:156) ~[grpc-stub-1.44.1.jar:1.44.1]
+	at io.axoniq.axonserver.grpc.control.PlatformServiceGrpc$PlatformServiceBlockingStub.getPlatformServer(PlatformServiceGrpc.java:250) ~[axonserver-connector-java-4.6.1.jar:4.6.1]
+	at io.axoniq.axonserver.connector.impl.AxonServerManagedChannel.connectChannel(AxonServerManagedChannel.java:115) ~[axonserver-connector-java-4.6.1.jar:4.6.1]
+	at io.axoniq.axonserver.connector.impl.AxonServerManagedChannel.createConnection(AxonServerManagedChannel.java:335) ~[axonserver-connector-java-4.6.1.jar:4.6.1]
+	at io.axoniq.axonserver.connector.impl.AxonServerManagedChannel.ensureConnected(AxonServerManagedChannel.java:300) ~[axonserver-connector-java-4.6.1.jar:4.6.1]
+	at io.axoniq.axonserver.connector.impl.AxonServerManagedChannel.getState(AxonServerManagedChannel.java:227) ~[axonserver-connector-java-4.6.1.jar:4.6.1]
+	at io.axoniq.axonserver.connector.impl.ContextConnection.ensureConnected(ContextConnection.java:210) ~[axonserver-connector-java-4.6.1.jar:4.6.1]
+	at io.axoniq.axonserver.connector.impl.ContextConnection.connect(ContextConnection.java:158) ~[axonserver-connector-java-4.6.1.jar:4.6.1]
+	at io.axoniq.axonserver.connector.AxonServerConnectionFactory.connect(AxonServerConnectionFactory.java:166) ~[axonserver-connector-java-4.6.1.jar:4.6.1]
+	at org.axonframework.axonserver.connector.AxonServerConnectionManager.createConnection(AxonServerConnectionManager.java:130) ~[axon-server-connector-4.6.0.jar:4.6.0]
+	at java.base/java.util.concurrent.ConcurrentHashMap.computeIfAbsent(ConcurrentHashMap.java:1708) ~[na:na]
+	at org.axonframework.axonserver.connector.AxonServerConnectionManager.getConnection(AxonServerConnectionManager.java:126) ~[axon-server-connector-4.6.0.jar:4.6.0]
+	at org.axonframework.axonserver.connector.query.AxonServerQueryBus.subscribe(AxonServerQueryBus.java:242) ~[axon-server-connector-4.6.0.jar:4.6.0]
+	at org.axonframework.queryhandling.annotation.AnnotationQueryHandlerAdapter.lambda$subscribe$1(AnnotationQueryHandlerAdapter.java:96) ~[axon-messaging-4.6.0.jar:4.6.0]
+	at java.base/java.util.stream.ReferencePipeline$3$1.accept(ReferencePipeline.java:197) ~[na:na]
+	at java.base/java.util.stream.ReferencePipeline$3$1.accept(ReferencePipeline.java:197) ~[na:na]
+	at java.base/java.util.stream.ReferencePipeline$2$1.accept(ReferencePipeline.java:179) ~[na:na]
+	at java.base/java.util.stream.ReferencePipeline$3$1.accept(ReferencePipeline.java:197) ~[na:na]
+	at java.base/java.util.TreeMap$KeySpliterator.forEachRemaining(TreeMap.java:3064) ~[na:na]
+	at java.base/java.util.stream.AbstractPipeline.copyInto(AbstractPipeline.java:509) ~[na:na]
+	at java.base/java.util.stream.AbstractPipeline.wrapAndCopyInto(AbstractPipeline.java:499) ~[na:na]
+	at java.base/java.util.stream.ReduceOps$ReduceOp.evaluateSequential(ReduceOps.java:921) ~[na:na]
+	at java.base/java.util.stream.AbstractPipeline.evaluate(AbstractPipeline.java:234) ~[na:na]
+	at java.base/java.util.stream.ReferencePipeline.collect(ReferencePipeline.java:682) ~[na:na]
+	at org.axonframework.queryhandling.annotation.AnnotationQueryHandlerAdapter.subscribe(AnnotationQueryHandlerAdapter.java:101) ~[axon-messaging-4.6.0.jar:4.6.0]
+	at org.axonframework.config.DefaultConfigurer.lambda$null$37(DefaultConfigurer.java:676) ~[axon-configuration-4.6.0.jar:4.6.0]
+	at org.axonframework.config.MessageHandlerRegistrar.start(MessageHandlerRegistrar.java:85) ~[axon-configuration-4.6.0.jar:4.6.0]
+	at org.axonframework.lifecycle.Lifecycle$LifecycleRegistry.lambda$onStart$0(Lifecycle.java:68) ~[axon-messaging-4.6.0.jar:4.6.0]
+	at java.base/java.util.stream.ReferencePipeline$3$1.accept(ReferencePipeline.java:197) ~[na:na]
+	at java.base/java.util.Spliterators$ArraySpliterator.forEachRemaining(Spliterators.java:992) ~[na:na]
+	at java.base/java.util.stream.AbstractPipeline.copyInto(AbstractPipeline.java:509) ~[na:na]
+	at java.base/java.util.stream.AbstractPipeline.wrapAndCopyInto(AbstractPipeline.java:499) ~[na:na]
+	at java.base/java.util.stream.ReduceOps$ReduceOp.evaluateSequential(ReduceOps.java:921) ~[na:na]
+	at java.base/java.util.stream.AbstractPipeline.evaluate(AbstractPipeline.java:234) ~[na:na]
+	at java.base/java.util.stream.ReferencePipeline.reduce(ReferencePipeline.java:662) ~[na:na]
+	at org.axonframework.config.DefaultConfigurer.invokeLifecycleHandlers(DefaultConfigurer.java:856) ~[axon-configuration-4.6.0.jar:4.6.0]
+	at org.axonframework.config.DefaultConfigurer.invokeStartHandlers(DefaultConfigurer.java:802) ~[axon-configuration-4.6.0.jar:4.6.0]
+	at org.axonframework.config.DefaultConfigurer$ConfigurationImpl.start(DefaultConfigurer.java:953) ~[axon-configuration-4.6.0.jar:4.6.0]
+	at org.axonframework.spring.config.SpringAxonConfiguration.start(SpringAxonConfiguration.java:76) ~[axon-spring-4.6.0.jar:4.6.0]
+	at org.springframework.context.support.DefaultLifecycleProcessor.doStart(DefaultLifecycleProcessor.java:178) ~[spring-context-5.3.22.jar:5.3.22]
+	at org.springframework.context.support.DefaultLifecycleProcessor.access$200(DefaultLifecycleProcessor.java:54) ~[spring-context-5.3.22.jar:5.3.22]
+	at org.springframework.context.support.DefaultLifecycleProcessor$LifecycleGroup.start(DefaultLifecycleProcessor.java:356) ~[spring-context-5.3.22.jar:5.3.22]
+	at java.base/java.lang.Iterable.forEach(Iterable.java:75) ~[na:na]
+	at org.springframework.context.support.DefaultLifecycleProcessor.startBeans(DefaultLifecycleProcessor.java:155) ~[spring-context-5.3.22.jar:5.3.22]
+	at org.springframework.context.support.DefaultLifecycleProcessor.onRefresh(DefaultLifecycleProcessor.java:123) ~[spring-context-5.3.22.jar:5.3.22]
+	at org.springframework.context.support.AbstractApplicationContext.finishRefresh(AbstractApplicationContext.java:935) ~[spring-context-5.3.22.jar:5.3.22]
+	at org.springframework.context.support.AbstractApplicationContext.refresh(AbstractApplicationContext.java:586) ~[spring-context-5.3.22.jar:5.3.22]
+	at org.springframework.boot.web.servlet.context.ServletWebServerApplicationContext.refresh(ServletWebServerApplicationContext.java:147) ~[spring-boot-2.7.3.jar:2.7.3]
+	at org.springframework.boot.SpringApplication.refresh(SpringApplication.java:734) ~[spring-boot-2.7.3.jar:2.7.3]
+	at org.springframework.boot.SpringApplication.refreshContext(SpringApplication.java:408) ~[spring-boot-2.7.3.jar:2.7.3]
+	at org.springframework.boot.SpringApplication.run(SpringApplication.java:308) ~[spring-boot-2.7.3.jar:2.7.3]
+	at org.springframework.boot.SpringApplication.run(SpringApplication.java:1306) ~[spring-boot-2.7.3.jar:2.7.3]
+	at org.springframework.boot.SpringApplication.run(SpringApplication.java:1295) ~[spring-boot-2.7.3.jar:2.7.3]
+	at com.airscholar.UserService.UserServiceApplication.main(UserServiceApplication.java:11) ~[classes/:na]
+
+2022-12-19 15:38:08.446  INFO 91998 --- [main] i.a.a.c.impl.AxonServerManagedChannel    : Failed to get connection to AxonServer. Scheduling a reconnect in 2000ms
+2022-12-19 15:38:09.721  INFO 91998 --- [main] i.a.a.c.impl.AxonServerManagedChannel    : Requesting connection details from localhost:8124
+2022-12-19 15:38:12.956  INFO 91998 --- [main] i.a.a.c.impl.AxonServerManagedChannel    : Successfully connected to localhost:8124
+2022-12-19 15:38:13.143  INFO 91998 --- [main] i.a.a.connector.impl.ControlChannelImpl  : Connected instruction stream for context 'default'. Sending client identification
+2022-12-19 15:38:13.253  INFO 91998 --- [main] i.a.a.c.query.impl.QueryChannelImpl      : QueryChannel for context 'default' connected, 0 registrations resubscribed
+2022-12-19 15:38:13.342  INFO 91998 --- [main] i.a.a.c.query.impl.QueryChannelImpl      : Registered handler for query 'com.airscholar.CommonService.queries.GetUserPaymentDetailsQuery : com.airscholar.CommonService.data.User' in context 'default'
+2022-12-19 15:38:13.707  INFO 91998 --- [main] c.a.UserService.UserServiceApplication   : Started UserServiceApplication in 111.008 seconds (JVM running for 124.363)
+2022-12-19 15:46:43.973  INFO 91998 --- [SpringApplicationShutdownHook] j.LocalContainerEntityManagerFactoryBean : Closing JPA EntityManagerFactory for persistence unit 'default'
+2022-12-19 15:46:44.764  INFO 91998 --- [SpringApplicationShutdownHook] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Shutdown initiated...
+2022-12-19 15:46:45.310  INFO 91998 --- [SpringApplicationShutdownHook] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Shutdown completed.
+2022-12-19 15:59:45.846  INFO 95027 --- [main] c.a.UserService.UserServiceApplication   : Starting UserServiceApplication using Java 17.0.1 on ed-dynamic-158-197.wless.cranfield.ac.uk with PID 95027 (/Users/airscholar/IdeaProjects/OrderApp/UserService/target/classes started by airscholar in /Users/airscholar/IdeaProjects/OrderApp)
+2022-12-19 15:59:45.882  INFO 95027 --- [main] c.a.UserService.UserServiceApplication   : No active profile set, falling back to 1 default profile: "default"
+2022-12-19 15:59:46.848  INFO 95027 --- [main] .s.d.r.c.RepositoryConfigurationDelegate : Bootstrapping Spring Data JPA repositories in DEFAULT mode.
+2022-12-19 15:59:46.914  INFO 95027 --- [main] .s.d.r.c.RepositoryConfigurationDelegate : Finished Spring Data repository scanning in 58 ms. Found 0 JPA repository interfaces.
+2022-12-19 15:59:47.972  INFO 95027 --- [main] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat initialized with port(s): 9092 (http)
+2022-12-19 15:59:47.978  INFO 95027 --- [main] o.apache.catalina.core.StandardService   : Starting service [Tomcat]
+2022-12-19 15:59:47.978  INFO 95027 --- [main] org.apache.catalina.core.StandardEngine  : Starting Servlet engine: [Apache Tomcat/9.0.65]
+2022-12-19 15:59:48.125  INFO 95027 --- [main] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring embedded WebApplicationContext
+2022-12-19 15:59:48.126  INFO 95027 --- [main] w.s.c.ServletWebServerApplicationContext : Root WebApplicationContext: initialization completed in 2155 ms
+2022-12-19 15:59:48.186  INFO 95027 --- [main] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Starting...
+2022-12-19 15:59:48.417  INFO 95027 --- [main] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Start completed.
+2022-12-19 15:59:48.431  INFO 95027 --- [main] o.s.b.a.h2.H2ConsoleAutoConfiguration    : H2 console available at '/h2-console'. Database available at 'jdbc:h2:file:~/data/userDB'
+2022-12-19 15:59:48.614  INFO 95027 --- [main] o.hibernate.jpa.internal.util.LogHelper  : HHH000204: Processing PersistenceUnitInfo [name: default]
+2022-12-19 15:59:48.671  INFO 95027 --- [main] org.hibernate.Version                    : HHH000412: Hibernate ORM core version 5.6.10.Final
+2022-12-19 15:59:48.768  INFO 95027 --- [main] o.hibernate.annotations.common.Version   : HCANN000001: Hibernate Commons Annotations {5.1.2.Final}
+2022-12-19 15:59:48.846  INFO 95027 --- [main] org.hibernate.dialect.Dialect            : HHH000400: Using dialect: org.hibernate.dialect.H2Dialect
+2022-12-19 15:59:50.184  INFO 95027 --- [main] o.h.e.t.j.p.i.JtaPlatformInitiator       : HHH000490: Using JtaPlatform implementation: [org.hibernate.engine.transaction.jta.platform.internal.NoJtaPlatform]
+2022-12-19 15:59:50.195  INFO 95027 --- [main] j.LocalContainerEntityManagerFactoryBean : Initialized JPA EntityManagerFactory for persistence unit 'default'
+2022-12-19 15:59:50.340  INFO 95027 --- [main] o.a.s.a.XStreamAutoConfiguration         : Initializing an XStream instance since none was found. The auto configuration base packages will be used as wildcards for the XStream security settings.
+2022-12-19 15:59:50.463  INFO 95027 --- [main] o.a.s.util.XStreamSecurityTypeUtility    : Constructing wildcard type for base package [com.airscholar.UserService].
+2022-12-19 15:59:50.463  INFO 95027 --- [main] o.a.s.util.XStreamSecurityTypeUtility    : Constructing wildcard type for base package [org.axonframework.eventhandling.tokenstore].
+2022-12-19 15:59:50.464  INFO 95027 --- [main] o.a.s.util.XStreamSecurityTypeUtility    : Constructing wildcard type for base package [org.axonframework.eventhandling.deadletter.jpa].
+2022-12-19 15:59:50.464  INFO 95027 --- [main] o.a.s.util.XStreamSecurityTypeUtility    : Constructing wildcard type for base package [org.axonframework.modelling.saga.repository.jpa].
+2022-12-19 15:59:50.464  INFO 95027 --- [main] o.a.s.util.XStreamSecurityTypeUtility    : Constructing wildcard type for base package [org.axonframework.eventsourcing.eventstore.jpa].
+2022-12-19 15:59:50.472  INFO 95027 --- [main] o.a.serialization.ChainingConverter      : ContentTypeConverter of type [class org.axonframework.serialization.xml.Dom4JToByteArrayConverter] is ignored. It seems to rely on a class that is not available in the class loader: org/dom4j/Document
+2022-12-19 15:59:50.473  INFO 95027 --- [main] o.a.serialization.ChainingConverter      : ContentTypeConverter of type [class org.axonframework.serialization.xml.InputStreamToDom4jConverter] is ignored. It seems to rely on a class that is not available in the class loader: org/dom4j/Document
+2022-12-19 15:59:50.473  INFO 95027 --- [main] o.a.serialization.ChainingConverter      : ContentTypeConverter of type [class org.axonframework.serialization.xml.XomToStringConverter] is ignored. It seems to rely on a class that is not available in the class loader: nu/xom/Document
+2022-12-19 15:59:50.473  INFO 95027 --- [main] o.a.serialization.ChainingConverter      : ContentTypeConverter of type [class org.axonframework.serialization.xml.InputStreamToXomConverter] is ignored. It seems to rely on a class that is not available in the class loader: nu/xom/ParsingException
+2022-12-19 15:59:50.618  WARN 95027 --- [main] JpaBaseConfiguration$JpaWebConfiguration : spring.jpa.open-in-view is enabled by default. Therefore, database queries may be performed during view rendering. Explicitly configure spring.jpa.open-in-view to disable this warning
+2022-12-19 15:59:51.036  INFO 95027 --- [main] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat started on port(s): 9092 (http) with context path ''
+2022-12-19 15:59:51.190  INFO 95027 --- [main] i.a.a.c.impl.AxonServerManagedChannel    : Requesting connection details from localhost:8124
+2022-12-19 15:59:51.368  INFO 95027 --- [main] i.a.a.c.impl.AxonServerManagedChannel    : Successfully connected to localhost:8124
+2022-12-19 15:59:51.374  INFO 95027 --- [main] i.a.a.connector.impl.ControlChannelImpl  : Connected instruction stream for context 'default'. Sending client identification
+2022-12-19 15:59:51.388  INFO 95027 --- [main] i.a.a.c.query.impl.QueryChannelImpl      : QueryChannel for context 'default' connected, 0 registrations resubscribed
+2022-12-19 15:59:51.396  INFO 95027 --- [main] i.a.a.c.query.impl.QueryChannelImpl      : Registered handler for query 'com.airscholar.CommonService.queries.GetUserPaymentDetailsQuery : com.airscholar.CommonService.data.User' in context 'default'
+2022-12-19 15:59:51.418  INFO 95027 --- [main] c.a.UserService.UserServiceApplication   : Started UserServiceApplication in 6.11 seconds (JVM running for 7.064)
+2022-12-19 16:19:07.968  INFO 95027 --- [SpringApplicationShutdownHook] j.LocalContainerEntityManagerFactoryBean : Closing JPA EntityManagerFactory for persistence unit 'default'
+2022-12-19 16:19:08.030  INFO 95027 --- [SpringApplicationShutdownHook] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Shutdown initiated...
+2022-12-19 16:19:08.062  INFO 95027 --- [SpringApplicationShutdownHook] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Shutdown completed.
+2022-12-19 16:19:13.311  INFO 97216 --- [main] c.a.UserService.UserServiceApplication   : Starting UserServiceApplication using Java 17.0.1 on ed-dynamic-158-197.wless.cranfield.ac.uk with PID 97216 (/Users/airscholar/IdeaProjects/OrderApp/UserService/target/classes started by airscholar in /Users/airscholar/IdeaProjects/OrderApp)
+2022-12-19 16:19:13.334  INFO 97216 --- [main] c.a.UserService.UserServiceApplication   : No active profile set, falling back to 1 default profile: "default"
+2022-12-19 16:19:14.588  INFO 97216 --- [main] .s.d.r.c.RepositoryConfigurationDelegate : Bootstrapping Spring Data JPA repositories in DEFAULT mode.
+2022-12-19 16:19:14.654  INFO 97216 --- [main] .s.d.r.c.RepositoryConfigurationDelegate : Finished Spring Data repository scanning in 56 ms. Found 0 JPA repository interfaces.
+2022-12-19 16:19:15.638  INFO 97216 --- [main] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat initialized with port(s): 9092 (http)
+2022-12-19 16:19:15.646  INFO 97216 --- [main] o.apache.catalina.core.StandardService   : Starting service [Tomcat]
+2022-12-19 16:19:15.646  INFO 97216 --- [main] org.apache.catalina.core.StandardEngine  : Starting Servlet engine: [Apache Tomcat/9.0.65]
+2022-12-19 16:19:15.778  INFO 97216 --- [main] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring embedded WebApplicationContext
+2022-12-19 16:19:15.778  INFO 97216 --- [main] w.s.c.ServletWebServerApplicationContext : Root WebApplicationContext: initialization completed in 2350 ms
+2022-12-19 16:19:15.819  INFO 97216 --- [main] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Starting...
+2022-12-19 16:19:16.069  INFO 97216 --- [main] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Start completed.
+2022-12-19 16:19:16.085  INFO 97216 --- [main] o.s.b.a.h2.H2ConsoleAutoConfiguration    : H2 console available at '/h2-console'. Database available at 'jdbc:h2:file:~/data/userDB'
+2022-12-19 16:19:16.341  INFO 97216 --- [main] o.hibernate.jpa.internal.util.LogHelper  : HHH000204: Processing PersistenceUnitInfo [name: default]
+2022-12-19 16:19:16.393  INFO 97216 --- [main] org.hibernate.Version                    : HHH000412: Hibernate ORM core version 5.6.10.Final
+2022-12-19 16:19:16.503  INFO 97216 --- [main] o.hibernate.annotations.common.Version   : HCANN000001: Hibernate Commons Annotations {5.1.2.Final}
+2022-12-19 16:19:16.584  INFO 97216 --- [main] org.hibernate.dialect.Dialect            : HHH000400: Using dialect: org.hibernate.dialect.H2Dialect
+2022-12-19 16:19:17.212  INFO 97216 --- [main] o.h.e.t.j.p.i.JtaPlatformInitiator       : HHH000490: Using JtaPlatform implementation: [org.hibernate.engine.transaction.jta.platform.internal.NoJtaPlatform]
+2022-12-19 16:19:17.221  INFO 97216 --- [main] j.LocalContainerEntityManagerFactoryBean : Initialized JPA EntityManagerFactory for persistence unit 'default'
+2022-12-19 16:19:17.368  INFO 97216 --- [main] o.a.s.a.XStreamAutoConfiguration         : Initializing an XStream instance since none was found. The auto configuration base packages will be used as wildcards for the XStream security settings.
+2022-12-19 16:19:17.515  INFO 97216 --- [main] o.a.s.util.XStreamSecurityTypeUtility    : Constructing wildcard type for base package [com.airscholar.UserService].
+2022-12-19 16:19:17.515  INFO 97216 --- [main] o.a.s.util.XStreamSecurityTypeUtility    : Constructing wildcard type for base package [org.axonframework.eventhandling.tokenstore].
+2022-12-19 16:19:17.515  INFO 97216 --- [main] o.a.s.util.XStreamSecurityTypeUtility    : Constructing wildcard type for base package [org.axonframework.eventhandling.deadletter.jpa].
+2022-12-19 16:19:17.515  INFO 97216 --- [main] o.a.s.util.XStreamSecurityTypeUtility    : Constructing wildcard type for base package [org.axonframework.modelling.saga.repository.jpa].
+2022-12-19 16:19:17.515  INFO 97216 --- [main] o.a.s.util.XStreamSecurityTypeUtility    : Constructing wildcard type for base package [org.axonframework.eventsourcing.eventstore.jpa].
+2022-12-19 16:19:17.525  INFO 97216 --- [main] o.a.serialization.ChainingConverter      : ContentTypeConverter of type [class org.axonframework.serialization.xml.Dom4JToByteArrayConverter] is ignored. It seems to rely on a class that is not available in the class loader: org/dom4j/Document
+2022-12-19 16:19:17.526  INFO 97216 --- [main] o.a.serialization.ChainingConverter      : ContentTypeConverter of type [class org.axonframework.serialization.xml.InputStreamToDom4jConverter] is ignored. It seems to rely on a class that is not available in the class loader: org/dom4j/Document
+2022-12-19 16:19:17.526  INFO 97216 --- [main] o.a.serialization.ChainingConverter      : ContentTypeConverter of type [class org.axonframework.serialization.xml.XomToStringConverter] is ignored. It seems to rely on a class that is not available in the class loader: nu/xom/Document
+2022-12-19 16:19:17.527  INFO 97216 --- [main] o.a.serialization.ChainingConverter      : ContentTypeConverter of type [class org.axonframework.serialization.xml.InputStreamToXomConverter] is ignored. It seems to rely on a class that is not available in the class loader: nu/xom/ParsingException
+2022-12-19 16:19:17.684  WARN 97216 --- [main] JpaBaseConfiguration$JpaWebConfiguration : spring.jpa.open-in-view is enabled by default. Therefore, database queries may be performed during view rendering. Explicitly configure spring.jpa.open-in-view to disable this warning
+2022-12-19 16:19:19.612  INFO 97216 --- [main] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat started on port(s): 9092 (http) with context path ''
+2022-12-19 16:19:20.083  INFO 97216 --- [main] i.a.a.c.impl.AxonServerManagedChannel    : Requesting connection details from localhost:8124
+2022-12-19 16:19:20.697  INFO 97216 --- [main] i.a.a.c.impl.AxonServerManagedChannel    : Successfully connected to localhost:8124
+2022-12-19 16:19:20.709  INFO 97216 --- [main] i.a.a.connector.impl.ControlChannelImpl  : Connected instruction stream for context 'default'. Sending client identification
+2022-12-19 16:19:20.728  INFO 97216 --- [main] i.a.a.c.query.impl.QueryChannelImpl      : QueryChannel for context 'default' connected, 0 registrations resubscribed
+2022-12-19 16:19:20.735  INFO 97216 --- [main] i.a.a.c.query.impl.QueryChannelImpl      : Registered handler for query 'com.airscholar.CommonService.queries.GetUserPaymentDetailsQuery : com.airscholar.CommonService.data.User' in context 'default'
+2022-12-19 16:19:20.788  INFO 97216 --- [main] c.a.UserService.UserServiceApplication   : Started UserServiceApplication in 8.062 seconds (JVM running for 9.516)
+2022-12-19 16:27:57.196  INFO 97216 --- [SpringApplicationShutdownHook] j.LocalContainerEntityManagerFactoryBean : Closing JPA EntityManagerFactory for persistence unit 'default'
+2022-12-19 16:27:57.240  INFO 97216 --- [SpringApplicationShutdownHook] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Shutdown initiated...
+2022-12-19 16:27:57.252  INFO 97216 --- [SpringApplicationShutdownHook] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Shutdown completed.
+2022-12-19 16:28:20.301  INFO 98277 --- [main] c.a.UserService.UserServiceApplication   : Starting UserServiceApplication using Java 17.0.1 on ed-dynamic-158-197.wless.cranfield.ac.uk with PID 98277 (/Users/airscholar/IdeaProjects/OrderApp/UserService/target/classes started by airscholar in /Users/airscholar/IdeaProjects/OrderApp)
+2022-12-19 16:28:20.308  INFO 98277 --- [main] c.a.UserService.UserServiceApplication   : No active profile set, falling back to 1 default profile: "default"
+2022-12-19 16:28:21.464  INFO 98277 --- [main] .s.d.r.c.RepositoryConfigurationDelegate : Bootstrapping Spring Data JPA repositories in DEFAULT mode.
+2022-12-19 16:28:21.517  INFO 98277 --- [main] .s.d.r.c.RepositoryConfigurationDelegate : Finished Spring Data repository scanning in 46 ms. Found 0 JPA repository interfaces.
+2022-12-19 16:28:22.405  INFO 98277 --- [main] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat initialized with port(s): 9092 (http)
+2022-12-19 16:28:22.412  INFO 98277 --- [main] o.apache.catalina.core.StandardService   : Starting service [Tomcat]
+2022-12-19 16:28:22.413  INFO 98277 --- [main] org.apache.catalina.core.StandardEngine  : Starting Servlet engine: [Apache Tomcat/9.0.65]
+2022-12-19 16:28:22.545  INFO 98277 --- [main] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring embedded WebApplicationContext
+2022-12-19 16:28:22.546  INFO 98277 --- [main] w.s.c.ServletWebServerApplicationContext : Root WebApplicationContext: initialization completed in 2115 ms
+2022-12-19 16:28:22.593  INFO 98277 --- [main] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Starting...
+2022-12-19 16:28:22.872  INFO 98277 --- [main] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Start completed.
+2022-12-19 16:28:22.887  INFO 98277 --- [main] o.s.b.a.h2.H2ConsoleAutoConfiguration    : H2 console available at '/h2-console'. Database available at 'jdbc:h2:file:~/data/userDB'
+2022-12-19 16:28:23.058  INFO 98277 --- [main] o.hibernate.jpa.internal.util.LogHelper  : HHH000204: Processing PersistenceUnitInfo [name: default]
+2022-12-19 16:28:23.104  INFO 98277 --- [main] org.hibernate.Version                    : HHH000412: Hibernate ORM core version 5.6.10.Final
+2022-12-19 16:28:23.196  INFO 98277 --- [main] o.hibernate.annotations.common.Version   : HCANN000001: Hibernate Commons Annotations {5.1.2.Final}
+2022-12-19 16:28:23.249  INFO 98277 --- [main] org.hibernate.dialect.Dialect            : HHH000400: Using dialect: org.hibernate.dialect.H2Dialect
+2022-12-19 16:28:23.873  INFO 98277 --- [main] o.h.e.t.j.p.i.JtaPlatformInitiator       : HHH000490: Using JtaPlatform implementation: [org.hibernate.engine.transaction.jta.platform.internal.NoJtaPlatform]
+2022-12-19 16:28:23.879  INFO 98277 --- [main] j.LocalContainerEntityManagerFactoryBean : Initialized JPA EntityManagerFactory for persistence unit 'default'
+2022-12-19 16:28:24.002  INFO 98277 --- [main] o.a.s.a.XStreamAutoConfiguration         : Initializing an XStream instance since none was found. The auto configuration base packages will be used as wildcards for the XStream security settings.
+2022-12-19 16:28:24.134  INFO 98277 --- [main] o.a.s.util.XStreamSecurityTypeUtility    : Constructing wildcard type for base package [com.airscholar.UserService].
+2022-12-19 16:28:24.135  INFO 98277 --- [main] o.a.s.util.XStreamSecurityTypeUtility    : Constructing wildcard type for base package [org.axonframework.eventhandling.tokenstore].
+2022-12-19 16:28:24.135  INFO 98277 --- [main] o.a.s.util.XStreamSecurityTypeUtility    : Constructing wildcard type for base package [org.axonframework.eventhandling.deadletter.jpa].
+2022-12-19 16:28:24.135  INFO 98277 --- [main] o.a.s.util.XStreamSecurityTypeUtility    : Constructing wildcard type for base package [org.axonframework.modelling.saga.repository.jpa].
+2022-12-19 16:28:24.135  INFO 98277 --- [main] o.a.s.util.XStreamSecurityTypeUtility    : Constructing wildcard type for base package [org.axonframework.eventsourcing.eventstore.jpa].
+2022-12-19 16:28:24.145  INFO 98277 --- [main] o.a.serialization.ChainingConverter      : ContentTypeConverter of type [class org.axonframework.serialization.xml.Dom4JToByteArrayConverter] is ignored. It seems to rely on a class that is not available in the class loader: org/dom4j/Document
+2022-12-19 16:28:24.146  INFO 98277 --- [main] o.a.serialization.ChainingConverter      : ContentTypeConverter of type [class org.axonframework.serialization.xml.InputStreamToDom4jConverter] is ignored. It seems to rely on a class that is not available in the class loader: org/dom4j/Document
+2022-12-19 16:28:24.146  INFO 98277 --- [main] o.a.serialization.ChainingConverter      : ContentTypeConverter of type [class org.axonframework.serialization.xml.XomToStringConverter] is ignored. It seems to rely on a class that is not available in the class loader: nu/xom/Document
+2022-12-19 16:28:24.147  INFO 98277 --- [main] o.a.serialization.ChainingConverter      : ContentTypeConverter of type [class org.axonframework.serialization.xml.InputStreamToXomConverter] is ignored. It seems to rely on a class that is not available in the class loader: nu/xom/ParsingException
+2022-12-19 16:28:24.291  WARN 98277 --- [main] JpaBaseConfiguration$JpaWebConfiguration : spring.jpa.open-in-view is enabled by default. Therefore, database queries may be performed during view rendering. Explicitly configure spring.jpa.open-in-view to disable this warning
+2022-12-19 16:28:24.743  INFO 98277 --- [main] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat started on port(s): 9092 (http) with context path ''
+2022-12-19 16:28:24.983  INFO 98277 --- [main] i.a.a.c.impl.AxonServerManagedChannel    : Requesting connection details from localhost:8124
+2022-12-19 16:28:25.161  INFO 98277 --- [main] i.a.a.c.impl.AxonServerManagedChannel    : Successfully connected to localhost:8124
+2022-12-19 16:28:25.168  INFO 98277 --- [main] i.a.a.connector.impl.ControlChannelImpl  : Connected instruction stream for context 'default'. Sending client identification
+2022-12-19 16:28:25.187  INFO 98277 --- [main] i.a.a.c.query.impl.QueryChannelImpl      : QueryChannel for context 'default' connected, 0 registrations resubscribed
+2022-12-19 16:28:25.193  INFO 98277 --- [main] i.a.a.c.query.impl.QueryChannelImpl      : Registered handler for query 'com.airscholar.CommonService.queries.GetUserPaymentDetailsQuery : com.airscholar.CommonService.data.User' in context 'default'
+2022-12-19 16:28:25.223  INFO 98277 --- [main] c.a.UserService.UserServiceApplication   : Started UserServiceApplication in 5.826 seconds (JVM running for 7.283)
+2022-12-19 16:40:12.301  INFO 98277 --- [SpringApplicationShutdownHook] j.LocalContainerEntityManagerFactoryBean : Closing JPA EntityManagerFactory for persistence unit 'default'
+2022-12-19 16:40:12.379  INFO 98277 --- [SpringApplicationShutdownHook] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Shutdown initiated...
+2022-12-19 16:40:12.435  INFO 98277 --- [SpringApplicationShutdownHook] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Shutdown completed.
+2022-12-19 16:40:23.155  INFO 99675 --- [main] c.a.UserService.UserServiceApplication   : Starting UserServiceApplication using Java 17.0.1 on ed-dynamic-158-197.wless.cranfield.ac.uk with PID 99675 (/Users/airscholar/IdeaProjects/OrderApp/UserService/target/classes started by airscholar in /Users/airscholar/IdeaProjects/OrderApp)
+2022-12-19 16:40:23.158  INFO 99675 --- [main] c.a.UserService.UserServiceApplication   : No active profile set, falling back to 1 default profile: "default"
+2022-12-19 16:40:24.168  INFO 99675 --- [main] .s.d.r.c.RepositoryConfigurationDelegate : Bootstrapping Spring Data JPA repositories in DEFAULT mode.
+2022-12-19 16:40:24.231  INFO 99675 --- [main] .s.d.r.c.RepositoryConfigurationDelegate : Finished Spring Data repository scanning in 54 ms. Found 0 JPA repository interfaces.
+2022-12-19 16:40:25.214  INFO 99675 --- [main] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat initialized with port(s): 9092 (http)
+2022-12-19 16:40:25.238  INFO 99675 --- [main] o.apache.catalina.core.StandardService   : Starting service [Tomcat]
+2022-12-19 16:40:25.238  INFO 99675 --- [main] org.apache.catalina.core.StandardEngine  : Starting Servlet engine: [Apache Tomcat/9.0.65]
+2022-12-19 16:40:25.438  INFO 99675 --- [main] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring embedded WebApplicationContext
+2022-12-19 16:40:25.439  INFO 99675 --- [main] w.s.c.ServletWebServerApplicationContext : Root WebApplicationContext: initialization completed in 2182 ms
+2022-12-19 16:40:25.549  INFO 99675 --- [main] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Starting...
+2022-12-19 16:40:26.280  INFO 99675 --- [main] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Start completed.
+2022-12-19 16:40:26.330  INFO 99675 --- [main] o.s.b.a.h2.H2ConsoleAutoConfiguration    : H2 console available at '/h2-console'. Database available at 'jdbc:h2:file:~/data/userDB'
+2022-12-19 16:40:27.135  INFO 99675 --- [main] o.hibernate.jpa.internal.util.LogHelper  : HHH000204: Processing PersistenceUnitInfo [name: default]
+2022-12-19 16:40:27.225  INFO 99675 --- [main] org.hibernate.Version                    : HHH000412: Hibernate ORM core version 5.6.10.Final
+2022-12-19 16:40:27.372  INFO 99675 --- [main] o.hibernate.annotations.common.Version   : HCANN000001: Hibernate Commons Annotations {5.1.2.Final}
+2022-12-19 16:40:27.452  INFO 99675 --- [main] org.hibernate.dialect.Dialect            : HHH000400: Using dialect: org.hibernate.dialect.H2Dialect
+2022-12-19 16:40:28.307  INFO 99675 --- [main] o.h.e.t.j.p.i.JtaPlatformInitiator       : HHH000490: Using JtaPlatform implementation: [org.hibernate.engine.transaction.jta.platform.internal.NoJtaPlatform]
+2022-12-19 16:40:28.313  INFO 99675 --- [main] j.LocalContainerEntityManagerFactoryBean : Initialized JPA EntityManagerFactory for persistence unit 'default'
+2022-12-19 16:40:28.520  INFO 99675 --- [main] o.a.s.a.XStreamAutoConfiguration         : Initializing an XStream instance since none was found. The auto configuration base packages will be used as wildcards for the XStream security settings.
+2022-12-19 16:40:28.691  INFO 99675 --- [main] o.a.s.util.XStreamSecurityTypeUtility    : Constructing wildcard type for base package [com.airscholar.UserService].
+2022-12-19 16:40:28.692  INFO 99675 --- [main] o.a.s.util.XStreamSecurityTypeUtility    : Constructing wildcard type for base package [org.axonframework.eventhandling.tokenstore].
+2022-12-19 16:40:28.692  INFO 99675 --- [main] o.a.s.util.XStreamSecurityTypeUtility    : Constructing wildcard type for base package [org.axonframework.eventhandling.deadletter.jpa].
+2022-12-19 16:40:28.692  INFO 99675 --- [main] o.a.s.util.XStreamSecurityTypeUtility    : Constructing wildcard type for base package [org.axonframework.modelling.saga.repository.jpa].
+2022-12-19 16:40:28.692  INFO 99675 --- [main] o.a.s.util.XStreamSecurityTypeUtility    : Constructing wildcard type for base package [org.axonframework.eventsourcing.eventstore.jpa].
+2022-12-19 16:40:28.703  INFO 99675 --- [main] o.a.serialization.ChainingConverter      : ContentTypeConverter of type [class org.axonframework.serialization.xml.Dom4JToByteArrayConverter] is ignored. It seems to rely on a class that is not available in the class loader: org/dom4j/Document
+2022-12-19 16:40:28.704  INFO 99675 --- [main] o.a.serialization.ChainingConverter      : ContentTypeConverter of type [class org.axonframework.serialization.xml.InputStreamToDom4jConverter] is ignored. It seems to rely on a class that is not available in the class loader: org/dom4j/Document
+2022-12-19 16:40:28.705  INFO 99675 --- [main] o.a.serialization.ChainingConverter      : ContentTypeConverter of type [class org.axonframework.serialization.xml.XomToStringConverter] is ignored. It seems to rely on a class that is not available in the class loader: nu/xom/Document
+2022-12-19 16:40:28.705  INFO 99675 --- [main] o.a.serialization.ChainingConverter      : ContentTypeConverter of type [class org.axonframework.serialization.xml.InputStreamToXomConverter] is ignored. It seems to rely on a class that is not available in the class loader: nu/xom/ParsingException
+2022-12-19 16:40:28.898  WARN 99675 --- [main] JpaBaseConfiguration$JpaWebConfiguration : spring.jpa.open-in-view is enabled by default. Therefore, database queries may be performed during view rendering. Explicitly configure spring.jpa.open-in-view to disable this warning
+2022-12-19 16:40:29.619  INFO 99675 --- [main] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat started on port(s): 9092 (http) with context path ''
+2022-12-19 16:40:29.841  INFO 99675 --- [main] i.a.a.c.impl.AxonServerManagedChannel    : Requesting connection details from localhost:8124
+2022-12-19 16:40:30.130  INFO 99675 --- [main] i.a.a.c.impl.AxonServerManagedChannel    : Successfully connected to localhost:8124
+2022-12-19 16:40:30.146  INFO 99675 --- [main] i.a.a.connector.impl.ControlChannelImpl  : Connected instruction stream for context 'default'. Sending client identification
+2022-12-19 16:40:30.180  INFO 99675 --- [main] i.a.a.c.query.impl.QueryChannelImpl      : QueryChannel for context 'default' connected, 0 registrations resubscribed
+2022-12-19 16:40:30.197  INFO 99675 --- [main] i.a.a.c.query.impl.QueryChannelImpl      : Registered handler for query 'com.airscholar.CommonService.queries.GetUserPaymentDetailsQuery : com.airscholar.CommonService.data.User' in context 'default'
+2022-12-19 16:40:30.252  INFO 99675 --- [main] c.a.UserService.UserServiceApplication   : Started UserServiceApplication in 7.608 seconds (JVM running for 8.713)
+2022-12-19 16:44:31.911  INFO 99675 --- [SpringApplicationShutdownHook] j.LocalContainerEntityManagerFactoryBean : Closing JPA EntityManagerFactory for persistence unit 'default'
+2022-12-19 16:44:31.945  INFO 99675 --- [SpringApplicationShutdownHook] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Shutdown initiated...
+2022-12-19 16:44:31.954  INFO 99675 --- [SpringApplicationShutdownHook] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Shutdown completed.
+2022-12-19 16:44:39.500  INFO 270 --- [main] c.a.UserService.UserServiceApplication   : Starting UserServiceApplication using Java 17.0.1 on ed-dynamic-158-197.wless.cranfield.ac.uk with PID 270 (/Users/airscholar/IdeaProjects/OrderApp/UserService/target/classes started by airscholar in /Users/airscholar/IdeaProjects/OrderApp)
+2022-12-19 16:44:39.526  INFO 270 --- [main] c.a.UserService.UserServiceApplication   : No active profile set, falling back to 1 default profile: "default"
+2022-12-19 16:44:40.472  INFO 270 --- [main] .s.d.r.c.RepositoryConfigurationDelegate : Bootstrapping Spring Data JPA repositories in DEFAULT mode.
+2022-12-19 16:44:40.530  INFO 270 --- [main] .s.d.r.c.RepositoryConfigurationDelegate : Finished Spring Data repository scanning in 51 ms. Found 0 JPA repository interfaces.
+2022-12-19 16:44:41.471  INFO 270 --- [main] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat initialized with port(s): 9092 (http)
+2022-12-19 16:44:41.481  INFO 270 --- [main] o.apache.catalina.core.StandardService   : Starting service [Tomcat]
+2022-12-19 16:44:41.481  INFO 270 --- [main] org.apache.catalina.core.StandardEngine  : Starting Servlet engine: [Apache Tomcat/9.0.65]
+2022-12-19 16:44:41.656  INFO 270 --- [main] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring embedded WebApplicationContext
+2022-12-19 16:44:41.657  INFO 270 --- [main] w.s.c.ServletWebServerApplicationContext : Root WebApplicationContext: initialization completed in 2074 ms
+2022-12-19 16:44:41.704  INFO 270 --- [main] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Starting...
+2022-12-19 16:44:41.950  INFO 270 --- [main] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Start completed.
+2022-12-19 16:44:41.973  INFO 270 --- [main] o.s.b.a.h2.H2ConsoleAutoConfiguration    : H2 console available at '/h2-console'. Database available at 'jdbc:h2:file:~/data/userDB'
+2022-12-19 16:44:42.157  INFO 270 --- [main] o.hibernate.jpa.internal.util.LogHelper  : HHH000204: Processing PersistenceUnitInfo [name: default]
+2022-12-19 16:44:42.238  INFO 270 --- [main] org.hibernate.Version                    : HHH000412: Hibernate ORM core version 5.6.10.Final
+2022-12-19 16:44:42.357  INFO 270 --- [main] o.hibernate.annotations.common.Version   : HCANN000001: Hibernate Commons Annotations {5.1.2.Final}
+2022-12-19 16:44:42.447  INFO 270 --- [main] org.hibernate.dialect.Dialect            : HHH000400: Using dialect: org.hibernate.dialect.H2Dialect
+2022-12-19 16:44:43.532  INFO 270 --- [main] o.h.e.t.j.p.i.JtaPlatformInitiator       : HHH000490: Using JtaPlatform implementation: [org.hibernate.engine.transaction.jta.platform.internal.NoJtaPlatform]
+2022-12-19 16:44:43.538  INFO 270 --- [main] j.LocalContainerEntityManagerFactoryBean : Initialized JPA EntityManagerFactory for persistence unit 'default'
+2022-12-19 16:44:43.857  INFO 270 --- [main] o.a.s.a.XStreamAutoConfiguration         : Initializing an XStream instance since none was found. The auto configuration base packages will be used as wildcards for the XStream security settings.
+2022-12-19 16:44:44.283  INFO 270 --- [main] o.a.s.util.XStreamSecurityTypeUtility    : Constructing wildcard type for base package [com.airscholar.UserService].
+2022-12-19 16:44:44.284  INFO 270 --- [main] o.a.s.util.XStreamSecurityTypeUtility    : Constructing wildcard type for base package [org.axonframework.eventhandling.tokenstore].
+2022-12-19 16:44:44.284  INFO 270 --- [main] o.a.s.util.XStreamSecurityTypeUtility    : Constructing wildcard type for base package [org.axonframework.eventhandling.deadletter.jpa].
+2022-12-19 16:44:44.284  INFO 270 --- [main] o.a.s.util.XStreamSecurityTypeUtility    : Constructing wildcard type for base package [org.axonframework.modelling.saga.repository.jpa].
+2022-12-19 16:44:44.284  INFO 270 --- [main] o.a.s.util.XStreamSecurityTypeUtility    : Constructing wildcard type for base package [org.axonframework.eventsourcing.eventstore.jpa].
+2022-12-19 16:44:44.309  INFO 270 --- [main] o.a.serialization.ChainingConverter      : ContentTypeConverter of type [class org.axonframework.serialization.xml.Dom4JToByteArrayConverter] is ignored. It seems to rely on a class that is not available in the class loader: org/dom4j/Document
+2022-12-19 16:44:44.312  INFO 270 --- [main] o.a.serialization.ChainingConverter      : ContentTypeConverter of type [class org.axonframework.serialization.xml.InputStreamToDom4jConverter] is ignored. It seems to rely on a class that is not available in the class loader: org/dom4j/Document
+2022-12-19 16:44:44.312  INFO 270 --- [main] o.a.serialization.ChainingConverter      : ContentTypeConverter of type [class org.axonframework.serialization.xml.XomToStringConverter] is ignored. It seems to rely on a class that is not available in the class loader: nu/xom/Document
+2022-12-19 16:44:44.316  INFO 270 --- [main] o.a.serialization.ChainingConverter      : ContentTypeConverter of type [class org.axonframework.serialization.xml.InputStreamToXomConverter] is ignored. It seems to rely on a class that is not available in the class loader: nu/xom/ParsingException
+2022-12-19 16:44:44.510  WARN 270 --- [main] JpaBaseConfiguration$JpaWebConfiguration : spring.jpa.open-in-view is enabled by default. Therefore, database queries may be performed during view rendering. Explicitly configure spring.jpa.open-in-view to disable this warning
+2022-12-19 16:44:45.469  INFO 270 --- [main] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat started on port(s): 9092 (http) with context path ''
+2022-12-19 16:44:45.691  INFO 270 --- [main] i.a.a.c.impl.AxonServerManagedChannel    : Requesting connection details from localhost:8124
+2022-12-19 16:44:46.024  INFO 270 --- [main] i.a.a.c.impl.AxonServerManagedChannel    : Successfully connected to localhost:8124
+2022-12-19 16:44:46.035  INFO 270 --- [main] i.a.a.connector.impl.ControlChannelImpl  : Connected instruction stream for context 'default'. Sending client identification
+2022-12-19 16:44:46.055  INFO 270 --- [main] i.a.a.c.query.impl.QueryChannelImpl      : QueryChannel for context 'default' connected, 0 registrations resubscribed
+2022-12-19 16:44:46.062  INFO 270 --- [main] i.a.a.c.query.impl.QueryChannelImpl      : Registered handler for query 'com.airscholar.CommonService.queries.GetUserPaymentDetailsQuery : com.airscholar.CommonService.data.User' in context 'default'
+2022-12-19 16:44:46.094  INFO 270 --- [main] c.a.UserService.UserServiceApplication   : Started UserServiceApplication in 7.153 seconds (JVM running for 8.233)
+2022-12-19 16:52:19.934  INFO 270 --- [SpringApplicationShutdownHook] j.LocalContainerEntityManagerFactoryBean : Closing JPA EntityManagerFactory for persistence unit 'default'
+2022-12-19 16:52:20.049  INFO 270 --- [SpringApplicationShutdownHook] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Shutdown initiated...
+2022-12-19 16:52:20.139  INFO 270 --- [SpringApplicationShutdownHook] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Shutdown completed.

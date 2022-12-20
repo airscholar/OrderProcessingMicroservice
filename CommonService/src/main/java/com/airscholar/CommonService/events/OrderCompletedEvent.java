@@ -1,4 +1,4 @@
-package com.airscholar.CommonService.commands;
+package com.airscholar.CommonService.events;
 
 import lombok.AllArgsConstructor;
 import lombok.Builder;
@@ -7,9 +7,9 @@ import lombok.NoArgsConstructor;
 
 @Data
 @Builder
-@NoArgsConstructor
 @AllArgsConstructor
-public class CompleteOrderCommand {
+@NoArgsConstructor
+public class OrderCompletedEvent {
     private String orderId;
     private String orderStatus;
 }

@@ -1,17 +1,18 @@
 package com.airscholar.CommonService.commands;
 
-import com.airscholar.CommonService.model.CardDetails;
+import com.airscholar.CommonService.data.CardDetails;
 import lombok.AllArgsConstructor;
 import lombok.Builder;
 import lombok.Data;
+import lombok.NoArgsConstructor;
 import org.axonframework.modelling.command.TargetAggregateIdentifier;
 
 @Data
 @Builder
+@NoArgsConstructor
 @AllArgsConstructor
 public class ValidatePaymentCommand {
-    @TargetAggregateIdentifier
     private String paymentId;
     private String orderId;
-    private CardDetails cardDetails;
+    private String cardDetails;
 }

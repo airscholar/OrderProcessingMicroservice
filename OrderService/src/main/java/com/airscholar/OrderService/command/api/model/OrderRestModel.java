@@ -12,5 +12,4 @@ public class OrderRestModel {
     private String userId;
     private String addressId;
     private Integer quantity;
-    private String orderStatus;
 }
